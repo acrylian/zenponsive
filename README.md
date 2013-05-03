@@ -38,34 +38,30 @@ Code examples
 Code example
 
 A row of col2 columns
-`
-<div class="site" class="w960">
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-</div>
-`
+    <div class="site" class="w960">
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    </div>
+
 
 col2 columbs with a wrapper that sets them to col04 on 767px widht and to col06 on 479px width.
 
-`
-<div class="site" class="w960">
-<div class="col04-767-n col06-479-n">
-<div class="col02"<h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-<div class="col02"><h3>col02</h3></div>
-</div>
-</div>
-`
+    <div class="site" class="w960">
+    <div class="col04-767-n col06-479-n">
+    <div class="col02"><img src="thumb.jpg" /></div>
+    <div class="col02"><img src="thumb.jpg" /></div>
+    <div class="col02"><img src="thumb.jpg" /></div>
+    <div class="col02"><img src="thumb.jpg" /></div>
+    <div class="col02"><img src="thumb.jpg" /></div>
+    <div class="col02"><img src="thumb.jpg" /></div>
+    </div>
+    </div>
+
 
 You can also set any column to that behaviour using the classes without "-n".
 
-`
-<div class="col02 col04-767"><img src="thumb.jpg" /></div>
-`
+    <div class="col02 col04-767"><img src="thumb.jpg" /></div>
