@@ -1,0 +1,155 @@
+/* place here your custom css */
+
+#sizingnote479,
+#sizingnote767 { 
+	position: fixed;
+	display: none;
+	color: white;
+	background-color: brown;
+	text-align: center;
+	top: 0px;
+	left:0px;
+	width: 100%;
+	z-index: 3000;
+}
+			 
+
+.overviewwrapper {
+}
+	
+			
+.overviewwrapper h3 {
+	background-color: gray;
+	color: white;
+	font-size: 12px;
+	font-weight: normal;
+	padding: 8px;
+	text-align: center;
+	margin: 0;
+}
+
+hr {
+clear: left;
+height: 10px;
+margin: 10px 0 10px 0 !important;
+border-bottom: 1px dashed black !important;
+}
+
+h1 { 
+font-size: 2rem;
+text-align: center;
+margin-bottom: 20px;
+padding-top: 20px;
+}
+
+h2 { 
+font-size: 1rem;
+font-style: italic;
+margin-top: 10px;
+margin-bottom: 10px;
+padding: 0 15px 0 15px !important;
+}
+
+h3,
+p,
+code {
+padding: 0 20px 0 20px !important;
+margin-bottom: 10px;
+}
+code {
+margin-left: 10px;
+}
+
+ol {
+margin-left: 40px;
+margin-bottom: 30px;
+}
+
+/* for sized images if portrait we don't really want width: 100% ! */
+img.imgportrait {
+width: auto !important;
+max-width: 100% !important;
+}
+
+/*
+.col6-extra.one img,
+.col4-extra.one img,
+.col3-extra.one img,
+.col2-extra.one img {
+ margin: 0% 6% 10% 0% !important;
+ max-width: 94%;
+}
+
+.col3-extra.three img,
+.col2-extra.two img,
+.col2-extra.three img,
+.col2-extra.four img,
+.col2-extra.five img {
+	margin: 0% 3% 10% 3% !important;
+	max-width: 94%;
+}
+
+.col6-extra.two img,
+.col4-extra.three img,
+.col3-extra.four img,
+.col2-extra.six img {
+	margin: 0% 0% 10% 6% !important;
+	max-width: 94%;
+}
+*/
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+body {
+background-color: lightgray;
+}
+
+#site {
+padding-bottom: 100px !important;
+background-color: white;
+}
+
+
+#footer {
+	background:#ffab62;
+	width:100%;
+	height:100px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+/*---------------------------------------------------------
+	Custom responsive breakpoints - 
+	recommended to use the same as within zenponsive.css
+----------------------------------------------------------*/
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+			
+			#sizingnote479 { 
+				display: none;
+			}
+			#sizingnote767 {
+				display: block;
+			}
+	
+	}
+
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	
+	
+	@media only screen and (max-width: 479px) {
+		#sizingnote479 {
+				display: block;
+			}
+			
+			#sizingnote767 {
+				display: none;
+			}
+
+
+	}

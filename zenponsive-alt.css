@@ -1,0 +1,175 @@
+@import url(normalize.css);
+
+/*
+* Zenponsive CSS Framework
+* @author Malte Müller - www.maltem.de
+* @Licence: GPL v2 - http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/**************************************************************************************
+	Zenponsive basics
+ 	-----------------------
+	The separation into .site and .content that looks unnecessary is needed to allow
+	keeping a full height background for the main content and the footer at the bottom following this:
+ 	http://www.cssreset.com/2010/css-tutorials/how-to-keep-footer-at-bottom-of-page-with-css/
+ 	License: Free - do whatever you like with it! Credit and linkbacks much appreciated.
+***************************************************************************************/
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width: 100%;
+}
+
+/* Reset all so you really get really only the margins/paddings you want */	
+body * {
+ 	margin:0;
+	padding:0;
+}
+
+/* main content wrapper for the columns */
+#site {
+	max-width: 961px; /* 1px cheating so the percentage roundings of different browser do better fit (FF is best because of subpixel rounding) */
+	min-width: 240px;  /* this is generally the widht of "normal" mobiles */
+	margin: 0 auto;
+	padding: 0; /* if you need paddings you can adjust them here. But oyu might need to adjust max-width additionally */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	position:relative;
+}
+
+/************** 
+	The columns 
+***************/
+.col01 { width: 8.333334%; }
+.col02 { width: 16.66%; }
+.col03 { width: 25%; }
+.col04 { width: 33.33%; }
+.col05 { width: 41.6666667%; }
+.col06 { width: 50%; }
+.col07 { width: 58.3333333%; }
+.col08 { width: 66.66%; }
+.col09 { width: 75%; }
+.col10 { width: 83.3333333%; }
+.col11 { width: 91.6666666%; }
+.col12 { width: 100%; }
+
+.col01,.col02,.col03,.col04,.col05,.col06,.col07,.col08,.col09,.col10,.col11,.col12 {
+	height: auto;
+	margin: 0; /* Don't change this because then the widths will not work */
+	position: relative; /* needed so you can relatively/absolutely position elements within */
+	float: left;
+	word-wrap: break-word; /* So longer words don't break the width  */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/********************************************************  
+	Responsive images
+	-----------------
+	Be sure to setup your site/theme 
+	that <img> elements don't have a width and height 
+	attribute set
+ *******************************************************/
+.col01 img,
+.col02 img,
+.col03 img,
+.col04 img,
+.col05 img,
+.col06 img,
+.col07 img,
+.col08 img,
+.col09 img,
+.col10 img,
+.col11 img,
+.col12 img {
+	width: auto; 
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	display: block;
+}
+
+/* General clear float to start a row of other column sizes All and IE8+ */
+.clearfix:before, 
+.clearfix:after {
+	content: "";
+	display: table;
+}
+.floatclear,
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+
+/************************************************************ 
+	Responsive breakpoints
+	----------------------
+	just two to keep it simple
+	For really special things you can override these and 
+	add more to your own custom css file
+ ************************************************************/
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	
+	/** 
+	 * Extra classed to override the default col12 set above on this width breakpoint
+	 * 
+	 * Use the one with -n on wrappers to set extra behaviour on a row of columns
+	 */
+	.col01-767,.col01-767-n > * { width: 8.333334% !important; }
+	.col02-767,.col02-767-n > * { width: 16.66% !important; }
+	.col03-767,.col03-767-n > * { width: 25% !important; }
+	.col04-767,.col04-767-n > * { width: 33.33% !important; }
+	.col05-767,.col05-767-n > * { width: 41.6666667% !important; }
+	.col06-767,.col06-767-n > * { width: 50% !important; }
+	.col07-767,.col07-767-n > * { width: 58.3333333% !important; }
+	.col08-767,.col08-767-n > * { width: 66.66% !important; }
+	.col09-767,.col09-767-n > * { width: 75% !important; }
+	.col10-767,.col10-767-n > * { width: 83.3333333% !important; }
+	.col11-767,.col11-767-n > * { width: 91.6666666% !important; }
+	.col12-767,.col12-767-n > * { width: 100% !important; }
+	
+	.floatright-767 { float: right !important; }
+}
+
+/** 
+ * Mobile Portrait Size to Mobile Landscape Size (devices and browsers) 
+ */
+@media only screen and (max-width: 479px) {
+	
+	/* col12 - Columns are always set to full width on this width breakpoint */
+	.col01,.col02,.col03,.col04,.col05,.col06,.col07,.col08,.col09,.col10,.col11,.col12 {
+		width: 100% !important;
+	}
+	
+	/** 
+	 * Extra classed to override the default col12 set above on this width
+	 * 
+	 * Use the one with -n on wrappers to set extra behaviour on a row of columns
+	 */
+	.col01-479,.col01-479-n > * { width: 8.333334% !important; }
+	.col02-479,.col02-479-n > * { width: 16.66% !important; }
+	.col03-479,.col03-479-n > * { width: 25% !important; }
+	.col04-479,.col04-479-n > * { width: 33.33% !important; }
+	.col05-479,.col05-479-n > * { width: 41.6666667% !important; }
+	.col06-479,.col06-479-n > * { width: 50% !important; }
+	.col07-479,.col07-479-n > * { width: 58.3333333% !important; }
+	.col08-479,.col08-479-n > * { width: 66.66% !important; }
+	.col09-479,.col09-479-n > * { width: 75% !important; }
+	.col10-479,.col10-479-n > * { width: 83.3333333% !important; }
+	.col11-479,.col11-479-n > * { width: 91.6666666% !important; }
+	.col12-479,.col12-479-n > * { width: 100% !important; }
+	
+	.floatright-479 { float: right !important; }
+}
