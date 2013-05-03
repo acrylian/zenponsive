@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Zenponsive - A responsive framework draft</title>
+		<title>Zenponsive - A responsive CSS framework</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<!-- The base responsive grid -->
-		<link rel="stylesheet" href="zenponsive.css" type="text/css" />
-		<!--[if lt IE 7 ]><link rel="stylesheet" href="zenponsive-iehacks.css" type="text/css" /><![endif]-->
+		<link rel="stylesheet" href="../zenponsive.css" type="text/css" />
+		<!--[if lt IE 7 ]><link rel="stylesheet" href="../zenponsive-iehacks.css" type="text/css" /><![endif]-->
 		
 		<!-- Optional Custom CSS  -->
 		<link rel="stylesheet" href="zenponsive-custom.css" type="text/css" />
@@ -24,77 +24,11 @@
 	
 			<div class="col12 clearfix">
 			
-				<h1>Zenponsive - A responsive framework draft <br />
+				<h1>Zenponsive - A responsive CSS framework<br />
 				<em>with (Zenphoto) gallery themes in mind</em></h1>
-				<p>Admittedly this is not that different from lots of other grid frameworks and probably a bit less sophisticated. It was made to be a simple grid that has no predefined design styles. The features: </p>
-	
-	
-				<ol>
-					
-		
-	
-				<li><h3>Fluid scaling percent based layout</h3> <p>ca. 960px base width (can be adjusted generally) and only two mediaquery breakpoints of 767px and 479px.</p></li>
-				<li><h3>No gutter</h3> 
-					<p>That way you can easily combine or nest columns around without needing to care about different left, middle or right margins for the first or last column in a row. You just set any margin/padding using your elements within the column using an custom css file. More freedom to you.</p>
-					<p>(note due percentage rounding differences the grid is not exact and the same on all browsers).</p>
-				</li>
+				<p><strong>Note: THis is the demo of a demo and will be polished later on.</strong></p>
 				
-					<li><h3>No predefined styles and typography</h3> <p>All styling up to you. Only a normalize css to eliminate browser differences is included</p></li>
-				<li>
-					<h3>Only two default mediaqueries</h3>
-					<p>Only 767px and 479px are included since the framework is fully fluid. You can easily extend if you need or want more via your custom css file.</p>
-				</li>
-			
-				<li>
-					<h3>Extra column classes</h3> 
-					<p>By default all columns becomme full width (col12) on the smallest view. But there are extra ones for some columns to force different behaviour:</p>
-						<ul>
-							<li>.xxx-479/.xxx-767/.xxx-960: For columns directly</li>
-							<li>.xxx-479-n/.xxx-767-n/..xxx-960-n: For columns nested within other columns.</li>
-						</ul>
-					</li>
-	
-				</ol>
-		
-				<h2>Browser support</h2>
-				<p>Generally tested with latest Safari, Firefox, Opera, Chrome. Base layout also seems to work in IE7+ (responsiveness not tested)</p>
-				 <p>Because of the percentage roundings is different in all browsers it may not always be 100% accurat</p>
-
-	
-			 <h2>Code example</h2>
-			 <p>A row of col2 columns</p>
-			 <p>
-			  &lt;div class="site"&gt;<br />
- &lt;div class="col02"&gt;&lt;h3&gt;col02&lt;/h3&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;h3&gt;col02&lt;/h3&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;h3&gt;col02&lt;/h3&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;h3&gt;col02&lt;/h3&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;h3&gt;col02&lt;/h3&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;h3&gt;col02&lt;/h3&gt;&lt;/div&gt;<br /> 
-&lt;/div&gt;
-</p>
-
-			
-			<p>col2 columbs with a wrapper that sets them to col04 on 767px widht and to col06 on 479px width.</p> 
-<p>
-&lt;div class="site"&gt;<br />
-&lt;div class="col04-767-n col06-479-n"&gt;<br />
-&lt;div class="col02"&gt;&lt;img src="thumb.jpg" /&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;img src="thumb.jpg" /&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;img src="thumb.jpg" /&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;img src="thumb.jpg" /&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;img src="thumb.jpg" /&gt;&lt;/div&gt;<br />
-&lt;div class="col02"&gt;&lt;img src="thumb.jpg" /&gt;&lt;/div&gt;<br />
-&lt;/div&gt;<br />
-&lt;/div&gt;
-</p>
-<p>You can also set any column to that behaviour using the classes without "-n".</p> 
-<p>&lt;div class="col02 col04-767"&gt;&lt;img src="thumb.jpg" /&gt;&lt;/div&gt;</p>
-
-
-
-
-					</div><!-- col12 -->
+			</div><!-- col12 -->
 
 	
 		<div class="overviewwrapper clearfix">
