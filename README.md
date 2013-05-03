@@ -6,7 +6,7 @@ Or just another framework..;-) Admittedly this is not that different from lots o
 
 It was made to be a simple grid without all the bells and whistles others have to leave more freedom. 
 
-*License: GPL v2 or later (zenponsive.css only – normalize.css is MIT licensed and not by me) *
+*License: GPL v2 or later (zenponsive.css)*
 
 The features:
 -------------
