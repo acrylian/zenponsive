@@ -4,6 +4,8 @@ Zenponsive - A simple responsive CSS framework with (Zenphoto) gallery themes in
 Admittedly this is not that different from lots of other grid frameworks and probably a bit less sophisticated. 
 It was made to be a simple grid without all the bells and whistles others have to leave more freedom. 
 
+License: GPL v2 or later
+
 The features:
 -------------
 
