@@ -38,6 +38,7 @@ Code examples
 Code example
 
 A row of col2 columns
+
     <div class="site" class="w960">
     <div class="col02"><h3>col02</h3></div>
     <div class="col02"><h3>col02</h3></div>
