@@ -1,4 +1,4 @@
-zenponsive
+Zenponsive
 ==========
 
 A simple responsive CSS framework with (Zenphoto) gallery themes in mind
