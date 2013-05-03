@@ -24,12 +24,12 @@ The features:
 Browser support
 ----------------
 
-Generally tested with latest 
+Generally tested with latest browser versions of:
 - Safari
 - Firefox
 - Opera
 - Chrome
-- IE7+ (responsiveness not drictly tested).
+- IE7+ (responsiveness not directly tested).
 
 Because of the percentage roundings is different in all browsers it may not always be 100% accurat (works best in
 
