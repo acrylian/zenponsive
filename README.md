@@ -37,7 +37,7 @@ Code examples
 -------------
 Code example
 
-A row of col2 columns
+A row of six col2 columns
 
     <div class="site" class="w960">
     <div class="col02"><h3>col02</h3></div>
@@ -48,8 +48,19 @@ A row of col2 columns
     <div class="col02"><h3>col02</h3></div>
     </div>
 
+By default all columns become col12 on 479 and are just scaled on all other size.
+You can of course also nest columns within each other.
 
-col2 columbs with a wrapper that sets them to col04 on 767px widht and to col06 on 479px width.
+To get a kind of gutter or padding, don't set that on the column but on the elements within.
+
+But you can also request to turn any column to another column width using the special classes `xxx-979`/`xxx-767`/`xxx-479`.
+
+    <div class="col02 col04-767"><img src="thumb.jpg" /></div>
+    
+If you need more breakpoints you can define them in your `custom.css` file.
+
+
+You can also put columns into a wrapper and change their behaviour col2 columns within a wrapper using the `xxx-xxx-n` classes.
 
     <div class="site" class="w960">
     <div class="col04-767-n col06-479-n">
@@ -61,8 +72,7 @@ col2 columbs with a wrapper that sets them to col04 on 767px widht and to col06 
     <div class="col02"><img src="thumb.jpg" /></div>
     </div>
     </div>
+    
+This sets the col02 within the wrapper to col04 on `767px` width using the class `col04-767-n` and to col06 on `479px` width using the class `col06-479-n`.
 
 
-You can also set any column to that behaviour using the classes without "-n".
-
-    <div class="col02 col04-767"><img src="thumb.jpg" /></div>
