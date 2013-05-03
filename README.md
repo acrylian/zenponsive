@@ -8,6 +8,8 @@ It was made to be a simple grid without all the bells and whistles others have t
 
 *License: GPL v2 or later (zenponsive.css)*
 
+*The separate [normalize.css - MIT license](http://necolas.github.io/normalize.css/http://necolas.github.io/normalize.css/)*
+
 The features:
 -------------
 
