@@ -4,6 +4,10 @@
 		<title>Zenponsive - A responsive CSS framework</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		
+		<!-- normalize.css v2.1.0 | MIT License | git.io/normalize - optional but recommended -->	
+		<link rel="stylesheet" href="../normalize.css" type="text/css" />
+		
 		<!-- The base responsive grid -->
 		<link rel="stylesheet" href="../zenponsive.css" type="text/css" />
 		<!--[if lt IE 7 ]><link rel="stylesheet" href="../zenponsive-iehacks.css" type="text/css" /><![endif]-->
@@ -23,183 +27,28 @@
 	<div id="site" class="w960">
 	
 			<div class="col12 clearfix">
-			
+				<ul id="nav">
+					<li><a href="index.html">Demo 1</a></li>
+					<li><a href="columns-overriding.html">Demo 2</a></li>
+					<li>Demo 3</li>
+				</ul>
 				<h1>Zenponsive - A responsive CSS framework<br />
 				<em>with (Zenphoto) gallery themes in mind</em></h1>
-				<p><strong>Note: THis is the demo of a demo and will be polished later on.</strong></p>
 				
 			</div><!-- col12 -->
-
-	
-		<div class="overviewwrapper clearfix">
-		
-			<div class="col12">
-				<h2>Column grid overview with margin</h2>
-				<p>See how the columbs behave in the row</p>
-			</div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			<div class="col01"><h3>col01</h3></div>
-			
-			<div class="col01"><h3>col01</h3></div>	
-			<div class="col11"><h3>col11</h3></div>	
-			
-			<hr />
-			
-			<div class="col02"><h3>col02</h3></div>
-			<div class="col02"><h3>col02</h3></div>
-			<div class="col02"><h3>col02</h3></div>
-			<div class="col02"><h3>col02</h3></div>
-			<div class="col02"><h3>col02</h3></div>
-			<div class="col02"><h3>col02</h3></div>
-			
-			<hr />
+	 <div class="col12 info">
 				
-			<div class="col02"><h3>col02</h3></div>
-			<div class="col10"><h3>col010</h3></div>
-			
-			<hr />
-			
-			<div class="col03"><h3>col03</h3></div>
-			<div class="col03"><h3>col03</h3></div>
-			<div class="col03"><h3>col03</h3></div>
-			<div class="col03"><h3>col03</h3></div>
-		
-			<hr />
-					
-			<div class="col03"><h3>col03</h3></div>
-			<div class="col09"><h3>col09</h3></div>		
-			
-			<hr />
-			<div class="col04"><h3>col04</h3></div>	
-			<div class="col04"><h3>col04</h3></div>	
-			<div class="col04"><h3>col04</h3></div>	
-		
-			<hr />
-					
-			<div class="col04"><h3>col04</h3></div>	
-			<div class="col08"><h3>col08</h3></div>	
-			
-			<hr />
-			
-			<div class="col05"><h3>col05</h3></div>		
-			<div class="col07"><h3>col07</h3></div>	
-			
-			<hr />
-			
-			<div class="col06"><h3>col06</h3></div>	
-			<div class="col06"><h3>col06</h3></div>	
-				
-			<hr />
-				
-			<div class="col07"><h3>col07</h3></div>		
-			<div class="col05"><h3>col05</h3></div>		
-			
-			<hr />
-				
-			<div class="col08"><h3>col08</h3></div>	
-			<div class="col04"><h3>col04</h3></div>	
-			
-			<hr />
-				
-			<div class="col09"><h3>col09</h3></div>
-			<div class="col03"><h3>col03</h3></div>
-			
-			<hr />
-				
-			<div class="col10"><h3>col10</h3></div>
-			<div class="col02"><h3>col02</h3></div>	
-			
-			<hr />
-				
-			<div class="col11"><h3>col11</h3></div>
-			<div class="col01"><h3>col01</h3></div>	
-			
-			<hr />
-				
-			<div class="col12"><h3>col12</h3></div>	
-			
-			<hr />
-		<h2> test </h2>
-		
-			<div class="col11 floatright-767 floatright-479"><h3>col11</h3></div>
-			<div class="col01 "><h3>col01</h3></div>	
-			
-			<hr />
-			
-		
-			<div class="col12">
-				<h2>Overriding behaviour using the extra classes</h2>
-				<p>You can use the special classes mentioned above to override the behaviour. SO you can choose to turn colums into different ones on the smaller resolutions. </p>
-			</div>
-		
-			<div class="col12">
-				<h3>.col01 wrapped in .col02-767-n and .col04-479-n</h3>
-			</div>
-			<div class="col02-767-n col04-479-n">
-			<div class="col01"><img src="thumb.jpg" /></div>
-			<div class="col01"><img src="thumb.jpg" /></div>
-				<div class="col01"><img src="thumb.jpg" /></div>
-			<div class="col01"><img src="thumb.jpg" /></div>
-				<div class="col01"><img src="thumb.jpg" /></div>
-			<div class="col01"><img src="thumb.jpg" /></div>
-				<div class="col01"><img src="thumb.jpg" /></div>
-			<div class="col01"><img src="thumb.jpg" /></div>
-				<div class="col01"><img src="thumb.jpg" /></div>
-			<div class="col01"><img src="thumb.jpg" /></div>
-				<div class="col01"><img src="thumb.jpg" /></div>
-			<div class="col01 "><img src="thumb.jpg" /></div>
-			</div>
-				<div class="col12">
-				<h3>.col02 wrapped in .col04-767-n and .col06-479-n</h3>
-			</div>
-			<div class="col04-767-n col06-479-n">
-			<div class="col02"><img src="thumb.jpg" /></div>
-			<div class="col02"><img src="thumb.jpg" /></div>
-			<div class="col02"><img src="thumb.jpg" /></div>
-			<div class="col02"><img src="thumb.jpg" /></div>
-			<div class="col02"><img src="thumb.jpg" /></div>
-			<div class="col02"><img src="thumb.jpg" /></div>
-			</div>
-				
-			<div class="col12">
-				<h3>Two rows .col03 wrapped in .col06-479-n</h3>
-			</div>
-			<div class="col06-479-n">
-			<div class="col03"><img src="thumb.jpg" /></div>
-			<div class="col03"><img src="thumb.jpg" /></div>
-			<div class="col03"><img src="thumb.jpg" /></div>
-			<div class="col03"><img src="thumb.jpg" /></div>
-			<div class="col03"><img src="thumb.jpg" /></div>
-			<div class="col03"><img src="thumb.jpg" /></div>
-			<div class="col03"><img src="thumb.jpg" /></div>
-			<div class="col03"><img src="thumb.jpg" /></div>
-			</div>
-		
-				
-		  <br class="floatclear" />
-		  
-
-		  
-		  <div class="col12">
 				<h2>Nested columns</h2>
 				<p>You can nested classes of the size col01(-extra) to col06(-extra) within col03-10. It does not make sense to nested within col01 or col012. The first is way too narrow and for the latter you better can just use columns directly.</p>
 				<p>The nested cols must be numbered with the classes .one to .six to eliminate the left/right borders of the first and last in the row.</p>
 				<p>Besides that you can put several rows within without any extra wrapper.</p>
 			</div>
 
+	
+		<div class="overviewwrapper clearfix nested">
+		
 
-<hr />
-
+			<div class="clearfix">
 				<div class="col09">
 					<h3>col09 and right col03 with nested col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
@@ -210,8 +59,7 @@
 					<div class="col06 one"><img src="thumb.jpg" /></div>
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>	
-				
-				<hr />
+			</div>
 			
 				<div class="col08">
 					<h3>col08 and right col04 with nested col06</h3>
@@ -222,7 +70,6 @@
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>	
 				
-				<hr />
 				
 				<div class="col07">
 					<h3>col07 and right col05 with nested col06</h3>
@@ -233,8 +80,7 @@
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>
 				
-				<hr />
-				
+			<div class="clearfix">		
 				<div class="col06">
 					<h3>col06 and right col06 with nested col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
@@ -243,9 +89,9 @@
 					<div class="col06 one"><img src="thumb.jpg" /></div>
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>
+			</div>
 	
-				<hr />
-
+		<div class="clearfix">
 				<div class="col05">
 					<h3>col04 and right col07 with nested col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
@@ -254,9 +100,9 @@
 					<div class="col06 one"><img src="thumb.jpg" /></div>
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>
+			</div>
 				
-				<hr />
-				
+			<div class="clearfix">	
 				<div class="col04">
 					<h3>col04 and right col08 with nested col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
@@ -265,9 +111,9 @@
 					<div class="col06 one"><img src="thumb.jpg" /></div>
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>
+			</div>
 				
-				<hr />
-				
+			<div class="clearfix">						
 				<div class="col03">
 					<h3>col03 and right col09 with nested col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
@@ -277,9 +123,9 @@
 					<div class="col06 one"><img src="thumb.jpg" /></div>
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>
+			</div>
 				
-				<hr />
-				
+			<div class="clearfix">
 				<div class="col02">
 					<h3>col02 and right col010 with nested col06</h3>
 				</div>
@@ -298,7 +144,7 @@
 						<p><strong>Set to col12 on 767px. </strong>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 					</div>
 				</div>
-				
+			</div>	
 
 	</div><!-- overviewwrapper -->
 

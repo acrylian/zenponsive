@@ -37,16 +37,33 @@ Code examples
 A row of six col2 columns
 
     <div class="site" class="w960">
-    <div class="col02"><h3>col02</h3></div>
-    <div class="col02"><h3>col02</h3></div>
-    <div class="col02"><h3>col02</h3></div>
-    <div class="col02"><h3>col02</h3></div>
-    <div class="col02"><h3>col02</h3></div>
-    <div class="col02"><h3>col02</h3></div>
+    	<div class="col02"><h3>col02</h3></div>
+    	<div class="col02"><h3>col02</h3></div>
+    	<div class="col02"><h3>col02</h3></div>
+    	<div class="col02"><h3>col02</h3></div>
+    	<div class="col02"><h3>col02</h3></div>
+    	<div class="col02"><h3>col02</h3></div>
     </div>
 
 By default all columns become col12 on 479 and are just scaled on all other size.
-You can of course also nest columns within each other.
+You can of course also nest columns within each other. 
+
+If you have several rows of columns you need to wrap them to reset the floating so they appear as intended:
+
+		<div class="site" class="w960">
+			<div class="clearfix">
+    		<div class="col02"><h3>col02</h3></div>
+    		<div class="col02"><h3>col02</h3></div>
+    		<div class="col02"><h3>col02</h3></div>
+    		<div class="col02"><h3>col02</h3></div>
+    		<div class="col02"><h3>col02</h3></div>
+    		<div class="col02"><h3>col02</h3></div>
+    	</div>
+    	<div class="clearfix">
+    		<div class="col06"><h3>col06</h3></div>
+    		<div class="col06"><h3>col06</h3></div>
+    	</div>
+  	</div>
 
 To get a kind of gutter or padding, don't set that on the column but on the elements within.
 
@@ -60,14 +77,14 @@ If you need more breakpoints you can define them in your additional custom.css f
 You can also put columns into a wrapper and change their behaviour col2 columns within a wrapper using the `xxx-xxx-n` classes.
 
     <div class="site" class="w960">
-    <div class="col04-767-n col06-479-n">
-    <div class="col02"><img src="thumb.jpg" /></div>
-    <div class="col02"><img src="thumb.jpg" /></div>
-    <div class="col02"><img src="thumb.jpg" /></div>
-    <div class="col02"><img src="thumb.jpg" /></div>
-    <div class="col02"><img src="thumb.jpg" /></div>
-    <div class="col02"><img src="thumb.jpg" /></div>
-    </div>
+    	<div class="col04-767-n col06-479-n">
+    		<div class="col02"><img src="thumb.jpg" /></div>
+    		<div class="col02"><img src="thumb.jpg" /></div>
+    		<div class="col02"><img src="thumb.jpg" /></div>
+    		<div class="col02"><img src="thumb.jpg" /></div>
+    		<div class="col02"><img src="thumb.jpg" /></div>
+    		<div class="col02"><img src="thumb.jpg" /></div>
+    	</div>
     </div>
     
 This sets the col02 within the wrapper to col04 on `767px` width using the class `col04-767-n` and to col06 on `479px` width using the class `col06-479-n`.

@@ -1,4 +1,13 @@
-/* place here your custom css */
+/* Example of a custom CSS file */
+
+body {
+background-color: darkgray;
+}
+
+#site {
+padding-bottom: 100px !important;
+background-color: white;
+}
 
 #sizingnote479,
 #sizingnote767 { 
@@ -14,18 +23,19 @@
 }
 			 
 
-.overviewwrapper {
-}
-	
+
 			
 .overviewwrapper h3 {
-	background-color: gray;
-	color: white;
+	background-color: lightgray;
+	color: black;
+	vertical-align: middle;
+	display: block;
 	font-size: 12px;
 	font-weight: normal;
-	padding: 8px;
+	padding: 15px 8px 15px 8px !important;
 	text-align: center;
 	margin: 0;
+	border: 1px solid darkgray;
 }
 
 hr {
@@ -35,6 +45,40 @@ margin: 10px 0 10px 0 !important;
 border-bottom: 1px dashed black !important;
 }
 
+.info {
+padding: 0 15px 15px 15px !important;
+}
+
+p {
+line-height: 22px;
+}
+
+.info p {
+margin-bottom: 10px;
+}
+
+.nested p {
+padding: 0.5em;
+}
+ul#nav {
+text-align: center;
+padding: 10px 0 10px 0;
+background-color: black;
+
+
+}
+
+ul#nav li a {
+	color: orange;
+}
+
+ul#nav li {
+display: inline;
+padding: 0 5px 0 5px;
+color: white;
+}
+	
+
 h1 { 
 font-size: 2rem;
 text-align: center;
@@ -43,19 +87,12 @@ padding-top: 20px;
 }
 
 h2 { 
-font-size: 1rem;
+font-size: 1.5rem;
 font-style: italic;
 margin-top: 10px;
 margin-bottom: 10px;
-padding: 0 15px 0 15px !important;
 }
 
-h3,
-p,
-code {
-padding: 0 20px 0 20px !important;
-margin-bottom: 10px;
-}
 code {
 margin-left: 10px;
 }
@@ -65,51 +102,12 @@ margin-left: 40px;
 margin-bottom: 30px;
 }
 
-/* for sized images if portrait we don't really want width: 100% ! */
-img.imgportrait {
-width: auto !important;
-max-width: 100% !important;
-}
-
-/*
-.col6-extra.one img,
-.col4-extra.one img,
-.col3-extra.one img,
-.col2-extra.one img {
- margin: 0% 6% 10% 0% !important;
- max-width: 94%;
-}
-
-.col3-extra.three img,
-.col2-extra.two img,
-.col2-extra.three img,
-.col2-extra.four img,
-.col2-extra.five img {
-	margin: 0% 3% 10% 3% !important;
-	max-width: 94%;
-}
-
-.col6-extra.two img,
-.col4-extra.three img,
-.col3-extra.four img,
-.col2-extra.six img {
-	margin: 0% 0% 10% 6% !important;
-	max-width: 94%;
-}
-*/
 #wrapper {
 	min-height:100%;
 	position:relative;
 }
 
-body {
-background-color: lightgray;
-}
 
-#site {
-padding-bottom: 100px !important;
-background-color: white;
-}
 
 
 #footer {
