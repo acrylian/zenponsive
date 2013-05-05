@@ -22,16 +22,19 @@
 	<div id="sizingnote479">Width > 479px</div>
 	
 	
-<div id="wrapper">
-
+	<div id="wrapper">
+		<ul id="nav">
+			<li><a href="index.html">Demo 1</a></li>
+			<li><a href="columns-overriding.html">Demo 2</a></li>
+			<li>Demo 3</li>
+			<li><a href="https://github.com/acrylian/zenponsive">Info & Download on GitHub</a></li>
+			<li><a href="http://maltem.de">maltem.de</a></li>
+		</ul>
+				
 	<div id="site" class="w960">
 	
 			<div class="col12 clearfix">
-				<ul id="nav">
-					<li><a href="index.html">Demo 1</a></li>
-					<li><a href="columns-overriding.html">Demo 2</a></li>
-					<li>Demo 3</li>
-				</ul>
+
 				<h1>Zenponsive - A responsive CSS framework<br />
 				<em>with (Zenphoto) gallery themes in mind</em></h1>
 				
@@ -39,9 +42,8 @@
 	 <div class="col12 info">
 				
 				<h2>Nested columns</h2>
-				<p>You can nested classes of the size col01(-extra) to col06(-extra) within col03-10. It does not make sense to nested within col01 or col012. The first is way too narrow and for the latter you better can just use columns directly.</p>
-				<p>The nested cols must be numbered with the classes .one to .six to eliminate the left/right borders of the first and last in the row.</p>
-				<p>Besides that you can put several rows within without any extra wrapper.</p>
+				<p>You can easily nest all columns within each other since there is no gutter to take care of.</p>
+				<p>Besides that you can also put several rows – say two rows of .col04 – within without any extra wrapper.</p>
 			</div>
 
 	
@@ -50,7 +52,7 @@
 
 			<div class="clearfix">
 				<div class="col09">
-					<h3>col09 and right col03 with nested col06</h3>
+					<h3>.col09 and right .col03 with nested .col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 				</div>	
 				<div class="col03">
@@ -62,7 +64,7 @@
 			</div>
 			
 				<div class="col08">
-					<h3>col08 and right col04 with nested col06</h3>
+					<h3>.col08 and right .col04 with nested .col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 					</div>	
 				<div class="col04">
@@ -72,7 +74,7 @@
 				
 				
 				<div class="col07">
-					<h3>col07 and right col05 with nested col06</h3>
+					<h3>.col07 and right .col05 with nested .col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>	
 				</div>	
 				<div class="col05">
@@ -82,7 +84,7 @@
 				
 			<div class="clearfix">		
 				<div class="col06">
-					<h3>col06 and right col06 with nested col06</h3>
+					<h3>.col06 and right .col06 with nested .col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 				</div>	
 				<div class="col06">
@@ -93,7 +95,7 @@
 	
 		<div class="clearfix">
 				<div class="col05">
-					<h3>col04 and right col07 with nested col06</h3>
+					<h3>.col04 and right .col07 with nested .col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 				</div>	
 				<div class="col07">
@@ -104,7 +106,7 @@
 				
 			<div class="clearfix">	
 				<div class="col04">
-					<h3>col04 and right col08 with nested col06</h3>
+					<h3>.col04 and right .col08 with nested .col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 				</div>	
 				<div class="col08">
@@ -115,11 +117,11 @@
 				
 			<div class="clearfix">						
 				<div class="col03">
-					<h3>col03 and right col09 with nested col06</h3>
+					<h3>.col03 and right .col09 with nested .col06</h3>
 					<p class="margin">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 				</div>	
 				<div class="col09">
-					<h3>col09 with nested col06</h3>
+					<h3>.col09 with nested .col06</h3>
 					<div class="col06 one"><img src="thumb.jpg" /></div>
 					<div class="col06 two"><img src="thumb.jpg" /></div>
 				</div>
@@ -127,12 +129,12 @@
 				
 			<div class="clearfix">
 				<div class="col02">
-					<h3>col02 and right col010 with nested col06</h3>
+					<h3>.col02 and right .col010 with nested .col06</h3>
 				</div>
 				
 				<div class="col10">
 					<div class="col03 col12-767">
-						<p><strong>Set to col12 on 767px. </strong>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
+						<p><strong>Set to .col12 on 767px. </strong>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>
 					</div>
 					<div class="col03 col06-767">
 						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos</p>

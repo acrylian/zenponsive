@@ -2,9 +2,9 @@ Zenponsive
 ==========
 A simple responsive CSS framework with (Zenphoto) gallery themes in mind
 ----------------------------
-Or just another framework..;-) Admittedly this is not that different from lots of other grid frameworks and probably a bit less sophisticated. 
+Or just another framework..;-) Admittedly this is not that different from lots of other grid frameworks and of course inspired by them. Probably it is a bit less sophisticated than those. 
 
-It was made to be a simple grid without all the bells and whistles others have to leave more freedom. 
+But I was made for my own use (and education) to be a simple grid without all the bells and whistles others have to leave more freedom. 
 
 *License: GPL v2 or later (zenponsive.css)*
 
@@ -15,7 +15,7 @@ The features:
 
 1. Fluid scaling percent based 12 column layout (predefined widths 960/1280/1600/fullwidth). 
 
-2. No gutter on purpose: That way you can easily combine or nest columns around without needing to care about different left, middle or right margins for the first or last column in a row. You just set any margin/padding using your elements within the column using an custom css file. More freedom to you.
+2. No gutter by default: That way you can easily combine or nest columns around without needing to care about different left, middle or right margins for the first or last column in a row. You just set any margin/padding using your elements within the column using an custom css file. More freedom to you.
 
 3. No predefined styles and typography: All styling up to you. Only a normalize css to reset browser differences is included.
 
@@ -52,7 +52,7 @@ You can of course also nest columns within each other.
 
 If you have several rows of columns you need to wrap them to reset the floating so they appear as intended:
 
-		<div class="site" class="w960">
+    <div class="site" class="w960">
 			<div class="clearfix">
     		<div class="col02"><h3>col02</h3></div>
     		<div class="col02"><h3>col02</h3></div>
