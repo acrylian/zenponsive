@@ -45,7 +45,7 @@ body * {
 	This "cheating" makes it look at least a bit better in the initial width.
 ***************************************************************************************/
 .w960 { max-width: 961px; } /* Standard desktop */
-.w1280 { max-width: 1274px; } /* Biger desktop */
+.w1280 { max-width: 1274px; } /* Bigger desktop */
 .w1600 { max-width: 1598px; } /* Big desktop */
 .wFull { max-width: 100%; } /* Full width */
 
