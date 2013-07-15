@@ -1,3 +1,5 @@
+*Files added later after some initial testing*
+
 Zenponsive 
 ==========
 A simple responsive CSS framework (with Zenphoto gallery themes in mind)
