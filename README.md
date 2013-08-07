@@ -13,11 +13,7 @@ It was made for my own use (and education) to provide a plain simple and flexibl
 License
 ----------
 *License: GPL v3*
-
-More info and documentation
+ 
+Documentation & Demos
 --------
-Coming later
-
-Demos
----------
 Coming later
