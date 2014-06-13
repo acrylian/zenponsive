@@ -262,11 +262,11 @@ The gutter is applied to the direct children only and uses negative left margins
     </div>
 
 Demos
-======
+-----
 To be added later.
 
 TODO
-====
+----
 - Extra version useing `flexbox` for modern browsers possibly
 
 
