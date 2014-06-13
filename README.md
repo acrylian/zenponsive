@@ -5,21 +5,21 @@ A simple responsive CSS framework
 ----------------------------
 Yet another framework ;-) 
 ---------------------------
-This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It is on purpose not trying to be a full design framework like Bootstrap, Foundation, YAML etc. that are great and were of course an inspiration. But those are a bit overloaded even if largely modular to my taste.
+This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It is on purpose not trying to be a full design framework like the big ones that are great and were of course an inspiration. But those are a bit overloaded even if largely modular to my taste.
 
 **License**: GPL v3*
  
 Features
 ---------
-- Fluid scaling percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based).
-- No predefined styles and typography. All styling up to you.
-- No JS involved and 17 kb weight (uncompressed).
-- Only three default mediaquery breakpoints on Full/959/767/479px widths. You can easily extend if you need or want more via your custom css file.
-- Extra column classes: By default all columns become full width (col12) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
+- **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based).
+- **No predefined styles and typography**: All styling up to you.
+- **No JS involved**: 16 kb weight (uncompressed).
+- **Only three default mediaquery breakpoints**: 959/767/479px widths. You can easily extend if you need or want more via your custom css file.
+- **Extra column classes:** By default all columns become full width (`col12`) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
 
 Browser support
 ---------------
-Generally aimed at modern browsers :-)
+Well, modern browsers but might work with IE9 :-)
 
 Setup
 -----
