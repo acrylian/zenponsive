@@ -166,7 +166,7 @@ Don't use `.row` on `.col12` elements.
 Changing columns
 -----------------
 
-###Changing even columns to even columns)
+###Changing even columns to even columns
 But you can also request to turn any column to another column width using the special classes `.colXX-959`/`.colXX-767`/`.colXX-479`. You can use these even to apply to be mobile first. Here an example that turns a `.col02` (six per row) into `.col04` (two times three per row) on the 767px breakpoint:
 
     <div class="site" class="w960">
@@ -180,7 +180,7 @@ But you can also request to turn any column to another column width using the sp
     
 If you need more breakpoints you can define them in your additional `custom.css` file.
 
-###Changing even columns to even (and vice versa) without rows
+###Changing even columns to uneven (and vice versa) without rows
 You can also work without an extra `.row` or a `.clearfix` wrapper. If you use breakpoints switch to different columns on different breakpoints and the column height is not the same (e.g. not square thumbs), the wrapper gets into your way as the row does not fit anymore. For example if you start with six `.col02` and switch to `.col03` you will get two rows.
 
 In this case use the `.floatclearXXX` classes on the first row item of the 2nd and onward rows. This exists for all four default breakpoints so you can address the rows individually:
