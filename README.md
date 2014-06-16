@@ -19,6 +19,15 @@ Browser support
 ---------------
 Well, modern browsers but might work with IE9 :-)
 
+
+```
+<title>Zenponsive - A responsive CSS framework</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+```
+
+
+
 Setup
 -----
 This is quite simple:
