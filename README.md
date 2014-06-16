@@ -22,6 +22,32 @@ Well, modern browsers but might work with IE9 :-)
 Setup
 -----
 This is quite simple:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zenponsive - A responsive CSS framework</title>
+<meta charset="UTF-8">
+<!-- normalize.css v2.1.0 | MIT License | git.io/normalize - optional but recommended to include -->   
+<link rel="stylesheet" href="normalize.css" type="text/css" />
+<!-- The responsive grid - required -->
+<link rel="stylesheet" href="zenponsive.css" type="text/css" />
+<!-- Hacks so the clear classes work correctly on older IEs - really optional -->
+<!--[if lt IE 7 ]><link rel="stylesheet" href="zenponsive-iehacks.css" type="text/css" /><![endif]-->
+<!--[if lt IE 9]>
+<script src="../html5shiv.js"></script>
+<script src="../html5shiv-printshiv.js"></script>
+<![endif]-->
+<!-- Optional Custom CSS - name as you like - optional but makes sense, doesn't it? ;-) -->
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+<body>
+<!-- Your stuff here -->
+</body>
+</html>
+```
+
+
 
     <!DOCTYPE html>
       <html>
