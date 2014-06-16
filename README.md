@@ -22,6 +22,7 @@ Well, modern browsers but might work with IE9 :-)
 Setup
 -----
 This is quite simple:
+
 ```html
 <!DOCTYPE html>
   <html>
@@ -60,14 +61,16 @@ You can use any size you wish for the main wrapper, too
 
 See the `zenponsive.css` file for the file comments for more info. We use `w960` here and six columns:
 
-    <div class="site" class="w960">
-      <div class="col02"><h3>col02</h3></div>
-      <div class="col02"><h3>col02</h3></div>
-      <div class="col02"><h3>col02</h3></div>
-      <div class="col02"><h3>col02</h3></div>
-      <div class="col02"><h3>col02</h3></div>
-      <div class="col02"><h3>col02</h3></div>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+</div>
+```
     
 By default all columns become .`col12` on 479px width and below and are just scaled on all other sizes. You can of course also nest columns within each other.
 
@@ -77,58 +80,63 @@ Rows/wrapping columns
 ----------------------
 You don't need to wrap columns in rows. If your columns are the same size you can have for example two rows of six `.col02` (e.g. a thumbnail gallery grid) you don't need to wrapp each row of six. You just need to wrap them all within `.clearfix` to clear the floating on anything after them (e.g. another section of content).
 
-    <div class="site" class="w960">
-      <div class="clearfix">
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-      </div>
-      <p>Some other content</p>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="clearfix">
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  <div class="col02"><h3>col02</h3></div>
+  </div>
+  <p>Some other content</p>
+</div>
+```
 
 However if you have several rows of columns and each column is not the same height as with e.g. thumbnails you need to wrap them to reset the floating so they appear as intended and not disturb the following rows.
 
-    <div class="site" class="w960">
-      <div class="clearfix">
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-      </div>
-      <div class="clearfix">
-        <div class="col02"><h3>col06</h3></div>
-        <div class="col08"><h3>col06</h3></div>
-      </div>
-    </div>
-    
+```html
+<div class="site" class="w960">
+  <div class="clearfix">
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+  </div>
+  <div class="clearfix">
+    <div class="col02"><h3>col06</h3></div>
+    <div class="col08"><h3>col06</h3></div>
+  </div>
+</div>
+````
 
 If your columns for example have background color and need to really align visually on the right side, you should wrapp them within the `.row` instead of `.clearfix`.
 
-    <div class="site" class="w960">
-      <div class="row">
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-      </div>
-      <div class="clearfix">
-        <div class="col02"><h3>col06</h3></div>
-        <div class="col08"><h3>col06</h3></div>
-      </div>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="row">
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+  </div>
+  <div class="clearfix">
+    <div class="col02"><h3>col06</h3></div>
+    <div class="col08"><h3>col06</h3></div>
+  </div>
+</div>
+````
 
 `.row` does basically the same as `.clearfix` but it additionally floats the last item of a row to the right. This is because of pixel rounding issues of certain browsers. You should only use this with one row and if the cols add up to 12.
 
@@ -141,21 +149,22 @@ Sadly the `:last-child` CSS selector is not supported on every browser so you mi
 
 An example: 
 
-     <div class="site" class="w960">
-       <div class="row">
-         <div class="col02"><h3>col02</h3></div>
-         <div class="col02"><h3>col02</h3></div>
-         <div class="col02"><h3>col02</h3></div>
-         <div class="col02"><h3>col02</h3></div>
-         <div class="col02"><h3>col02</h3></div>
-         <div class="col02 floatright"><h3>col02</h3></div>
-       </div>
-       <div class="row">
-         <div class="col06"><h3>col06</h3></div>
-         <div class="col06 floatright"><h3>col06</h3></div>
-       </div> 
-     </div>
-       
+```html
+<div class="site" class="w960">
+  <div class="row">
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02 floatright"><h3>col02</h3></div>
+  </div>
+  <div class="row">
+    <div class="col06"><h3>col06</h3></div>
+    <div class="col06 floatright"><h3>col06</h3></div>
+  </div> 
+</div>
+```       
 
 Don't use `.row` on `.col12` elements.
 
@@ -165,14 +174,16 @@ Changing columns
 ###Changing even columns to even columns
 But you can also request to turn any column to another column width using the special classes `.colXX-959`/`.colXX-767`/`.colXX-479`. You can use these even to apply to be mobile first. Here an example that turns a `.col02` (six per row) into `.col04` (two times three per row) on the 767px breakpoint:
 
-    <div class="site" class="w960">
-      <div class="col02 col04-767"><h3>col02</h3></div>
-      <div class="col02 col04-767"><h3>col02</h3></div>
-      <div class="col02 col04-767"><h3>col02</h3></div>
-      <div class="col02 col04-767"><h3>col02</h3></div> 
-      <div class="col02 col04-767"><h3>col02</h3></div>
-      <div class="col02 col04-767"><h3>col02</h3></div>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="col02 col04-767"><h3>col02</h3></div>
+  <div class="col02 col04-767"><h3>col02</h3></div>
+  <div class="col02 col04-767"><h3>col02</h3></div>
+  <div class="col02 col04-767"><h3>col02</h3></div> 
+  <div class="col02 col04-767"><h3>col02</h3></div>
+  <div class="col02 col04-767"><h3>col02</h3></div>
+</div>
+```
     
 If you need more breakpoints you can define them in your additional `custom.css` file.
 
@@ -188,26 +199,30 @@ In this case use the `.floatclearXXX` classes on the first row item of the 2nd a
 
 Example:
 
-    <div class="site" class="w960">
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <!-- First of the 2nd row on 767px breakpoint -->
-      <div class="col02 col03-767 floatclear767"><h3>col02</h3></div>  
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <div class="col02 col03-767 floatright"><h3>col02</h3></div>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <!-- First of the 2nd row on 767px breakpoint -->
+  <div class="col02 col03-767 floatclear767"><h3>col02</h3></div>  
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <div class="col02 col03-767 floatright"><h3>col02</h3></div>
+</div>
+````
     
 Note the floatclear of the breakpoints before the current one are reseted to `clear: none`. That means if you wish to clear floating on several breakpoints the same way you need to assign the classes in order like this:
 
-    <div class="site" class="w960">
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <div class="col02 col03-767 floatclear floatclear959 floatclear767"><h3>col02</h3></div>
-      <div class="col02 col03-767"><h3>col02</h3></div>
-      <div class="col02 col03-767 floatright"><h3>col02</h3></div>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <div class="col02 col03-767 floatclear floatclear959 floatclear767"><h3>col02</h3></div>
+  <div class="col02 col03-767"><h3>col02</h3></div>
+  <div class="col02 col03-767 floatright"><h3>col02</h3></div>
+</div>
+```
     
 Change float order
 ------------------
@@ -220,10 +235,12 @@ All columns are set to `float:left`. Sometimes you may wish to change the order 
 
 Example: 
 
-    <div class="site" class="w960">
-      <div class="col02 floatright767"><img src="thumb.jpg" /></div>
-      <div class="col010"><img src="thumb.jpg" /></div>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="col02 floatright767"><img src="thumb.jpg" /></div>
+  <div class="col010"><img src="thumb.jpg" /></div>
+</div>
+```
     
 This of course only works if you have at least two columns that actually float.
 
@@ -246,16 +263,18 @@ There are two predefined gutters available 2% and 4%. Just wrap the colums you w
 
 The gutter is applied to the direct children only and uses negative left margins to achieve it. Don't use the gutter classes on a direct parent that has a `.colXXX` class assigned but an additional wrapper. The negative margin otherwise can cause wrong display.
 
-    <div class="site" class="w960">
-      <div class="row gutter4">
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-        <div class="col02"><h3>col02</h3></div>
-      </div>
-    </div>
+```html
+<div class="site" class="w960">
+  <div class="row gutter4">
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+    <div class="col02"><h3>col02</h3></div>
+  </div>
+</div>
+```
 
 Demos
 -----
