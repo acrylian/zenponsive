@@ -12,7 +12,7 @@ Features
 - **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based).
 - **No predefined styles and typography**: All styling up to you.
 - **No JS involved**: 16 kb weight (uncompressed).
-- **Only three default mediaquery breakpoints**: 959/767/479px widths. You can easily extend if you need or want more via your custom css file.
+- **Three mediaquery breakpoints**: 959/767/479px widths. You can easily extend if you need or want more via your custom css file.
 - **Extra column classes:** By default all columns become full width (`col12`) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
 
 Browser support
@@ -33,6 +33,7 @@ This is quite simple:
       <link rel="stylesheet" href="normalize.css" type="text/css" />
       <!-- The responsive grid - required -->
       <link rel="stylesheet" href="zenponsive.css" type="text/css" />
+      <!-- https://github.com/aFarkas/html5shiv | Optional but recommended for older non HTML5 capable browsers -->
       <!--[if lt IE 9]>
         <script src="../html5shiv.js"></script>
         <script src="../html5shiv-printshiv.js"></script>
@@ -283,8 +284,3 @@ To be added later.
 TODO
 ----
 - Extra version useing `flexbox` for modern browsers possibly
-
-
-
-
-
