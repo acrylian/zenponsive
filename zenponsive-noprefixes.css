@@ -1,0 +1,429 @@
+/*
+* Zenponsive CSS Framework - deprecated version without "zp-" prefix on id and class names
+* @author Malte Müller - www.maltem.de / https://github.com/acrylian/zenponsive
+* @version: 1.1
+* @Licence: GPL v3 - http://www.gnu.org/licenses/gpl
+*/
+
+/**************************************************************************************
+	Zenponsive basics - It is recommend to include a normalize.css before zenponsive.css
+***************************************************************************************/
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width: 100%;
+}
+
+/* Reset all so you really get really only the margins/paddings you want */	
+body * {
+ 	margin:0;
+	padding:0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*********************************************************************************
+	Main content wrapper for the site itself
+	-------------------------------------
+	Should be set with a width always like <div id="site" class="w960"> ... </div> 
+**********************************************************************************/
+#site {
+	min-width: 240px;  /* this is generally the width of "normal" mobiles */
+	margin: 0 auto;
+	position:relative;
+}
+
+/*********************************************************************************
+	Predefined for some general used widths
+	----------------------------------------
+	You will notice that the pixel widths are bit off the actual class name. 
+	The reason is that some browsers like Safari have no superiour subpixel
+	rounding like Firefox or Chrome have so the columns (especially col01) 
+	do not exactly fit the width always (you see it always if you resize the 
+	window). This "cheating" makes it look at least a bit better on the 
+	initial width.
+*********************************************************************************/
+.w960 { max-width: 961px; } /* Standard desktop */
+.w1024 { max-width: 1024px; } /* Standard desktop wider */
+.w1280 { max-width: 1274px; } /* Bigger desktop */
+.w1600 { max-width: 1598px; } /* Big desktop */
+.wFull { max-width: 100%; } /* Full width */
+
+/*********************************************************************************
+	The columns generally
+*********************************************************************************/
+.col01,.col02,.col03,.col04,.col05,.col06,.col07,.col08,.col09,.col10,.col11,.col12 {
+	height: auto;
+	margin: 0; /* Don't change this because then the widths will not work */
+	position: relative; /* needed so you can relatively/absolutely position elements within these */
+	float: left;
+	word-wrap: break-word; /* So longer words don't break the width  */
+}
+
+/*********************************************************************************
+	The columns without gutter
+*********************************************************************************/
+.col01 { width: 8.333334%; }
+.col02 { width: 16.66%; }
+.col03 { width: 25%; }
+.col04 { width: 33.33%; }
+.col05 { width: 41.6666667%; }
+.col06 { width: 50%; }
+.col07 { width: 58.3333333%; }
+.col08 { width: 66.66%; }
+.col09 { width: 75%; }
+.col10 { width: 83.3333333%; }
+.col11 { width: 91.6666666%; }
+.col12 { width: 100%; }
+
+/**********************************************************************************
+	The columns with gutter 2%
+	------------------------
+	The column sizes are the width minus the gutter. To make your own custom gutter 
+	css have fun calculating the percentage value and change the values accordingly
+***********************************************************************************/
+.gutter2 {
+	margin-left: -2% !important;
+}
+.gutter2 > * {
+	margin-left: 2% !important;
+}
+.gutter2 > .col01 { width: 6.333334% !important; }
+.gutter2 > .col02 { width: 14.66% !important; }
+.gutter2 > .col03 { width: 23% !important; }
+.gutter2 > .col04 { width: 31.33% !important; }
+.gutter2 > .col05 { width: 39.6666667% !important; }
+.gutter2 > .col06 { width: 48% !important; }
+.gutter2 > .col07 { width: 56.3333333% !important; }
+.gutter2 > .col08 { width: 64.66% !important; }
+.gutter2 > .col09 { width: 73% !important; }
+.gutter2 > .col10 { width: 81.3333333% !important; }
+.gutter2 > .col11 { width: 89.6666666% !important; }
+.gutter2 > .col12 { width: 98% !important; } 
+
+/**********************************************************************************
+	The columns with gutter 4%
+	------------------------
+	The column sizes are the width minus the gutter. To make your own custom gutter 
+	css have fun calculating the percentage value and change the values accordingly
+***********************************************************************************/
+.gutter4 {
+	margin-left: -4% !important;
+}
+.gutter4 > * {
+	margin-left: 4% !important;
+}
+.gutter4 > .col01 { width: 4.333334% !important; }
+.gutter4 > .col02 { width: 12.66% !important; }
+.gutter4 > .col03 { width: 21% !important; }
+.gutter4 > .col04 { width: 29.33% !important; }
+.gutter4 > .col05 { width: 37.6666667% !important; }
+.gutter4 > .col06 { width: 46% !important; }
+.gutter4 > .col07 { width: 54.3333333% !important; }
+.gutter4 > .col08 { width: 62.66% !important; }
+.gutter4 > .col09 { width: 71% !important; }
+.gutter4 > .col10 { width: 79.3333333% !important; }
+.gutter4 > .col11 { width: 87.6666666% !important; }
+.gutter4 > .col12 { width: 96% !important; } 
+
+
+/******************************************************************************
+	Responsive images
+	-----------------
+	Be sure to setup your site/theme that <img> elements don't have a width and 
+	height attributes set! Images are fluid but never exceed their real size
+ ******************************************************************************/
+img {
+	width: auto; 
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	display: block;
+}
+
+/******************************************************************************  
+	General clear float to start a row of other column sizes All and IE8+
+	------------------------------------------------------------------------
+	Zenponsive does not require to define rows by default if you for example use square cropped image thumbs. 
+	However to avoid some CSS issues with items of different height in different rows 
+	you can use.row as a wrapper if necessary. 
+	If you change columns per breakpoint the wrapper might not be useful,
+	then use .floatclear/.floatclearXXX to mark the first item in the row to 
+	clear the floating before it properly
+******************************************************************************/
+.row:before, 
+.row:after,
+.clearfix:before, 
+.clearfix:after {
+	content: " " !important;
+	display: table !important;
+}
+
+.row:after,
+.floatclear,
+.clearfix:after {
+	clear: both !important;
+}
+
+.row,
+.clearfix { /* IE6/7 only */
+	*zoom: 1;
+}
+
+.row:last-child,
+.floatright { 
+	float: right !important;  
+}
+
+/******************************************************************************  
+	Hide elements initially
+******************************************************************************/
+.hide { display: none !important; }
+.show { display: block !important; }
+.invisible { visibility: hidden !important; }
+.visible { visibility: visible !important; }
+
+/****************************************************************************** 
+	Responsive breakpoints
+	----------------------
+	Since the grid is fluid and to keep it simple just four breakpoints. For 
+	really special things you can override these and/or add more to your own 
+	custom css file
+ ******************************************************************************/
+@media only screen and (max-width: 959px) {
+	
+	/** 
+	 * Extra classed to override the default col12 set above on this width breakpoint
+	 * without and with gutter
+	 * Use the one with -n on wrappers to set extra behaviour on a row of nested columns
+	 */
+	.col01-959 { width: 8.33333% !important; }
+	.col02-959 { width: 16.66667% !important; }
+	.col03-959 { width: 25% !important; }
+	.col04-959 { width: 33.33333% !important; }
+	.col05-959 { width: 41.66667% !important; }
+	.col06-959 { width: 50% !important; }
+	.col07-959 { width: 58.33333% !important; }
+	.col08-959 { width: 66.66667% !important; }
+	.col09-959 { width: 75% !important; }
+	.col10-959 { width: 83.33333% !important; }
+	.col11-959 { width: 91.66667% !important; }
+	.col12-959 { width: 100% !important; }
+	
+	/* Gutter 2% */
+	.gutter2 > .col01-959 { width: 6.333334% !important; }
+	.gutter2 > .col02-959 { width: 14.66% !important; }
+	.gutter2 > .col03-959 { width: 23% !important; }
+	.gutter2 > .col04-959 { width: 31.33% !important; }
+	.gutter2 > .col05-959 { width: 39.6666667% !important; }
+	.gutter2 > .col06-959 { width: 48% !important; }
+	.gutter2 > .col07-959 { width: 56.3333333% !important; }
+	.gutter2 > .col08-959 { width: 64.66% !important; }
+	.gutter2 > .col09-959 { width: 73% !important; }
+	.gutter2 > .col10-959 { width: 81.3333333% !important; }
+	.gutter2 > .col11-959 { width: 89.6666666% !important; }
+	.gutter2 > .col12-959 { width: 96% !important; } 
+	
+	/* Gutter 4% */
+	.gutter4 > .col01-959 { width: 4.333334% !important; }
+	.gutter4 > .col02-959 { width: 12.66% !important; }
+	.gutter4 > .col03-959 { width: 21% !important; }
+	.gutter4 > .col04-959 { width: 29.33% !important; }
+	.gutter4 > .col05-959 { width: 37.6666667% !important; }
+	.gutter4 > .col06-959 { width: 46% !important; }
+	.gutter4 > .col07-959 { width: 54.3333333% !important; }
+	.gutter4 > .col08-959 { width: 62.66% !important; }
+	.gutter4 > .col09-959 { width: 71% !important; }
+	.gutter4 > .col10-959 { width: 79.3333333% !important; }
+	.gutter4 > .col11-959 { width: 87.6666666% !important; }
+	.gutter4 > .col12-959 { width: 96% !important; } 
+	
+	/* Override float order */
+	.floatclear { clear: none !important; }
+	.floatright959 { float: right !important; }
+	.floatclear959 { clear: both !important; }
+	
+	/* Hide/show elements */
+	.hide959 { display: none !important; }
+	.show959 { display: block !important; }
+	.invisible959 { visibility: hidden !important; }
+	.visible959 { visibility: visible !important; }
+}
+
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	
+	/** 
+	 * Extra classed to override the default col12 set above on this width breakpoint
+	 * 
+	 * Use the one with -n on wrappers to set extra behaviour on a row of nested columns
+	 */
+	.col01-767 { width: 8.33333% !important; }
+	.col02-767 { width: 16.66667% !important; }
+	.col03-767 { width: 25% !important; }
+	.col04-767 { width: 33.33333% !important; }
+	.col05-767 { width: 41.66667% !important; }
+	.col06-767 { width: 50% !important; }
+	.col07-767 { width: 58.33333% !important; }
+	.col08-767 { width: 66.66667% !important; }
+	.col09-767 { width: 75% !important; }
+	.col10-767 { width: 83.33333% !important; }
+	.col11-767 { width: 91.66667% !important; }
+	.col12-767 { width: 100% !important; }
+	
+	/* Gutter 4% */
+	.gutter4 > .col01-767 { width: 4.333334% !important; }
+	.gutter4 > .col02-767 { width: 12.66% !important; }
+	.gutter4 > .col03-767 { width: 21% !important; }
+	.gutter4 > .col04-767 { width: 29.33% !important; }
+	.gutter4 > .col05-767 { width: 37.6666667% !important; }
+	.gutter4 > .col06-767 { width: 46% !important; }
+	.gutter4 > .col07-767 { width: 54.3333333% !important; }
+	.gutter4 > .col08-767 { width: 62.66% !important; }
+	.gutter4 > .col09-767 { width: 71% !important; }
+	.gutter4 > .col10-767 { width: 79.3333333% !important; }
+	.gutter4 > .col11-767 { width: 87.6666666% !important; }
+	.gutter4 > .col12-767 { width: 96% !important; } 
+	
+	/* Gutter 2% */
+	.gutter2 > .col01-767 { width: 6.333334% !important; }
+	.gutter2 > .col02-767 { width: 14.66% !important; }
+	.gutter2 > .col03-767 { width: 23% !important; }
+	.gutter2 > .col04-767 { width: 31.33% !important; }
+	.gutter2 > .col05-767 { width: 39.6666667% !important; }
+	.gutter2 > .col06-767 { width: 48% !important; }
+	.gutter2 > .col07-767 { width: 56.3333333% !important; }
+	.gutter2 > .col08-767 { width: 64.66% !important; }
+	.gutter2 > .col09-767 { width: 73% !important; }
+	.gutter2 > .col10-767 { width: 81.3333333% !important; }
+	.gutter2 > .col11-767 { width: 89.6666666% !important; }
+	.gutter2 > .col12-767 { width: 96% !important; } 
+	
+	/* Override float order */
+	.floatclear,
+	.floatclear959 {
+		clear: none !important;
+	}
+	.floatright767 { float: right !important; }
+	.floatclear767 { clear: both !important; }
+
+	/* Hide/show elements */
+	.hide767 { display: none !important; }
+	.show767 { display: block !important; }
+	.invisible767 { visibility: hidden !important; }
+	.visible767 { visibility: visible !important; }
+}
+
+/** 
+ * Mobile Portrait Size to Mobile Landscape Size (devices and browsers) 
+ */
+@media only screen and (max-width: 479px) {
+	
+	/* col12 without gutter - Columns are always set to full width on this width breakpoint */
+	.col01,.col02,.col03,.col04,.col05,.col06,.col07,.col08,.col09,.col10,.col11,.col12 {
+		width: 100% !important;
+	}
+	
+	/* Gutter 2% */
+	.gutter2 > .col01, 
+	.gutter2 > .col02,
+	.gutter2 > .col03,
+	.gutter2 > .col04,
+	.gutter2 > .col05,
+	.gutter2 > .col06,
+	.gutter2 > .col07,
+	.gutter2 > .col08,
+	.gutter2 > .col09,
+	.gutter2 > .col10,
+	.gutter2 > .col11,
+	.gutter2 > .col12 {
+		width: 98% !important;
+	}
+	
+	/* Gutter 4% */
+	.gutter4 > .col01, 
+	.gutter4 > .col02,
+	.gutter4 > .col03,
+	.gutter4 > .col04,
+	.gutter4 > .col05,
+	.gutter4 > .col06,
+	.gutter4 > .col07,
+	.gutter4 > .col08,
+	.gutter4 > .col09,
+	.gutter4 > .col10,
+	.gutter4 > .col11,
+	.gutter4 > .col12 {
+		width: 96% !important;
+	}
+	
+	/** 
+	 * Extra classed to override the default col12 set above on this width
+	 * 
+	 * Use the one with -n on wrappers to set extra behaviour on a row of nested columns
+	 */
+	.col01-479 { width: 8.333334% !important; }
+	.col02-479 { width: 16.66% !important; }
+	.col03-479 { width: 25% !important; }
+	.col04-479 { width: 33.33% !important; }
+	.col05-479 { width: 41.6666667% !important; }
+	.col06-479 { width: 50% !important; }
+	.col07-479 { width: 58.3333333% !important; }
+	.col08-479 { width: 66.66% !important; }
+	.col09-479 { width: 75% !important; }
+	.col10-479 { width: 83.3333333% !important; }
+	.col11-479 { width: 91.6666666% !important; }
+	.col12-479 { width: 100% !important; }
+	
+	/* Gutter 2% */
+	.gutter2 > .col01-479 { width: 6.333334% !important; }
+	.gutter2 > .col02-479 { width: 14.66% !important; }
+	.gutter2 > .col03-479 { width: 23% !important; }
+	.gutter2 > .col04-479 { width: 31.33% !important; }
+	.gutter2 > .col05-479 { width: 39.6666667% !important; }
+	.gutter2 > .col06-479 { width: 48% !important; }
+	.gutter2 > .col07-479 { width: 56.3333333% !important; }
+	.gutter2 > .col08-479 { width: 64.66% !important; }
+	.gutter2 > .col09-479 { width: 73% !important; }
+	.gutter2 > .col10-479 { width: 81.3333333% !important; }
+	.gutter2 > .col11-479 { width: 89.6666666% !important; }
+	.gutter2 > .col12-479 { width: 98% !important; margin: 0 !important; } 
+	
+	/* Gutter 4% */
+	.gutter4 > .col01-479 { width: 4.333334% !important; }
+	.gutter4 > .col02-479 { width: 12.66% !important; }
+	.gutter4 > .col03-479 { width: 21% !important; }
+	.gutter4 > .col04-479 { width: 29.33% !important; }
+	.gutter4 > .col05-479 { width: 37.6666667% !important; }
+	.gutter4 > .col06-479 { width: 46% !important; }
+	.gutter4 > .col07-479 { width: 54.3333333% !important; }
+	.gutter4 > .col08-479 { width: 62.66% !important; }
+	.gutter4 > .col09-479 { width: 71% !important; }
+	.gutter4 > .col10-479 { width: 79.3333333% !important; }
+	.gutter4 > .col11-479 { width: 87.6666666% !important; }
+	.gutter4 > .col12-479 { width: 96% !important; margin: 0 !important;}
+	
+	/* Override float order */
+	.floatclear,
+	.floatclear959,
+	.floatclear767 {
+		clear: none !important;
+	}
+	.floatright479 { float: right !important; }
+	.floatclear479 { clear: both !important; }
+	.clearblock479 { display: inline !important; width: auto !important; }
+
+	/* Hide/show elements */
+	.hide479 { display: none !important; }
+	.show479 { display: block !important; }
+	.invisible479 { visibility: hidden !important; }
+	.visible479 { visibility: visible !important; }
+}
