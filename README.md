@@ -10,7 +10,7 @@ Yet another framework ;-). This was primarily made to provide a plain simple and
 Features
 ---------
 - **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based).
-- **Prefixed name:** All id or class names of Zenponsive are prefixed with `zp-` so you easily can recognize its usage on your site/themes. *Note*: There is a file `zenponsive-noprefixes.css` included that is considered deprecated now.
+- **Prefixed name:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css. *Note: There is still a `zenponsive-noprefixes.css` included that is considered deprecated now.*
 - **No predefined styles and typography**: All styling up to you.
 - **No JS involved**: 16 kb weight (uncompressed).
 - **Three default mediaquery breakpoints**: 959/767/479px widths. You can easily extend if you need or want more via your custom css file.
