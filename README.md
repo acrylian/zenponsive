@@ -12,7 +12,7 @@ Features
 - **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based).
 - **Prefixed id/class names:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css. *Note: There is still a `zenponsive-noprefixes.css` included that is considered deprecated now.*
 - **No predefined styles and typography**: All styling up to you.
-- **No JS involved**: 16 kb weight (uncompressed).
+- **No JS involved**: 17 kb weight (uncompressed).
 - **Three default mediaquery breakpoints**: 959/767/479px widths. You can easily extend if you need or want more via your custom css file.
 - **Extra column classes:** By default all columns become full width (`zp-col12`) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
 
