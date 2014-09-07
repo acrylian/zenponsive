@@ -3,7 +3,7 @@
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2014 Malte Müller
 * @license GPL v3 or later
-* @version: 1.1.2
+* @version: 1.1.3
 */
 
 /**************************************************************************************
@@ -32,11 +32,13 @@ body * {
 }
 
 /*********************************************************************************
-	Main content wrapper for the site itself
+	Main content wrapper for the site or parts of it
 	-------------------------------------
-	Should be set with a width always like <div id="site" class="w960"> ... </div> 
+	Should be set with a width always like 
+	<div id="zp-site" class="zp-w960">…</div> or <div class"zp-site w960">…</div>
 **********************************************************************************/
-#site {
+#site,
+.wrapper {
 	min-width: 240px;  /* this is generally the width of "normal" mobiles */
 	margin: 0 auto;
 	position:relative;
@@ -52,6 +54,8 @@ body * {
 	window). This "cheating" makes it look at least a bit better on the 
 	initial width.
 *********************************************************************************/
+.w479 { max-width: 479px; } /* Smartphone */
+.w767 { max-width: 767px; } /* Smaller tablet */
 .w960 { max-width: 961px; } /* Standard desktop */
 .w1024 { max-width: 1024px; } /* Standard desktop wider */
 .w1280 { max-width: 1274px; } /* Bigger desktop */
