@@ -122,7 +122,7 @@ However if you have several rows of columns and each column is not the same heig
 </div>
 ````
 
-If your columns for example have background zp-color and need to really align visually on the right side, you should wrapp them within the `.zp-row` instead of `.zp-clearfix`.
+If your columns for example have background zp-color and need to really align visually on the right side, you should wrap them within the `.zp-row` instead of `.zp-clearfix`.
 
 ```html
 <div id="zp-site" class="zp-w960">
@@ -226,6 +226,48 @@ Note the floatclear of the breakpoints before the current one are reseted to `cl
   <div class="zp-col02 zp-col03-767 zp-floatright"><h3>zp-col02</h3></div>
 </div>
 ```
+
+Gutter
+------
+There are two predefined gutters available 2% and 4%. Just wrap the colums you wish to use with the gutter with one of these classes: 
+- `.zp-gutter2`
+- `.zp-gutter4`
+
+The gutter is applied to the direct children only and uses negative left margins to achieve it. 
+
+```html
+<div id="zp-site" class="zp-w960">
+  <div class="zp-row zp-gutter4">
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+  </div>
+</div>
+```
+Don't use the gutter classes on a direct parent that has a `.zp-colXXX` class assigned but an additional wrapper. The negative margin otherwise can cause wrong display.
+
+Full width sites
+----------------
+Sometimes you may wish to have a full width colored or textured background on sections of your site but the actual content centered. To achieve this simply use a wrapper:
+
+```html
+<div id="zp-site"><!-- full width -->
+ <div class="zp-w960"><!-- fixed width 906px centered -->
+  <div class="zp-row zp-gutter4">
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02"><h3>zp-col02</h3></div>
+  </div>
+ </div>
+</div>
+```
+Instead of `#zp-site` id you can also use the `.zp-wrapper` class.
     
 Change float order
 ------------------
@@ -256,28 +298,6 @@ General classes are available to hide elements initially and/or on breakpoints:
 - `.zp-invisble`/`.zp-invisible979`/`.zp-invisible767`/`.zp-invisible479` (`visibility:hidden`)
 - `.zp-visible`/`.zp-visible979`/`.zp-visible767`/`.zp-visible479` (`visibility:visible`)
 
-This is especially usefull for clearing column floats on different breakpoints, e.g. after four on 767px width and two on 479px width.
-
-Gutter
-------
-There are two predefined gutters available 2% and 4%. Just wrap the colums you wish to use with the gutter with one of these classes: 
-- `.zp-gutter2`
-- `.zp-gutter4`
-
-The gutter is applied to the direct children only and uses negative left margins to achieve it. Don't use the gutter classes on a direct parent that has a `.zp-colXXX` class assigned but an additional wrapper. The negative margin otherwise can cause wrong display.
-
-```html
-<div id="zp-site" class="zp-w960">
-  <div class="zp-row zp-gutter4">
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-  </div>
-</div>
-```
 
 Demos
 -----
