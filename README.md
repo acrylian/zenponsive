@@ -208,7 +208,7 @@ Example:
   <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
   <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
   <!-- First of the 2nd row on 767px breakpoint -->
-  <div class="zp-col02 zp-col03-767 floatclear767"><h3>zp-col02</h3></div>  
+  <div class="zp-col02 zp-col03-767 zp-floatclear767"><h3>zp-col02</h3></div>  
   <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
   <div class="zp-col02 zp-col03-767 zp-floatright"><h3>zp-col02</h3></div>
 </div>
@@ -221,7 +221,7 @@ Note the floatclear of the breakpoints before the current one are reseted to `cl
   <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
   <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
   <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767 floatclear floatclear959 floatclear767"><h3>zp-col02</h3></div>
+  <div class="zp-col02 zp-col03-767 zp-floatclear zp-floatclear959 zp-floatclear767"><h3>zp-col02</h3></div>
   <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
   <div class="zp-col02 zp-col03-767 zp-floatright"><h3>zp-col02</h3></div>
 </div>
