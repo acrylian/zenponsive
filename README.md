@@ -1,9 +1,9 @@
 
 Zenponsive 
 ==========
-A simple responsive CSS framework
+A simple responsive CSS grid
 ----------------------------
-Yet another framework ;-). This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It of course does not reinvent the wheel and is on purpose not trying to be a full design framework like the big ones. Those are great and were of course an inspiration but also a bit overloaded to my taste even if largely modular. 
+Yet another grid ;-). This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It of course does not reinvent the wheel and is on purpose not trying to be a full design framework like the big ones. Those are great and were of course an inspiration but also a bit overloaded to my taste even if largely modular. 
 
 **License**: GPL v3
  
