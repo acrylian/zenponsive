@@ -1,5 +1,5 @@
 /**
-* Zenponsive CSS Framework
+* Zenponsive – Responsive CSS Grid
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2014 Malte Müller
 * @license GPL v3 or later
@@ -203,6 +203,7 @@ img, picture {
 	really special things you can override these and/or add more to your own 
 	custom css file
  ******************************************************************************/
+/* Desktop screen breakpoint */
 @media only screen and (max-width: 959px) {
 	
 	/** 
@@ -263,7 +264,7 @@ img, picture {
 }
 
 
-/* All Mobile Sizes (devices and browser) */
+/* Tablet */
 @media only screen and (max-width: 767px) {
 	
 	/** 
@@ -325,9 +326,7 @@ img, picture {
 	.zp-visible767 { visibility: visible !important; }
 }
 
-/** 
- * Mobile Portrait Size to Mobile Landscape Size (devices and browsers) 
- */
+/* Mobile */
 @media only screen and (max-width: 479px) {
 	
 	/* col12 without gutter - Columns are always set to full width on this width breakpoint */

@@ -1,0 +1,35 @@
+/**
+* Zenponsive - Responsive CSS Grid - Kickstart custom css file
+* @author Malte Müller (acrylian) <info@maltem.de>
+* @copyright 2014 Malte Müller
+* @license GPL v3 or later
+* @version: 1.1.4
+*/
+
+/* Place here your custom styles for standard screen size */
+
+/* Desktop screen breakpoint */
+@media only screen and (max-width: 959px) {
+	
+}
+
+/* Tablet */
+@media only screen and (max-width: 767px) {
+	
+}
+
+/* Mobile */
+@media only screen and (max-width: 479px) {
+	
+}
+
+/* Retina/HiDPI screen extras */
+@media (min--moz-device-pixel-ratio: 1.5),
+       (-o-min-device-pixel-ratio: 3/2),
+       (-webkit-min-device-pixel-ratio: 1.5),
+       (min-device-pixel-ratio: 1.5),
+       (min-resolution: 144dpi),
+       (min-resolution: 1.5dppx) {
+
+
+}
