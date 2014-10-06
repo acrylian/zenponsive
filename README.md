@@ -30,6 +30,8 @@ This is quite simple:
     <head>
       <title>Zenponsive - A responsive CSS framework</title>
       <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- normalize.css v2.1.0 | MIT License | git.io/normalize - optional but recommended to include -->   
       <link rel="stylesheet" href="normalize.css" type="text/css" />
       <!-- The responsive grid - required -->
