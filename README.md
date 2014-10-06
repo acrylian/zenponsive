@@ -1,9 +1,9 @@
 
 Zenponsive 
 ==========
-A simple responsive CSS framework
+A simple responsive CSS grid
 ----------------------------
-Yet another framework ;-). This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It of course does not reinvent the wheel and is on purpose not trying to be a full design framework like the big ones. Those are great and were of course an inspiration but also a bit overloaded to my taste even if largely modular. 
+Yet another grid ;-). This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It of course does not reinvent the wheel and is on purpose not trying to be a full design framework like the big ones. Those are great and were of course an inspiration but also a bit overloaded to my taste even if largely modular. 
 
 **License**: GPL v3
  
@@ -57,6 +57,8 @@ Basic structure
 
 There are four predefined site widths to choose from:
 
+- `.zp-w479` – Mobile width
+- `.zp-w767` – Tablet width
 - `.zp-w960` – Standard desktop width
 - `.zp-w1280` – Bigger desktop width
 - `.zp-w1600` – Big desktop width
@@ -76,6 +78,7 @@ See the `zenponsive.css` file for the file comments for more info. We use `zp-w9
   <div class="zp-col02"><h3>zp-col02</h3></div>
 </div>
 ```
+`#zp-site` is a general wrapper for the main content that is centered in the browser. Use it together with a width like `.zp-960`. You can also use `.zp-wrapper` which does the same.
     
 By default all zp-columns become .`zp-col12` on 479px width and below and are just scaled on all other sizes. You can of course also nest columns within each other.
 
