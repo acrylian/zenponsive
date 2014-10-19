@@ -69,16 +69,16 @@ You can use any size you wish for the main wrapper, too
 See the `zenponsive.css` file for the file comments for more info. We use `zp-w960` here and six columns:
 
 ```html
-<div id="zp-site" class="zp-w960">
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
+<div id="zp-wrapper" class="zp-w960">
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
 </div>
 ```
-`#zp-site` is a general wrapper for the main content that is centered in the browser. Use it together with a width like `.zp-960`. You can also use `.zp-wrapper` which does the same.
+`.zp-wrapper` or for the main content`#zp-wrapper` is a general wrapper for the main content that is centered in the browser. Use it together with a width like `.zp-960`.
     
 By default all zp-columns become .`zp-col12` on 479px width and below and are just scaled on all other sizes. You can of course also nest columns within each other.
 
@@ -89,20 +89,20 @@ Rows/wrapping zp-columns
 You don't need to wrap columns in rows. If your columns are the same size you can have for example two rows of six `.zp-col02` (e.g. a thumbnail gallery grid) you don't need to wrapp each row of six. You just need to wrap them all within `.zp-clearfix` to clear the floating on anything after them (e.g. another section of content).
 
 ```html
-<div id="zp-site" class="zp-w960">
+<div id="zp-wrapper" class="zp-w960">
   <div class="zp-clearfix">
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
-  <div class="zp-col02"><h3>zp-col02</h3></div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
+  <div class="zp-col02">zp-col02</div>
   </div>
   <p>Some other content</p>
 </div>
@@ -111,18 +111,18 @@ You don't need to wrap columns in rows. If your columns are the same size you ca
 However if you have several rows of columns and each column is not the same height as with e.g. thumbnails you need to wrap them to reset the floating so they appear as intended and not disturb the following rows.
 
 ```html
-<div id="zp-site" class="zp-w960">
+<div id="zp-wrapper" class="zp-w960">
   <div class="zp-clearfix">
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
   </div>
   <div class="zp-clearfix">
-    <div class="zp-col02"><h3>zp-col06</h3></div>
-    <div class="zp-col08"><h3>zp-col06</h3></div>
+    <div class="zp-col02">zp-col06</div>
+    <div class="zp-col08">zp-col06</div>
   </div>
 </div>
 ````
@@ -130,27 +130,27 @@ However if you have several rows of columns and each column is not the same heig
 If your columns for example have background zp-color and need to really align visually on the right side, you should wrap them within the `.zp-row` instead of `.zp-clearfix`.
 
 ```html
-<div id="zp-site" class="zp-w960">
+<div id="zp-wrapper" class="zp-w960">
   <div class="zp-row">
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
   </div>
   <div class="zp-clearfix">
-    <div class="zp-col02"><h3>zp-col06</h3></div>
-    <div class="zp-col08"><h3>zp-col06</h3></div>
+    <div class="zp-col02">zp-col06</div>
+    <div class="zp-col08">zp-col06</div>
   </div>
 </div>
 ````
 
-`.zp-row` does basically the same as `.zp-clearfix` but it additionally floats the last item of a row to the right. This is because of pixel rounding issues of certain browsers. You should only use this with one row and if the columns add up to 12.
+`.zp-row` is an alias for `.zp-clearfix`. You should only use this with one row and if the columns add up to 12.
 
-Sadly the `:last-child` CSS selector is not supported on every browser so you might need to add the class `.zp-floatright` manually to the last row item. This exists for all breakpoints predefined:
+IF you have columns with background color you might encounter rounding issue in some browsers so that the last row column is not aligning correctly to the right. Use `.zp-floatright` manually to the last row item. This exists for all breakpoints predefined:
 
-- `.zp-floatright` (Default)
+- `.zp-floatright` (Default size)
 - `.zp-floatright959`
 - `.zp-floatright767`
 - `.zp-floatright479`
@@ -158,23 +158,23 @@ Sadly the `:last-child` CSS selector is not supported on every browser so you mi
 An example: 
 
 ```html
-<div id="zp-site" class="zp-w960">
+<div id="zp-wrapper" class="zp-w960">
   <div class="zp-row">
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02 zp-floatright"><h3>zp-col02</h3></div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02 zp-floatright">zp-col02</div>
   </div>
   <div class="zp-row">
-    <div class="zp-col06"><h3>zp-col06</h3></div>
-    <div class="zp-col06 zp-floatright"><h3>zp-col06</h3></div>
+    <div class="zp-col06">zp-col06</div>
+    <div class="zp-col06 zp-floatright">zp-col06</div>
   </div> 
 </div>
 ```       
 
-Don't use `.zp-row` on `.zp-col12` elements.
+Don't use `.zp-row` on `.zp-col12` elements. The float class of the previous breakpoint is reseted on the next to avoid unwanted clearing. So it needs to be set for every breakpoint if needed.
 
 Changing zp-columns
 -----------------
@@ -183,13 +183,15 @@ Changing zp-columns
 But you can also request to turn any column to another column width using the special classes `.zp-colXX-959`/`.zp-colXX-767`/`.zp-colXX-479`. You can use these even to apply to be mobile first. Here an example that turns a `.zp-col02` (six per row) into `.zp-col04` (two times three per row) on the 767px breakpoint:
 
 ```html
-<div id="zp-site" class="zp-w960">
-  <div class="zp-col02 zp-col04-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col04-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col04-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col04-767"><h3>zp-col02</h3></div> 
-  <div class="zp-col02 zp-col04-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col04-767"><h3>zp-col02</h3></div>
+<div id="zp-wrapper" class="zp-w960">
+	<div class="zp-row">
+  <div class="zp-col02 zp-col04-767">zp-col02</div>
+  <div class="zp-col02 zp-col04-767">zp-col02</div>
+  <div class="zp-col02 zp-col04-767">zp-col02</div>
+  <div class="zp-col02 zp-col04-767">zp-col02</div> 
+  <div class="zp-col02 zp-col04-767">zp-col02</div>
+  <div class="zp-col02 zp-col04-767">zp-col02</div>
+  </div>
 </div>
 ```
     
@@ -208,27 +210,27 @@ In this case use the `.zp-floatclearXXX` classes on the first row item of the 2n
 Example:
 
 ```html
-<div id="zp-site" class="zp-w960">
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
+<div id="zp-wrapper" class="zp-w960">
+  <div class="zp-col02 zp-col03-767">zp-col02</div>
+  <div class="zp-col02 zp-col03-767">zp-col02</div>
+  <div class="zp-col02 zp-col03-767">zp-col02</div>
   <!-- First of the 2nd row on 767px breakpoint -->
-  <div class="zp-col02 zp-col03-767 zp-floatclear767"><h3>zp-col02</h3></div>  
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767 zp-floatright"><h3>zp-col02</h3></div>
+  <div class="zp-col02 zp-col03-767 zp-floatclear767">zp-col02</div>  
+  <div class="zp-col02 zp-col03-767">zp-col02</div>
+  <div class="zp-col02 zp-col03-767 zp-floatright">zp-col02</div>
 </div>
 ````
     
 Note the floatclear of the breakpoints before the current one are reseted to `clear: none`. That means if you wish to clear floating on several breakpoints the same way you need to assign the classes in order like this:
 
 ```html
-<div id="zp-site" class="zp-w960">
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767 zp-floatclear zp-floatclear959 zp-floatclear767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767"><h3>zp-col02</h3></div>
-  <div class="zp-col02 zp-col03-767 zp-floatright"><h3>zp-col02</h3></div>
+<div id="zp-wrapper" class="zp-w960">
+  <div class="zp-col02 zp-col03-767">zp-col02</div>
+  <div class="zp-col02 zp-col03-767">zp-col02</div>
+  <div class="zp-col02 zp-col03-767">zp-col02</div>
+  <div class="zp-col02 zp-col03-767 zp-floatclear">zp-col02</div>
+  <div class="zp-col02 zp-col06-767 zp-floatclear767">zp-col02</div>
+  <div class="zp-col02 zp-col06-767 zp-floatright">zp-col02</div>
 </div>
 ```
 
@@ -241,14 +243,14 @@ There are two predefined gutters available 2% and 4%. Just wrap the colums you w
 The gutter is applied to the direct children only and uses negative left margins to achieve it. 
 
 ```html
-<div id="zp-site" class="zp-w960">
+<div id="zp-wrapper" class="zp-w960">
   <div class="zp-row zp-gutter4">
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
   </div>
 </div>
 ```
@@ -259,20 +261,20 @@ Full width sites
 Sometimes you may wish to have a full width colored or textured background on sections of your site but the actual content centered. To achieve this simply use a wrapper:
 
 ```html
-<div id="zp-site"><!-- full width -->
+<div id="zp-wrapper"><!-- full width -->
  <div class="zp-w960"><!-- fixed width 906px centered -->
   <div class="zp-row zp-gutter4">
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
-    <div class="zp-col02"><h3>zp-col02</h3></div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
+    <div class="zp-col02">zp-col02</div>
   </div>
  </div>
 </div>
 ```
-Instead of `#zp-site` id you can also use the `.zp-wrapper` class.
+Instead of `#zp-wrapper` id you can also use the `.zp-wrapper` class.
     
 Change float order
 ------------------
@@ -286,7 +288,7 @@ All columns are set to `float:left`. Sometimes you may wish to change the order 
 Example: 
 
 ```html
-<div id="zp-site" class="zp-w960">
+<div id="zp-wrapper" class="zp-w960">
   <div class="zp-col02 zp-floatright767"><img src="thumb.jpg" /></div>
   <div class="zp-col010"><img src="thumb.jpg" /></div>
 </div>
