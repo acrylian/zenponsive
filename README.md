@@ -55,7 +55,7 @@ That's all. Of course you can also combine all css into one to speed up loading.
 Basic structure
 ----------------
 
-There are four predefined site widths to choose from:
+There are some predefined site widths you can use:
 
 - `.zp-w479` – Mobile width
 - `.zp-w767` – Tablet width
@@ -64,7 +64,7 @@ There are four predefined site widths to choose from:
 - `.zp-w1600` – Big desktop width
 - `.zp-wFull` – Full browser window width
 
-You can use any size you wish for the main wrapper, too
+These just set a `max-width: XXXpx respectively `max-width: 100%` for `.zp-wFull`. Since the grid itself is percentage based you can of course use any other custom width.
 
 See the `zenponsive.css` file for the file comments for more info. We use `zp-w960` here and six columns:
 
@@ -86,7 +86,8 @@ Don't set margins, borders or paddings on the columns class elements as that wil
 
 Rows/wrapping zp-columns
 ----------------------
-You don't need to wrap columns in rows. If your columns are the same size you can have for example two rows of six `.zp-col02` (e.g. a thumbnail gallery grid) you don't need to wrapp each row of six. You just need to wrap them all within `.zp-clearfix` to clear the floating on anything after them (e.g. another section of content).
+You don't need to wrap columns in rows. If your columns are the same size you can have for example two rows of six `.zp-col02` (e.g. a thumbnail gallery grid) you don't need to wrapp each row of six. You just need to wrap them all within `.zp-clearfix` to clear the floating on anything after them (e.g. another section of content). You can also use the alias `.zp-row`. 
+
 
 ```html
 <div id="zp-wrapper" class="zp-w960">
@@ -108,7 +109,7 @@ You don't need to wrap columns in rows. If your columns are the same size you ca
 </div>
 ```
 
-However if you have several rows of columns and each column is not the same height as with e.g. thumbnails you need to wrap them to reset the floating so they appear as intended and not disturb the following rows.
+However if you have several rows of columns and each column is not the same height as with e.g. thumbnails you need to wrap them to reset the floating so they appear as intended and not disturb the following columns.
 
 ```html
 <div id="zp-wrapper" class="zp-w960">
@@ -127,26 +128,6 @@ However if you have several rows of columns and each column is not the same heig
 </div>
 ````
 
-If your columns for example have background zp-color and need to really align visually on the right side, you should wrap them within the `.zp-row` instead of `.zp-clearfix`.
-
-```html
-<div id="zp-wrapper" class="zp-w960">
-  <div class="zp-row">
-    <div class="zp-col02">zp-col02</div>
-    <div class="zp-col02">zp-col02</div>
-    <div class="zp-col02">zp-col02</div>
-    <div class="zp-col02">zp-col02</div>
-    <div class="zp-col02">zp-col02</div>
-    <div class="zp-col02">zp-col02</div>
-  </div>
-  <div class="zp-clearfix">
-    <div class="zp-col02">zp-col06</div>
-    <div class="zp-col08">zp-col06</div>
-  </div>
-</div>
-````
-
-`.zp-row` is an alias for `.zp-clearfix`. You should only use this with one row and if the columns add up to 12.
 
 IF you have columns with background color you might encounter rounding issue in some browsers so that the last row column is not aligning correctly to the right. Use `.zp-floatright` manually to the last row item. This exists for all breakpoints predefined:
 
@@ -174,7 +155,7 @@ An example:
 </div>
 ```       
 
-Don't use `.zp-row` on `.zp-col12` elements. The float class of the previous breakpoint is reseted on the next to avoid unwanted clearing. So it needs to be set for every breakpoint if needed.
+Don't use `.zp-row` on `.zp-col12` elements. The float class of the previous breakpoint is reseted on the next to avoid unwanted clearing. So it also needs to be set for every breakpoint if needed.
 
 Changing zp-columns
 -----------------
@@ -262,7 +243,7 @@ Sometimes you may wish to have a full width colored or textured background on se
 
 ```html
 <div id="zp-wrapper"><!-- full width -->
- <div class="zp-w960"><!-- fixed width 906px centered -->
+ <div class="zp-wFull"><!-- width: 100% if you have a wrapper, otherwise obsolete of course -->
   <div class="zp-row zp-gutter4">
     <div class="zp-col02">zp-col02</div>
     <div class="zp-col02">zp-col02</div>
@@ -274,7 +255,7 @@ Sometimes you may wish to have a full width colored or textured background on se
  </div>
 </div>
 ```
-Instead of `#zp-wrapper` id you can also use the `.zp-wrapper` class.
+Instead of the id `#zp-wrapper` you can also use the `.zp-wrapper` class.
     
 Change float order
 ------------------
@@ -302,7 +283,7 @@ General classes are available to hide elements initially and/or on breakpoints:
 
 - `.zp-hide`/`.zp-hide979`/`.zp-hide767`/`.zp-hide479` (`display: none`)
 - `.zp-show`/`.zp-show979`/`.zp-show767`/`.zp-show479` (`display: block`)
-- `.zp-invisble`/`.zp-invisible979`/`.zp-invisible767`/`.zp-invisible479` (`visibility:hidden`)
+- `.zp-invisible`/`.zp-invisible979`/`.zp-invisible767`/`.zp-invisible479` (`visibility:hidden`)
 - `.zp-visible`/`.zp-visible979`/`.zp-visible767`/`.zp-visible479` (`visibility:visible`)
 
 
