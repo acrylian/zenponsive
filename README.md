@@ -55,6 +55,8 @@ That's all. Of course you can also combine all css into one to speed up loading.
 Basic structure
 ----------------
 
+###Prefefined widths
+
 There are some predefined site widths you can use:
 
 - `.zp-w479` – Mobile width
@@ -66,7 +68,15 @@ There are some predefined site widths you can use:
 
 These just set a `max-width: XXXpx respectively `max-width: 100%` for `.zp-wFull`. Since the grid itself is percentage based you can of course use any other custom width.
 
-See the `zenponsive.css` file for the file comments for more info. We use `zp-w960` here and six columns:
+
+###Columns
+
+- `.zp-col01` to `.zp-col12`: By default all columns become `zp-col12 ´ on the 479px breakpoint
+- `.zp-col01-959` to `.zp-col12-959`: Request a column change on the 960px breakpoint
+- `.zp-col01-767` to `.zp-col12-767`: Request a column change on the 767px breakpoint
+- `.zp-col01-479` to .zp-col12-479`: Request a column change on the 479px breakpoint
+
+Here a basic example using `.zp-w960` here and six columns:
 
 ```html
 <div id="zp-wrapper" class="zp-w960">
@@ -77,12 +87,11 @@ See the `zenponsive.css` file for the file comments for more info. We use `zp-w9
   <div class="zp-col02">zp-col02</div>
   <div class="zp-col02">zp-col02</div>
 </div>
+
 ```
 `.zp-wrapper` or for the main content`#zp-wrapper` is a general wrapper for the main content that is centered in the browser. Use it together with a width like `.zp-960`.
-    
-By default all zp-columns become .`zp-col12` on 479px width and below and are just scaled on all other sizes. You can of course also nest columns within each other.
-
-Don't set margins, borders or paddings on the columns class elements as that will disturb the layout calculation completely (it might work in newer browsers because it is using `box-sizing: border-box`). Set those on the elements within the columns instead.
+   
+Avoid setting margins, borders or paddings on the columns class elements as that will disturb the layout calculation completely (it might work in newer browsers because it is using `box-sizing: border-box`). Set those on the elements within the columns instead.
 
 Rows/wrapping zp-columns
 ----------------------
