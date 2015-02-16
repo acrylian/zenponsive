@@ -10,10 +10,10 @@ Yet another grid ;-) This was primarily made to provide a plain simple and flexi
 Features
 ---------
 - **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based).
-- **Prefixed id/class names:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css. *Note: There is still a `zenponsive-noprefixes.css` included that is considered deprecated now.*
+- **Prefixed id/class names:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css.
 - **No predefined styles and typography**: All styling up to you.
 - **No JS involved**: 17 kb weight (uncompressed).
-- **Three default mediaquery breakpoints**: 959/767/479px widths. You can easily extend if you need or want more via your custom css file.
+- **Five default mediaquery breakpoints**: 80em (ca.1280px), 60em (ca.959px), 48em (ca. 767px), 30em (ca. 479px) widths. You can easily extend if you need or want more via your custom css file.
 - **Extra column classes:** By default all columns become full width (`zp-col12`) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
 
 Browser support
@@ -298,7 +298,7 @@ General classes are available to hide elements initially and/or on breakpoints:
 
 Demos
 -----
-To be added later.
+http://zenponsive.maltem.de/demos.html
 
 TODO
 ----
