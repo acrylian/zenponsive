@@ -13,7 +13,7 @@ Features
 - **Prefixed id/class names:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css.
 - **No predefined styles and typography**: All styling up to you.
 - **No JS involved**: 17 kb weight (uncompressed).
-- **Five default mediaquery breakpoints**: 80em (ca.1280px), 60em (ca.959px), 48em (ca. 767px), 30em (ca. 479px) widths. You can easily extend if you need or want more via your custom css file.
+- **Five default mediaquery breakpoints**: default plus 80em (ca.1280px), 60em (ca.959px), 48em (ca. 767px), 30em (ca. 479px) widths. You can easily extend if you need or want more via your custom css file.
 - **Extra column classes:** By default all columns become full width (`zp-col12`) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
 
 Browser support
