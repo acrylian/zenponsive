@@ -9,7 +9,7 @@ Yet another grid ;-) This was primarily made to provide a plain simple and flexi
  
 Features
 ---------
-- **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based).
+- **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth (float based). Additionally fifths are available "outside" the 12 column grid.
 - **Prefixed id/class names:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css.
 - **No predefined styles and typography**: All styling up to you.
 - **No JS involved**: 17 kb weight (uncompressed).
@@ -57,24 +57,38 @@ Basic structure
 
 ###Prefefined widths
 
-There are some predefined site widths you can use:
+There are some predefined site widths you can use: 
 
-- `.zp-w479` – Mobile width
-- `.zp-w767` – Tablet width
-- `.zp-w960` – Standard desktop width
-- `.zp-w1280` – Bigger desktop width
-- `.zp-w1600` – Big desktop width
-- `.zp-wFull` – Full browser window width
+- `.zp-w479` – Mobile width: 30em
+- `.zp-w767` – Tablet width: 48em
+- `.zp-w960` – Standard desktop width: 60em
+- `.zp-w1024` - Standard desktop bigger width: 64em
+- `.zp-w1280` – Bigger desktop width: 80em
+- `.zp-w1600` – Big desktop width: 100em
+- `.zp-wFull` – Full browser window width: 100%
 
-These just set a `max-width: XXXpx respectively `max-width: 100%` for `.zp-wFull`. Since the grid itself is percentage based you can of course use any other custom width.
+Since the grid itself is percentage based you can of course use any other custom width.
 
 
 ###Columns
 
-- `.zp-col01` to `.zp-col12`: By default all columns become `zp-col12 ´ on the 479px breakpoint
+#### 12 column grid
+
+- `.zp-col01` to `.zp-col12`: By default all columns become `zp-col12` on the `479px` breakpoint
+- `.zp-col01-1280` to `.zp-col12-1280`: Request a column change on the 960px breakpoint
 - `.zp-col01-959` to `.zp-col12-959`: Request a column change on the 960px breakpoint
 - `.zp-col01-767` to `.zp-col12-767`: Request a column change on the 767px breakpoint
-- `.zp-col01-479` to .zp-col12-479`: Request a column change on the 479px breakpoint
+- `.zp-col01-479` to `.zp-col12-479`: Request a column change on the 479px breakpoint
+
+#### Fifths
+
+
+- `.zp-col5th-1` to `.zp-col5th-4`: By default all columns become `zp-col12` on the 479px breakpoint
+- Append `-1280`, `-959`, `-767` or `-479` to request changes on breakpoints as above.
+
+Since these are outside the 12 column grid, do not mix both. Besides they can be used the same way.
+
+#### Basic grid example
 
 Here a basic example using `.zp-w960` here and six columns:
 
@@ -135,7 +149,7 @@ However if you have several rows of columns and each column is not the same heig
     <div class="zp-col08">zp-col06</div>
   </div>
 </div>
-````
+```
 
 
 IF you have columns with background color you might encounter rounding issue in some browsers so that the last row column is not aligning correctly to the right. Use `.zp-floatright` manually to the last row item. This exists for all breakpoints predefined:
@@ -302,4 +316,4 @@ http://zenponsive.maltem.de/demos.html
 
 TODO
 ----
-- Extra version useing `flexbox` for modern browsers possibly
+- In the future using `flexbox` for modern browsers possibly…

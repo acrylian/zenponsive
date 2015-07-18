@@ -1,9 +1,9 @@
 /**
-* Zenponsive CSS Framework
+* Zenponsive – Responsive CSS Grid
 * @author Malte Müller (acrylian) <info@maltem.de>
-* @copyright 2014 Malte Müller
+* @copyright 2015 Malte Müller
 * @license GPL v3 or later
-* @version: 1.2
+* @version: 1.2.1
 */
 
 /*
@@ -65,8 +65,22 @@ body * {
 /*
 	The columns generally
 ----------------------------------------------------------------------------------------*/
-
-.zp-col01,.zp-col02,.zp-col03,.zp-col04,.zp-col05,.zp-col06,.zp-col07,.zp-col08,.zp-col09,.zp-col10,.zp-col11,.zp-col12 {
+.zp-col01,
+.zp-col02,
+.zp-col03,
+.zp-col04,
+.zp-col05,
+.zp-col06,
+.zp-col07,
+.zp-col08,
+.zp-col09,
+.zp-col10,
+.zp-col11,
+.zp-col12,
+.zp-col5th-1,
+.zp-col5th-2,
+.zp-col5th-3,
+.zp-col5th-4 {
 	height: auto;
 	margin: 0; /* Don't change this because then the widths will not work */
 	position: relative; /* needed so you can relatively/absolutely position elements within these */
@@ -90,6 +104,10 @@ body * {
 .zp-col10 { width: 83.3333333%; }
 .zp-col11 { width: 91.6666666%; }
 .zp-col12 { width: 100%; }
+.zp-col5th-1 { width: 20%; }
+.zp-col5th-2 { width: 40%; }
+.zp-col5th-3 { width: 60%; }
+.zp-col5th-4 { width: 80%; }
 
 /*
 	The columns with gutter 2%
@@ -115,6 +133,10 @@ body * {
 .zp-gutter2 > .zp-col10 { width: 81.3333333% !important; }
 .zp-gutter2 > .zp-col11 { width: 89.6666666% !important; }
 .zp-gutter2 > .zp-col12 { width: 98% !important; } 
+.zp-gutter2 > .zp-col5th-1 { width: 18%; }
+.zp-gutter2 > .zp-col5th-2 { width: 38%; }
+.zp-gutter2 > .zp-col5th-3 { width: 58%; }
+.zp-gutter2 > .zp-col5th-4 { width: 78%; }
 
 /*
 	The columns with gutter 4%
@@ -140,7 +162,10 @@ body * {
 .zp-gutter4 > .zp-col10 { width: 79.3333333% !important; }
 .zp-gutter4 > .zp-col11 { width: 87.6666666% !important; }
 .zp-gutter4 > .zp-col12 { width: 96% !important; } 
-
+.zp-gutter4 > .zp-col5th-1 { width: 16%; }
+.zp-gutter4 > .zp-col5th-2 { width: 36%; }
+.zp-gutter4 > .zp-col5th-3 { width: 56%; }
+.zp-gutter4 > .zp-col5th-4 { width: 76%; }
 
 /*
 	Responsive images
@@ -148,7 +173,7 @@ body * {
 	Be sure to setup your site/theme that <img> elements don't have a width and 
 	height attributes set! Images are fluid but never exceed their real size
 ----------------------------------------------------------------------------------------*/
-img, picture {
+img {
 	width: auto; 
 	max-width: 100%;
 	height: auto;
@@ -185,7 +210,6 @@ img, picture {
 	*zoom: 1;
 }
 
-.zp-row:last-child,
 .zp-floatright { 
 	float: right !important;  
 }
@@ -223,8 +247,11 @@ img, picture {
 	.zp-col10-1280 { width: 83.33333% !important; }
 	.zp-col11-1280 { width: 91.66667% !important; }
 	.zp-col12-1280 { width: 100% !important; }
+	.zp-col5th-1-1280 { width: 20%; }
+	.zp-col5th-2-1280 { width: 40%; }
+	.zp-col5th-3-1280 { width: 60%; }
+	.zp-col5th-4-1280 { width: 80%; }
 	
-	/* Gutter 2% */
 	.zp-gutter2 > .zp-col01-1280 { width: 6.333334% !important; }
 	.zp-gutter2 > .zp-col02-1280 { width: 14.66% !important; }
 	.zp-gutter2 > .zp-col03-1280 { width: 23% !important; }
@@ -237,8 +264,11 @@ img, picture {
 	.zp-gutter2 > .zp-col10-1280 { width: 81.3333333% !important; }
 	.zp-gutter2 > .zp-col11-1280 { width: 89.6666666% !important; }
 	.zp-gutter2 > .zp-col12-1280 { width: 96% !important; } 
+	.zp-gutter2 > .zp-col5th-1-1280 { width: 18%; }   
+	.zp-gutter2 > .zp-col5th-2-1280 { width: 38%; }
+	.zp-gutter2 > .zp-col5th-3-1280 { width: 58%; }
+	.zp-gutter2 > .zp-col5th-4-1280 { width: 78%; }
 	
-	/* Gutter 4% */
 	.zp-gutter4 > .zp-col01-1280 { width: 4.333334% !important; }
 	.zp-gutter4 > .zp-col02-1280 { width: 12.66% !important; }
 	.zp-gutter4 > .zp-col03-1280 { width: 21% !important; }
@@ -251,13 +281,15 @@ img, picture {
 	.zp-gutter4 > .zp-col10-1280 { width: 79.3333333% !important; }
 	.zp-gutter4 > .zp-col11-1280 { width: 87.6666666% !important; }
 	.zp-gutter4 > .zp-col12-1280 { width: 96% !important; } 
-	
-	/* Override float order */
+	.zp-gutter4 > .zp-col5th-1-1280 { width: 16%; }
+	.zp-gutter4 > .zp-col5th-2-1280 { width: 36%; }
+	.zp-gutter4 > .zp-col5th-3-1280 { width: 56%; }
+	.zp-gutter4 > .zp-col5th-4-1280 { width: 76%; }
+
 	.zp-floatclear { clear: none !important; }
 	.zp-floatright1280 { float: right !important; }
 	.zp-floatclear1280 { clear: both !important; }
 	
-	/* Hide/show elements */
 	.zp-hide1280 { display: none !important; }
 	.zp-show1280 { display: block !important; }
 	.zp-invisible1280 { visibility: hidden !important; }
@@ -282,8 +314,11 @@ img, picture {
 	.zp-col10-959 { width: 83.33333% !important; }
 	.zp-col11-959 { width: 91.66667% !important; }
 	.zp-col12-959 { width: 100% !important; }
+	.zp-col5th-1-959 { width: 20%; }
+	.zp-col5th-2-959 { width: 40%; }
+	.zp-col5th-3-959 { width: 60%; }
+	.zp-col5th-4-959 { width: 80%; }
 
-	/* Gutter 2% */
 	.zp-gutter2 > .zp-col01-959 { width: 6.333334% !important; }
 	.zp-gutter2 > .zp-col02-959 { width: 14.66% !important; }
 	.zp-gutter2 > .zp-col03-959 { width: 23% !important; }
@@ -295,9 +330,12 @@ img, picture {
 	.zp-gutter2 > .zp-col09-959 { width: 73% !important; }
 	.zp-gutter2 > .zp-col10-959 { width: 81.3333333% !important; }
 	.zp-gutter2 > .zp-col11-959 { width: 89.6666666% !important; }
-	.zp-gutter2 > .zp-col12-959 { width: 96% !important; } 
+	.zp-gutter2 > .zp-col12-959 { width: 96% !important; }
+	.zp-gutter2 > .zp-col5th-1-959 { width: 18%; }
+	.zp-gutter2 > .zp-col5th-2-959 { width: 38%; }
+	.zp-gutter2 > .zp-col5th-3-959 { width: 58%; }
+	.zp-gutter2 > .zp-col5th-4-959 { width: 78%; }
 	
-	/* Gutter 4% */
 	.zp-gutter4 > .zp-col01-959 { width: 4.333334% !important; }
 	.zp-gutter4 > .zp-col02-959 { width: 12.66% !important; }
 	.zp-gutter4 > .zp-col03-959 { width: 21% !important; }
@@ -310,13 +348,15 @@ img, picture {
 	.zp-gutter4 > .zp-col10-959 { width: 79.3333333% !important; }
 	.zp-gutter4 > .zp-col11-959 { width: 87.6666666% !important; }
 	.zp-gutter4 > .zp-col12-959 { width: 96% !important; } 
+	.zp-gutter4 > .zp-col5th-1-959 { width: 16%; }
+	.zp-gutter4 > .zp-col5th-2-959 { width: 36%; }
+	.zp-gutter4 > .zp-col5th-3-959 { width: 56%; }
+	.zp-gutter4 > .zp-col5th-4-959 { width: 76%; }
 	
-	/* Override float order */
 	.zp-floatclear { clear: none !important; }
 	.zp-floatright959 { float: right !important; }
 	.zp-floatclear959 { clear: both !important; }
 	
-	/* Hide/show elements */
 	.zp-hide959 { display: none !important; }
 	.zp-show959 { display: block !important; }
 	.zp-invisible959 { visibility: hidden !important; }
@@ -342,22 +382,11 @@ img, picture {
 	.zp-col10-767 { width: 83.33333% !important; }
 	.zp-col11-767 { width: 91.66667% !important; }
 	.zp-col12-767 { width: 100% !important; }
+	.zp-col5th-1-767 { width: 20%; }
+	.zp-col5th-2-767 { width: 40%; }
+	.zp-col5th-3-767 { width: 60%; }
+	.zp-col5th-4-767 { width: 80%; }
 	
-	/* Gutter 4% */
-	.zp-gutter4 > .zp-col01-767 { width: 4.333334% !important; }
-	.zp-gutter4 > .zp-col02-767 { width: 12.66% !important; }
-	.zp-gutter4 > .zp-col03-767 { width: 21% !important; }
-	.zp-gutter4 > .zp-col04-767 { width: 29.33% !important; }
-	.zp-gutter4 > .zp-col05-767 { width: 37.6666667% !important; }
-	.zp-gutter4 > .zp-col06-767 { width: 46% !important; }
-	.zp-gutter4 > .zp-col07-767 { width: 54.3333333% !important; }
-	.zp-gutter4 > .zp-col08-767 { width: 62.66% !important; }
-	.zp-gutter4 > .zp-col09-767 { width: 71% !important; }
-	.zp-gutter4 > .zp-col10-767 { width: 79.3333333% !important; }
-	.zp-gutter4 > .zp-col11-767 { width: 87.6666666% !important; }
-	.zp-gutter4 > .zp-col12-767 { width: 96% !important; } 
-	
-	/* Gutter 2% */
 	.zp-gutter2 > .zp-col01-767 { width: 6.333334% !important; }
 	.zp-gutter2 > .zp-col02-767 { width: 14.66% !important; }
 	.zp-gutter2 > .zp-col03-767 { width: 23% !important; }
@@ -370,8 +399,28 @@ img, picture {
 	.zp-gutter2 > .zp-col10-767 { width: 81.3333333% !important; }
 	.zp-gutter2 > .zp-col11-767 { width: 89.6666666% !important; }
 	.zp-gutter2 > .zp-col12-767 { width: 96% !important; } 
+	.zp-gutter2 > .zp-col5th-1-767 { width: 18%; }
+	.zp-gutter2 > .zp-col5th-2-767 { width: 38%; }
+	.zp-gutter2 > .zp-col5th-3-767 { width: 58%; }
+	.zp-gutter2 > .zp-col5th-4-767 { width: 78%; }
 	
-	/* Override float order */
+	.zp-gutter4 > .zp-col01-767 { width: 4.333334% !important; }
+	.zp-gutter4 > .zp-col02-767 { width: 12.66% !important; }
+	.zp-gutter4 > .zp-col03-767 { width: 21% !important; }
+	.zp-gutter4 > .zp-col04-767 { width: 29.33% !important; }
+	.zp-gutter4 > .zp-col05-767 { width: 37.6666667% !important; }
+	.zp-gutter4 > .zp-col06-767 { width: 46% !important; }
+	.zp-gutter4 > .zp-col07-767 { width: 54.3333333% !important; }
+	.zp-gutter4 > .zp-col08-767 { width: 62.66% !important; }
+	.zp-gutter4 > .zp-col09-767 { width: 71% !important; }
+	.zp-gutter4 > .zp-col10-767 { width: 79.3333333% !important; }
+	.zp-gutter4 > .zp-col11-767 { width: 87.6666666% !important; }
+	.zp-gutter4 > .zp-col12-767 { width: 96% !important; } 
+	.zp-gutter4 > .zp-col5th-1-767 { width: 16%; }
+	.zp-gutter4 > .zp-col5th-2-767 { width: 36%; }
+	.zp-gutter4 > .zp-col5th-3-767 { width: 56%; }
+	.zp-gutter4 > .zp-col5th-4-767 { width: 76%; }
+	
 	.zp-floatclear,
 	.zp-floatclear1280,
 	.zp-floatclear959 {
@@ -380,7 +429,6 @@ img, picture {
 	.zp-floatright767 { float: right !important; }
 	.zp-floatclear767 { clear: both !important; }
 
-	/* Hide/show elements */
 	.zp-hide767 { display: none !important; }
 	.zp-show767 { display: block !important; }
 	.zp-invisible767 { visibility: hidden !important; }
@@ -393,11 +441,25 @@ img, picture {
 @media only screen and (max-width: 30em) {
 	
 	/* col12 without gutter - Columns are always set to full width on this width breakpoint */
-	.zp-col01,.zp-col02,.zp-col03,.zp-col04,.zp-col05,.zp-col06,.zp-col07,.zp-col08,.zp-col09,.zp-col10,.zp-col11,.zp-col12 {
+	.zp-col01,
+	.zp-col02,
+	.zp-col03,
+	.zp-col04,
+	.zp-col05,
+	.zp-col06,
+	.zp-col07,
+	.zp-col08,
+	.zp-col09,
+	.zp-col10,
+	.zp-col11,
+	.zp-col12,
+	.zp-col5th-1,
+	.zp-col5th-2,
+	.zp-col5th-3,
+	.zp-col5th-4 {
 		width: 100% !important;
 	}
-	
-	/* Gutter 2% */
+
 	.zp-gutter2 > .zp-col01, 
 	.zp-gutter2 > .zp-col02,
 	.zp-gutter2 > .zp-col03,
@@ -413,7 +475,6 @@ img, picture {
 		width: 98% !important;
 	}
 	
-	/* Gutter 4% */
 	.zp-gutter4 > .zp-col01, 
 	.zp-gutter4 > .zp-col02,
 	.zp-gutter4 > .zp-col03,
@@ -444,8 +505,11 @@ img, picture {
 	.zp-col10-479 { width: 83.3333333% !important; }
 	.zp-col11-479 { width: 91.6666666% !important; }
 	.zp-col12-479 { width: 100% !important; }
+	.zp-col5th-1-479 { width: 20%; }
+	.zp-col5th-2-479 { width: 40%; }
+	.zp-col5th-3-479 { width: 60%; }
+	.zp-col5th-4-479 { width: 80%; }
 	
-	/* Gutter 2% */
 	.zp-gutter2 > .zp-col01-479 { width: 6.333334% !important; }
 	.zp-gutter2 > .zp-col02-479 { width: 14.66% !important; }
 	.zp-gutter2 > .zp-col03-479 { width: 23% !important; }
@@ -458,8 +522,11 @@ img, picture {
 	.zp-gutter2 > .zp-col10-479 { width: 81.3333333% !important; }
 	.zp-gutter2 > .zp-col11-479 { width: 89.6666666% !important; }
 	.zp-gutter2 > .zp-col12-479 { width: 98% !important; margin: 0 !important; } 
+	.zp-gutter2 > .zp-col5th-1-479 { width: 18%; }
+	.zp-gutter2 > .zp-col5th-2-479 { width: 38%; }
+	.zp-gutter2 > .zp-col5th-3-479 { width: 58%; }
+	.zp-gutter2 > .zp-col5th-4-479 { width: 78%; }
 	
-	/* Gutter 4% */
 	.zp-gutter4 > .zp-col01-479 { width: 4.333334% !important; }
 	.zp-gutter4 > .zp-col02-479 { width: 12.66% !important; }
 	.zp-gutter4 > .zp-col03-479 { width: 21% !important; }
@@ -472,8 +539,11 @@ img, picture {
 	.zp-gutter4 > .zp-col10-479 { width: 79.3333333% !important; }
 	.zp-gutter4 > .zp-col11-479 { width: 87.6666666% !important; }
 	.zp-gutter4 > .zp-col12-479 { width: 96% !important; margin: 0 !important;}
+	.zp-gutter4 > .zp-col5th-1-479 { width: 16%; }
+	.zp-gutter4 > .zp-col5th-2-479 { width: 36%; }
+	.zp-gutter4 > .zp-col5th-3-479 { width: 56%; }
+	.zp-gutter4 > .zp-col5th-4-479 { width: 76%; }
 	
-	/* Override float order */
 	.zp-floatclear,
 	.zp-floatclear1280,
 	.zp-floatclear959,
@@ -484,7 +554,6 @@ img, picture {
 	.zp-floatclear479 { clear: both !important; }
 	.zp-clearblock479 { display: inline !important; width: auto !important; }
 
-	/* Hide/show elements */
 	.zp-hide479 { display: none !important; }
 	.zp-show479 { display: block !important; }
 	.zp-invisible479 { visibility: hidden !important; }
