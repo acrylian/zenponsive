@@ -13,7 +13,7 @@ Features
 - **Prefixed id/class names:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css.
 - **No predefined styles and typography**: All styling up to you.
 - **No JS involved**: 17 kb weight (uncompressed).
-- **Five default mediaquery breakpoints**: default plus 80em (ca.1280px), 60em (ca.959px), 48em (ca. 767px), 30em (ca. 479px) widths. You can easily extend if you need or want more via your custom css file.
+- **Five default mediaquery breakpoints**: default plus 1280px, 959px, 767px, 479px widths. You can easily extend if you need or want more via your custom css file.
 - **Extra column classes:** By default all columns become full width (`zp-col12`) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
 
 Browser support
@@ -59,13 +59,13 @@ Basic structure
 
 There are some predefined site widths you can use: 
 
-- `.zp-w479` – Mobile width: 30em
-- `.zp-w767` – Tablet width: 48em
-- `.zp-w960` – Standard desktop width: 60em
-- `.zp-w1024` - Standard desktop bigger width: 64em
-- `.zp-w1280` – Bigger desktop width: 80em
-- `.zp-w1600` – Big desktop width: 100em
-- `.zp-wFull` – Full browser window width: 100%
+- `.zp-w479` – Mobile width
+- `.zp-w767` – Tablet width
+- `.zp-w960` – Standard desktop width
+- `.zp-w1024` - Standard desktop bigger width
+- `.zp-w1280` – Bigger desktop width
+- `.zp-w1600` – Big desktop width
+- `.zp-wFull` – Full browser window width (100%)
 
 Since the grid itself is percentage based you can of course use any other custom width.
 
