@@ -1,14 +1,16 @@
 @charset "UTF-8";
 /**
-* Zenponsive – Responsive CSS Grid
+* Zenponsive – Responsive CSS Grid - Float
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2015 Malte Müller
 * @license GPL v3 or later
-* @version: 1.3.1
+* @version: 1.4
 */
-/*
-	Zenponsive basics - It is recommend to include a normalize.css before zenponsive.css
-----------------------------------------------------------------------------------------*/
+/* Zenponsive base
+
+/* Basic reset all so you really get really only the margins/paddings you want 
+ * It is recommend to include a normalize.css before zenponsive.css
+------------------------------------------------------------------------------*/
 html,
 body {
   margin: 0;
@@ -16,7 +18,6 @@ body {
   height: 100%;
   width: 100%; }
 
-/* Reset all so you really get really only the margins/paddings you want */
 body * {
   margin: 0;
   padding: 0; }
@@ -28,69 +29,77 @@ body * {
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
-/*
-	Main content wrapper for the site or parts of it
-	-------------------------------------
-	Should be set with a width always like 
-	<div id="zp-site" class="zp-w960">…</div> or <div class"zp-site w960">…</div>
-----------------------------------------------------------------------------------------*/
+/* Main content wrapper for the site or parts of it
+---------------------------------------------------*/
 #zp-site,
 .zp-wrapper {
   min-width: 240px;
-  /* this is generally the width of "normal" mobiles */
   margin: 0 auto;
   position: relative; }
 
-/*
-	Predefined for some general used widths
-*----------------------------------------------------------------------------------------*/
+/* Predefined for some general used widths
+--------------------------------------------------*/
 .zp-w479 {
   max-width: 479px; }
 
-/* Smartphone */
 .zp-w767 {
   max-width: 767px; }
 
-/* Smaller tablet */
 .zp-w960 {
   max-width: 960px; }
 
-/* Standard desktop */
 .zp-w1024 {
   max-width: 1024px; }
 
-/* Standard desktop wider */
 .zp-w1280 {
   max-width: 1280px; }
 
-/* Bigger desktop */
 .zp-w1600 {
   max-width: 1600px; }
 
-/* Big desktop */
 .zp-wFull {
   max-width: 100%; }
 
-/* Full width */
-/*
-	The columns generally
-----------------------------------------------------------------------------------------*/
-.zp-col01,
-.zp-col02,
-.zp-col03,
-.zp-col04,
-.zp-col05,
-.zp-col06,
-.zp-col07,
-.zp-col08,
-.zp-col09,
-.zp-col10,
-.zp-col11,
-.zp-col12,
-.zp-col5th-1,
-.zp-col5th-2,
-.zp-col5th-3,
-.zp-col5th-4 {
+/* Default gutters 2% and 4%
+-----------------------------*/
+.zp-gutter2 {
+  margin-left: -2% !important; }
+
+.zp-gutter2 > * {
+  margin-left: 2% !important; }
+
+.zp-gutter4 {
+  margin-left: -4% !important; }
+
+.zp-gutter4 > * {
+  margin-left: 4% !important; }
+
+/* Responsive images
+------------------------------*/
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  display: block; }
+
+/* Show and hide helpers
+------------------------------*/
+.zp-hide {
+  display: none !important; }
+
+.zp-show {
+  display: block !important; }
+
+.zp-invisible {
+  visibility: hidden !important; }
+
+.zp-visible {
+  visibility: visible !important; }
+
+/* The columns generally
+------------------------------------------------*/
+*[class^='zp-col'] {
   height: auto;
   margin: 0;
   /* Don't change this because then the widths will not work */
@@ -101,9 +110,8 @@ body * {
   word-wrap: break-word;
   /* So longer words don't break the width  */ }
 
-/*
-	The columns without gutter
-----------------------------------------------------------------------------------------*/
+/* The columns without gutter
+------------------------------------------------*/
 .zp-col01 {
   width: 8.33333% !important; }
 
@@ -152,18 +160,8 @@ body * {
 .zp-col5th-4 {
   width: 80% !important; }
 
-/*
-	The columns with gutter 2%
-	------------------------
-	The column sizes are the width minus the gutter. To make your own custom gutter 
-	css have fun calculating the percentage value and change the values accordingly
-----------------------------------------------------------------------------------------*/
-.zp-gutter2 {
-  margin-left: -2% !important; }
-
-.zp-gutter2 > * {
-  margin-left: 2% !important; }
-
+/* The columns with 2% gutter 	
+------------------------------------------------*/
 .zp-gutter2 > .zp-col01 {
   width: 6.33333% !important; }
 
@@ -212,18 +210,8 @@ body * {
 .zp-gutter2 > .zp-col5th-4 {
   width: 78% !important; }
 
-/*
-	The columns with gutter 4%
-	------------------------
-	The column sizes are the width minus the gutter. To make your own custom gutter 
-	css have fun calculating the percentage value and change the values accordingly
-----------------------------------------------------------------------------------------*/
-.zp-gutter4 {
-  margin-left: -4% !important; }
-
-.zp-gutter4 > * {
-  margin-left: 4% !important; }
-
+/* The columns with  4% gutter
+------------------------------------------------*/
 .zp-gutter4 > .zp-col01 {
   width: 4.33333% !important; }
 
@@ -272,12 +260,8 @@ body * {
 .zp-gutter4 > .zp-col5th-4 {
   width: 76% !important; }
 
-/*
-	Responsive images
-	-----------------
-	Be sure to setup your site/theme that <img> elements don't have a width and 
-	height attributes set! Images are fluid but never exceed their real size
-----------------------------------------------------------------------------------------*/
+/* Responsive images
+------------------------------------------------*/
 img {
   width: auto;
   max-width: 100%;
@@ -285,8 +269,7 @@ img {
   border: 0;
   display: block; }
 
-/* 
-	General clear float to start a row of other column sizes All and IE8+
+/* General clear float to start a row of other column sizes All and IE8+
 	------------------------------------------------------------------------
 	Zenponsive does not require to define rows by default if you for example use square cropped image thumbs. 
 	However to avoid some CSS issues with items of different height in different rows 
@@ -315,9 +298,8 @@ img {
 .zp-floatright {
   float: right !important; }
 
-/*
-	Hide elements initially
-----------------------------------------------------------------------------------------*/
+/* Hide elements initially
+------------------------------------------------*/
 .zp-hide {
   display: none !important; }
 
@@ -330,20 +312,15 @@ img {
 .zp-visible {
   visibility: visible !important; }
 
-/*
-	Responsive breakpoints
-	----------------------
-	Since the grid is fluid and to keep it simple just four breakpoints. For 
-	really special things you can override these and/or add more to your own 
-	custom css file
-----------------------------------------------------------------------------------------*/
+/* Responsive breakpoints
+------------------------------------------------*/
 /* Bigger desktop */
 @media only screen and (max-width: 1280px) {
   /** 
    * Extra classed to override the default col12 set above on this width breakpoint
    * without and with gutter
    */
-  /* % gutter */
+  /* No gutter */
   .zp-col01-1280 {
     width: 8.33333% !important; }
 
@@ -491,7 +468,8 @@ img {
     width: 76% !important; }
 
   /* Various helpers */
-  .zp-floatclear, .zp-floatleft1280 {
+  .zp-floatclear,
+  .zp-floatleft1280 {
     clear: none !important; }
 
   .zp-floatright1280 {
@@ -517,7 +495,7 @@ img {
    * Extra classed to override the default col12 set above on this width breakpoint
    * without and with gutter
    */
-  /* % gutter */
+  /* No gutter */
   .zp-col01-959 {
     width: 8.33333% !important; }
 
@@ -691,7 +669,7 @@ img {
   /** 
    * Extra classed to override the default col12 set above on this width breakpoint
    */
-  /* % gutter */
+  /* No gutter */
   .zp-col01-767 {
     width: 8.33333% !important; }
 
@@ -862,57 +840,18 @@ img {
 
   .zp-visible767 {
     visibility: visible !important; } }
-/** 
- * Mobile Portrait Size to Mobile Landscape Size (devices and browsers) 
- */
+/* Mobile */
 @media only screen and (max-width: 479px) {
-  /* col12 without gutter - Columns are always set to full width on this width breakpoint */
-  .zp-col01,
-  .zp-col02,
-  .zp-col03,
-  .zp-col04,
-  .zp-col05,
-  .zp-col06,
-  .zp-col07,
-  .zp-col08,
-  .zp-col09,
-  .zp-col10,
-  .zp-col11,
-  .zp-col12,
-  .zp-col5th-1,
-  .zp-col5th-2,
-  .zp-col5th-3,
-  .zp-col5th-4 {
+  /* No gutter - Columns are always set to full width on this width breakpoint */
+  *[class^='zp-col'] {
     width: 100% !important; }
 
   /* 2% gutter */
-  .zp-gutter2 > .zp-col01,
-  .zp-gutter2 > .zp-col02,
-  .zp-gutter2 > .zp-col03,
-  .zp-gutter2 > .zp-col04,
-  .zp-gutter2 > .zp-col05,
-  .zp-gutter2 > .zp-col06,
-  .zp-gutter2 > .zp-col07,
-  .zp-gutter2 > .zp-col08,
-  .zp-gutter2 > .zp-col09,
-  .zp-gutter2 > .zp-col10,
-  .zp-gutter2 > .zp-col11,
-  .zp-gutter2 > .zp-col12 {
+  .zp-gutter2 > *[class^='zp-col'] {
     width: 98% !important; }
 
   /* 4% gutter */
-  .zp-gutter4 > .zp-col01,
-  .zp-gutter4 > .zp-col02,
-  .zp-gutter4 > .zp-col03,
-  .zp-gutter4 > .zp-col04,
-  .zp-gutter4 > .zp-col05,
-  .zp-gutter4 > .zp-col06,
-  .zp-gutter4 > .zp-col07,
-  .zp-gutter4 > .zp-col08,
-  .zp-gutter4 > .zp-col09,
-  .zp-gutter4 > .zp-col10,
-  .zp-gutter4 > .zp-col11,
-  .zp-gutter4 > .zp-col12 {
+  .zp-gutter4 > *[class^='zp-col'] {
     width: 96% !important; }
 
   /* % gutter */
@@ -1091,5 +1030,3 @@ img {
 
   .zp-visible479 {
     visibility: visible !important; } }
-
-/*# sourceMappingURL=zenponsive.css.map */

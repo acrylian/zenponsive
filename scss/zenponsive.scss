@@ -1,134 +1,18 @@
-//mixins 
-$prefix: zp-;
-$gutter: #{$prefix}gutter;
-$col12 : #{$prefix}col;
-$col5 : #{$prefix}col5th-;
-$break1 : -1280;
-$break2 : -959;
-$break3 : -767;
-$break4 : -479;
-
-//12 col grid
-@mixin grid12($breakpoint) {
-	@for $i from 1 through 12 {
-		$colnumber: $i;
-		@if $i < 10 {
-			$colnumber: 0#{$i};
-		}
-		.#{$col12}#{$colnumber}#{$breakpoint} {
-        width: $i/12*100% !important;
-    }
-	}
-}
-
-@mixin grid12_gutter($guttersize, $breakpoint) {
-	@for $i from 1 through 12 {
-		$colnumber: $i;
-		@if $i < 10 {
-			$colnumber: 0#{$i};
-		}
-		.#{$gutter}#{$guttersize} > .#{$col12}#{$colnumber}#{$breakpoint} {
-        width: $i/12*100%-$guttersize !important;
-    }
-	}
-}
-
-
-//5 col extra grid
-@mixin grid5($breakpoint) {
-	@for $i from 1 through 4 {
-		$colnumber: $i;
-		.#{$col5}#{$colnumber}#{$breakpoint} {
-        width: $i/5*100% !important;
-    }
-	}
-}
-
-@mixin grid5_gutter($guttersize, $breakpoint) {
-	@for $i from 1 through 4 {
-		$colnumber: $i;
-		.#{$gutter}#{$guttersize} > .#{$col5}#{$colnumber}#{$breakpoint} {
-        width: $i/5*100%-$guttersize !important;
-    }
-	}
-}
+@import 'zenponsive-mixins';
 
 /**
-* Zenponsive – Responsive CSS Grid
+* Zenponsive – Responsive CSS Grid - Float
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2015 Malte Müller
 * @license GPL v3 or later
-* @version: 1.3.1
+* @version: 1.4
 */
 
-/*
-	Zenponsive basics - It is recommend to include a normalize.css before zenponsive.css
-----------------------------------------------------------------------------------------*/
-html,
-body {
-	margin:0;
-	padding:0;
-	height:100%;
-	width: 100%;
-}
+@import 'zenponsive-base';
 
-/* Reset all so you really get really only the margins/paddings you want */	
-body * {
- 	margin:0;
-	padding:0;
-}
-
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/*
-	Main content wrapper for the site or parts of it
-	-------------------------------------
-	Should be set with a width always like 
-	<div id="zp-site" class="zp-w960">…</div> or <div class"zp-site w960">…</div>
-----------------------------------------------------------------------------------------*/
-#zp-site,
-.zp-wrapper {
-	min-width: 240px;  /* this is generally the width of "normal" mobiles */
-	margin: 0 auto;
-	position:relative;
-}
-
-/*
-	Predefined for some general used widths
-*----------------------------------------------------------------------------------------*/
-.zp-w479 { max-width: 479px; } /* Smartphone */ 
-.zp-w767 { max-width: 767px; } /* Smaller tablet */ 
-.zp-w960 { max-width: 960px; } /* Standard desktop */ 
-.zp-w1024 { max-width: 1024px; } /* Standard desktop wider */ 
-.zp-w1280 { max-width: 1280px; } /* Bigger desktop */ 
-.zp-w1600 { max-width: 1600px; } /* Big desktop */ 
-.zp-wFull { max-width: 100%; } /* Full width */
-
-/*
-	The columns generally
-----------------------------------------------------------------------------------------*/
-.zp-col01,
-.zp-col02,
-.zp-col03,
-.zp-col04,
-.zp-col05,
-.zp-col06,
-.zp-col07,
-.zp-col08,
-.zp-col09,
-.zp-col10,
-.zp-col11,
-.zp-col12,
-.zp-col5th-1,
-.zp-col5th-2,
-.zp-col5th-3,
-.zp-col5th-4 {
+/* The columns generally
+------------------------------------------------*/
+*[class^='#{$prefix}col'] {
 	height: auto;
 	margin: 0; /* Don't change this because then the widths will not work */
 	position: relative; /* needed so you can relatively/absolutely position elements within these */
@@ -137,51 +21,25 @@ body * {
 	word-wrap: break-word; /* So longer words don't break the width  */
 }
 
+/* The columns without gutter
+------------------------------------------------*/
+@include grid12('', 'float');
+@include grid5('', 'float'); 
 
-/*
-	The columns without gutter
-----------------------------------------------------------------------------------------*/
-@include grid12('');
-@include grid5('');
+/* The columns with 2% gutter 	
+------------------------------------------------*/
 
-/*
-	The columns with gutter 2%
-	------------------------
-	The column sizes are the width minus the gutter. To make your own custom gutter 
-	css have fun calculating the percentage value and change the values accordingly
-----------------------------------------------------------------------------------------*/
-.zp-gutter2 {
-	margin-left: -2% !important;
-}
-.zp-gutter2 > * {
-	margin-left: 2% !important;
-}
+@include grid12_gutter(2,'', 'float');
+@include grid5_gutter(2,'', 'float');
 
-@include grid12_gutter(2,'');
-@include grid5_gutter(2,'');
+/* The columns with  4% gutter
+------------------------------------------------*/
 
-/*
-	The columns with gutter 4%
-	------------------------
-	The column sizes are the width minus the gutter. To make your own custom gutter 
-	css have fun calculating the percentage value and change the values accordingly
-----------------------------------------------------------------------------------------*/
-.zp-gutter4 {
-	margin-left: -4% !important;
-}
-.zp-gutter4 > * {
-	margin-left: 4% !important;
-}
+@include grid12_gutter(4,'', 'float');
+@include grid5_gutter(4,'', 'float');
 
-@include grid12_gutter(4,'');
-@include grid5_gutter(4,'');
-
-/*
-	Responsive images
-	-----------------
-	Be sure to setup your site/theme that <img> elements don't have a width and 
-	height attributes set! Images are fluid but never exceed their real size
-----------------------------------------------------------------------------------------*/
+/* Responsive images
+------------------------------------------------*/
 img {
 	width: auto; 
 	max-width: 100%;
@@ -190,8 +48,7 @@ img {
 	display: block;
 }
 
-/* 
-	General clear float to start a row of other column sizes All and IE8+
+/* General clear float to start a row of other column sizes All and IE8+
 	------------------------------------------------------------------------
 	Zenponsive does not require to define rows by default if you for example use square cropped image thumbs. 
 	However to avoid some CSS issues with items of different height in different rows 
@@ -200,45 +57,47 @@ img {
 	then use .floatclear/.floatclearXXX to mark the first item in the row to 
 	clear the floating before it properly
 ----------------------------------------------------------------------------------------*/
-.zp-row:before, 
-.zp-row:after,
-.zp-clearfix:before, 
-.zp-clearfix:after {
+.#{$prefix}row:before, 
+.#{$prefix}row:after,
+.#{$prefix}clearfix:before, 
+.#{$prefix}clearfix:after {
 	content: " " !important;
 	display: table !important;
 }
 
-.zp-row:after,
-.zp-floatclear,
-.zp-clearfix:after {
+.#{$prefix}row:after,
+.#{$prefix}floatclear,
+.#{$prefix}clearfix:after {
 	clear: both !important;
 }
 
-.zp-row,
-.zp-clearfix { /* IE6/7 only */
+.#{$prefix}row,
+.#{$prefix}clearfix { /* IE6/7 only */
 	*zoom: 1;
 }
 
-.zp-floatright { 
+.#{$prefix}floatright { 
 	float: right !important;  
 }
 
-/*
-	Hide elements initially
-----------------------------------------------------------------------------------------*/
-.zp-hide { display: none !important; }
-.zp-show { display: block !important; }
-.zp-invisible { visibility: hidden !important; }
-.zp-visible { visibility: visible !important; }
+/* Hide elements initially
+------------------------------------------------*/
+.#{$prefix}hide { 
+	display: none !important; 
+}
+.#{$prefix}show { 
+	display: block !important; 
+}
+.#{$prefix}invisible { 
+	visibility: hidden !important; 
+}
+.#{$prefix}visible { 
+	visibility: visible !important; 
+}
 
 
-/*
-	Responsive breakpoints
-	----------------------
-	Since the grid is fluid and to keep it simple just four breakpoints. For 
-	really special things you can override these and/or add more to your own 
-	custom css file
-----------------------------------------------------------------------------------------*/
+/* Responsive breakpoints
+------------------------------------------------*/
 /* Bigger desktop */
 @media only screen and (max-width: 1280px) {
 	
@@ -247,27 +106,31 @@ img {
 	 * without and with gutter
 	 */
 	
-	/* % gutter */
-	@include grid12($break1);
-	@include grid5($break1);
+	/* No gutter */
+	@include grid12($break1, 'float');
+	@include grid5($break1, 'float');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break1);
-	@include grid5_gutter(2,$break1);
+	@include grid12_gutter(2,$break1, 'float');
+	@include grid5_gutter(2,$break1, 'float');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break1);
-	@include grid5_gutter(4,$break1);
+	@include grid12_gutter(4,$break1, 'float');
+	@include grid5_gutter(4,$break1, 'float');
 	
 	/* Various helpers */
-	.zp-floatclear, .zp-floatleft1280 { clear: none !important; }
-	.zp-floatright1280 { float: right !important; }
-	.zp-floatclear1280 { clear: both !important; }
+	.#{$prefix}floatclear, 
+	.#{$prefix}floatleft1280 { 
+		clear: none !important; 
+	}
+	.#{$prefix}floatright1280 { 
+		float: right !important; 
+	}
+	.#{$prefix}floatclear1280 { 
+		clear: both !important; 
+	}
 	
-	.zp-hide1280 { display: none !important; }
-	.zp-show1280 { display: block !important; }
-	.zp-invisible1280 { visibility: hidden !important; }
-	.zp-visible1280 { visibility: visible !important; }
+	@include show_hide(1280);
 } 
 
 /* "Standard" desktop */
@@ -278,32 +141,28 @@ img {
 	 * without and with gutter
 	 */
 	
-	/* % gutter */
-	@include grid12($break2);
-	@include grid5($break2);
+	/* No gutter */
+	@include grid12($break2, 'float');
+	@include grid5($break2, 'float');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break2);
-	@include grid5_gutter(2,$break2);
+	@include grid12_gutter(2,$break2, 'float');
+	@include grid5_gutter(2,$break2, 'float');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break2);
-	@include grid5_gutter(4,$break2);
+	@include grid12_gutter(4,$break2, 'float');
+	@include grid5_gutter(4,$break2, 'float');
 
 	/* various helpers */
-	.zp-floatclear, 
-	.zp-floatleft959 { 
+	.#{$prefix}floatclear, 
+	.#{$prefix}floatleft959 { 
 		clear: none !important; 
 	}
-	.zp-floatright959 { float: right !important; }
-	.zp-floatclear959 { clear: both !important; }
+	.#{$prefix}floatright959 { float: right !important; }
+	.#{$prefix}floatclear959 { clear: both !important; }
 	
-	.zp-hide959 { display: none !important; }
-	.zp-show959 { display: block !important; }
-	.zp-invisible959 { visibility: hidden !important; }
-	.zp-visible959 { visibility: visible !important; }
+	@include show_hide(959);
 }
-
 
 /* Tablet */
 @media only screen and (max-width: 767px) {
@@ -311,100 +170,59 @@ img {
 	/** 
 	 * Extra classed to override the default col12 set above on this width breakpoint
 	 */
-	/* % gutter */
-	@include grid12($break3);
-	@include grid5($break3);
+	/* No gutter */
+	@include grid12($break3, 'float');
+	@include grid5($break3, 'float');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break3);
-	@include grid5_gutter(2,$break3);
+	@include grid12_gutter(2,$break3, 'float');
+	@include grid5_gutter(2,$break3, 'float');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break3);
-	@include grid5_gutter(4,$break3);
+	@include grid12_gutter(4,$break3, 'float');
+	@include grid5_gutter(4,$break3, 'float');
 	
 	/* various helpers */
-	.zp-floatclear,
-	.zp-floatclear1280,
-	.zp-floatclear959,
-	.zp-floatleft767 {
+	.#{$prefix}floatclear,
+	.#{$prefix}floatclear1280,
+	.#{$prefix}floatclear959,
+	.#{$prefix}floatleft767 {
 		clear: none !important;
 	}
-	.zp-floatright767 { float: right !important; }
-	.zp-floatclear767 { clear: both !important; }
+	.#{$prefix}floatright767 { float: right !important; }
+	.#{$prefix}floatclear767 { clear: both !important; }
 
-	.zp-hide767 { display: none !important; }
-	.zp-show767 { display: block !important; }
-	.zp-invisible767 { visibility: hidden !important; }
-	.zp-visible767 { visibility: visible !important; }
+	@include show_hide(767);
 }
 
-/** 
- * Mobile Portrait Size to Mobile Landscape Size (devices and browsers) 
- */
+/* Mobile */
 @media only screen and (max-width: 479px) {
 	
-	/* col12 without gutter - Columns are always set to full width on this width breakpoint */
-	.zp-col01,
-	.zp-col02,
-	.zp-col03,
-	.zp-col04,
-	.zp-col05,
-	.zp-col06,
-	.zp-col07,
-	.zp-col08,
-	.zp-col09,
-	.zp-col10,
-	.zp-col11,
-	.zp-col12,
-	.zp-col5th-1,
-	.zp-col5th-2,
-	.zp-col5th-3,
-	.zp-col5th-4 {
+	/* No gutter - Columns are always set to full width on this width breakpoint */
+	
+	*[class^='#{$prefix}col'] {
 		width: 100% !important;
 	}
 	/* 2% gutter */
-	.zp-gutter2 > .zp-col01, 
-	.zp-gutter2 > .zp-col02,
-	.zp-gutter2 > .zp-col03,
-	.zp-gutter2 > .zp-col04,
-	.zp-gutter2 > .zp-col05,
-	.zp-gutter2 > .zp-col06,
-	.zp-gutter2 > .zp-col07,
-	.zp-gutter2 > .zp-col08,
-	.zp-gutter2 > .zp-col09,
-	.zp-gutter2 > .zp-col10,
-	.zp-gutter2 > .zp-col11,
-	.zp-gutter2 > .zp-col12 {
+	.#{$prefix}gutter2 > *[class^='#{$prefix}col'] {
 		width: 98% !important;
 	}
 	/* 4% gutter */
-	.zp-gutter4 > .zp-col01, 
-	.zp-gutter4 > .zp-col02,
-	.zp-gutter4 > .zp-col03,
-	.zp-gutter4 > .zp-col04,
-	.zp-gutter4 > .zp-col05,
-	.zp-gutter4 > .zp-col06,
-	.zp-gutter4 > .zp-col07,
-	.zp-gutter4 > .zp-col08,
-	.zp-gutter4 > .zp-col09,
-	.zp-gutter4 > .zp-col10,
-	.zp-gutter4 > .zp-col11,
-	.zp-gutter4 > .zp-col12 {
+	.#{$prefix}gutter4 > *[class^='#{$prefix}col'] {
 		width: 96% !important;
 	}
 	
 	/* % gutter */
-	@include grid12($break4);
-	@include grid5($break4);
+	@include grid12($break4, 'float');
+	@include grid5($break4, 'float');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break4);
-	@include grid5_gutter(2,$break4);
+	@include grid12_gutter(2,$break4, 'float');
+	@include grid5_gutter(2,$break4, 'float');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break4);
-	@include grid5_gutter(4,$break4);
+	@include grid12_gutter(4,$break4, 'float');
+	@include grid5_gutter(4,$break4, 'float');
 	
 	/* various helpers */
 	.zp-floatclear,
@@ -418,8 +236,5 @@ img {
 	.zp-floatclear479 { clear: both !important; }
 	.zp-clearblock479 { display: inline !important; width: auto !important; }
 
-	.zp-hide479 { display: none !important; }
-	.zp-show479 { display: block !important; }
-	.zp-invisible479 { visibility: hidden !important; }
-	.zp-visible479 { visibility: visible !important; }
+	@include show_hide(479);
 }

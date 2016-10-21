@@ -1,0 +1,128 @@
+@import 'zenponsive-mixins';
+
+/**
+* Zenponsive – Responsive CSS Grid - Flexbox
+* @author Malte Müller (acrylian) <info@maltem.de>
+* @copyright 2016 Malte Müller
+* @license GPL v3 or later
+* @version: 1.4
+*/
+
+@import 'zenponsive-base';
+
+/* Main flex wrapper: 
+ * @source: https://css-tricks.com/using-flexbox/
+-----------------------------------*/
+@include main_flexwrapper('flex-prefix');
+
+/* The columns without gutter 
+ * (12 col grid and 5th)
+-----------------------------------*/
+
+/* Grid items in case you don't want to use the cols */
+@include general_flexboxitem('flex-prefix');
+
+@include grid12('', 'flex-prefix'); 
+@include grid5('', 'flex-prefix');
+
+/* Columns with gutter 2%
+-----------------------------------*/
+
+@include grid12_gutter(2, '', 'flex-prefix');  
+@include grid5_gutter(2, '', 'flex-prefix');
+
+/* Columns with gutter 4%
+-----------------------------------*/
+ 
+@include grid12_gutter(4, '', 'flex-prefix');
+@include grid5_gutter(4, '', 'flex-prefix'); 
+
+/* Responsive breakpoints
+-----------------------------------*/
+
+/* Bigger desktop */
+@media only screen and (max-width: 1280px) {
+	
+	/* No gutter */
+	@include grid12($break1, 'flex-prefix');
+	@include grid5($break1, 'flex-prefix');
+	
+	/* 2% gutter */
+  @include grid12_gutter(2, $break1, 'flex-prefix');
+	@include grid5_gutter(2, $break1, 'flex-prefix');
+	
+	/* 4% gutter */
+	@include grid12_gutter(4, $break1, 'flex-prefix'); 
+	@include grid5_gutter(4, $break1, 'flex-prefix');
+	
+	/* show hide */
+	@include show_hide(1280);
+}
+
+/* "Standard" desktop */
+@media only screen and (max-width: 960px) { 
+	
+	/* No gutter */
+	@include grid12($break2, 'flex-prefix');
+	@include grid5($break2, 'flex-prefix');
+	
+	/* 2% gutter */
+	@include grid12_gutter(2, $break2, 'flex-prefix'); 
+	@include grid5_gutter(2, $break2, 'flex-prefix');
+	
+	/* 4% gutter */
+	@include grid12_gutter(4, $break2, 'flex-prefix'); 
+	@include grid5_gutter(4, $break2, 'flex-prefix');
+	
+	/* show hide */
+	@include show_hide(959);
+}
+
+/* Tablet */
+@media only screen and (max-width: 767px) {
+	/* No gutter */
+	@include grid12($break3, 'flex-prefix');
+	@include grid5($break3, 'flex-prefix');
+	
+	/* 2% gutter */
+	@include grid12_gutter(2, $break3, 'flex-prefix');
+	@include grid5_gutter(2, $break3, 'flex-prefix');
+	
+	/* 4% gutter */
+	@include grid12_gutter(4, $break3, 'flex-prefix'); 
+	@include grid5_gutter(4, $break3, 'flex-prefix');
+	
+	/* show hide */
+	@include show_hide(767);
+}
+
+/* Mobile */
+@media only screen and (max-width: 479px) {
+	
+	/* Full for all incl. gutter items */
+	.#{$prefix}flex > *[class^='#{$prefix}col'],
+	.#{$prefix}flex.#{$prefix}gutter2 > *[class^='#{$prefix}col'],
+	.#{$prefix}flex.#{$prefix}gutter4 > *[class^='#{$prefix}col'] {
+		-webkit-box-flex: 0 1 100% !important;
+		-moz-box-flex: 0 1 100%  !important;         
+		-webkit-flex: 0 1 100%  !important;  
+		-ms-flex: 0 1 100%  !important;
+		flex: 0 1 100%  !important; 
+		width: 100%  !important;
+	}
+	
+	/* No gutter */
+	@include grid12($break4, 'flex-prefix');
+	@include grid5($break4, 'flex-prefix');
+	
+	/* 2% gutter */
+	@include grid12_gutter(2, $break4, 'flex-prefix'); 
+	@include grid5_gutter(2, $break4, 'flex-prefix');
+	
+	/* 4% gutter */
+	@include grid12_gutter(4, $break4, 'flex-prefix'); 
+	@include grid5_gutter(4, $break4, 'flex-prefix');
+	
+	/* show hide */
+	@include show_hide(479);
+}

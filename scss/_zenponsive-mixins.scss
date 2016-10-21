@@ -1,0 +1,164 @@
+//mixins 
+$prefix: zp-; //prefix for the class so they are easily spottable
+//$gutter: #{$prefix}gutter; //the gutter class base name
+//$flexwrapper: #{$prefix}flex; // the flexbox wrapper class
+$col12 : #{$prefix}col; //base name for the 12 grid col classes
+$col5 : #{$prefix}col5th-; //base name for the 5th grid col classes
+$break1 : -1280;
+$break2 : -959;
+$break3 : -767;
+$break4 : -479; 
+
+//show+hide helpers
+@mixin show_hide($breakpoint) { 
+	.#{$prefix}hide#{$breakpoint} { 
+		display: none !important; 
+	}
+	.#{$prefix}show#{$breakpoint} { 
+		display: block !important; 
+	}
+	.#{$prefix}invisible#{$breakpoint} { 
+		visibility: hidden !important; 
+	}
+	.#{$prefix}visible#{$breakpoint} { 
+		visibility: visible !important; 
+	}
+}
+
+// Main flex wrapper
+@mixin main_flexwrapper($mode) {
+	.#{$prefix}flex {
+		@if $mode == 'flex-prefix' {
+			display: -webkit-box;      // OLD - iOS 6-, Safari 3.1-6 
+			display: -moz-box;         // OLD - Firefox 19- (buggy but mostly works) 
+			display: -ms-flexbox;      // TWEENER - IE 10
+			display: -webkit-flex;		 // NEW - Chrome 
+		}
+		display: flex;						 // NEW, Spec - Opera 12.1, Firefox 20+ 
+		@if $mode == 'flex-prefix' {
+			-webkit-flex-flow: row wrap;
+			-ms-flex-flow: row wrap;
+		}
+		flex-flow: row wrap;
+	}
+}
+
+
+//general flexbox item
+@mixin general_flexboxitem($mode) {
+	.#{$prefix}flex > *  {
+		@if $mode == 'flex-prefix' {	
+			-webkit-box-flex: 1 1 auto; // OLD - iOS 6-, Safari 3.1-6    
+			-moz-box-flex: 1 1 auto;    // OLD - Firefox 19- */    
+			width: 20%;								  // For old syntax, otherwise collapses. 
+			-webkit-flex: 1 1 auto;     // Chrome       
+			-ms-flex: 1 1 auto;					// IE 10
+		}
+		flex: 1 1 auto;							// NEW, Spec - Opera 12.1, Firefox 20+ 
+	}  
+}
+
+//12 col grid
+@mixin grid12($breakpoint, $mode) {
+	@for $i from 1 through 12 {
+		$colnumber: $i;
+		$width: $i/12*100%;
+		@if $i < 10 {
+			$colnumber: 0#{$i};
+		}
+		@if $mode == 'float' {
+			.#{$col12}#{$colnumber}#{$breakpoint} {
+				width: $width !important;
+			}
+		}
+		@if $mode == 'flex' or $mode == 'flex-prefix' {
+			.#{$prefix}flex > .#{$col12}#{$colnumber}#{$breakpoint} {
+				@if $mode == 'flex-prefix' {
+					-webkit-box-flex: 0 1 $width !important;
+					-moz-box-flex: 0 1 $width !important;         
+					-webkit-flex: 0 1 $width !important;  
+					-ms-flex: 0 1 $width !important;
+				}
+				flex: 0 1 $width !important; 
+				width: $width !important;
+			}
+		}
+	}
+}
+
+//12 col grid with gutter
+@mixin grid12_gutter($guttersize, $breakpoint, $mode) {
+	@for $i from 1 through 12 {
+		$colnumber: $i;
+		$width: $i/12*100%-$guttersize;
+		@if $i < 10 {
+			$colnumber: 0#{$i};
+		}
+		@if $mode == 'float' {
+			.#{$prefix}gutter#{$guttersize} > .#{$col12}#{$colnumber}#{$breakpoint} {
+				width: $width !important;
+			}
+		}
+		@if $mode == 'flex' or $mode == 'flex-prefix' {
+			.#{$prefix}flex.#{$prefix}gutter#{$guttersize} > .#{$col12}#{$colnumber}#{$breakpoint} {
+				@if $mode == 'flex-prefix' {
+					-webkit-box-flex: 0 1 $width !important;  
+					-moz-box-flex: 0 1 $width !important; 
+					-webkit-flex: 0 1 $width !important;  
+					-ms-flex: 0 1 $width !important;
+				}
+				flex: 0 1 $width !important; 
+				width: $width !important;
+			}
+		}
+	}
+}
+
+//5 col grid
+@mixin grid5($breakpoint, $mode) {
+	@for $i from 1 through 4 {
+		$colnumber: $i;
+		$width: $i/5*100%;
+		@if $mode == 'float' {
+			.#{$col5}#{$colnumber}#{$breakpoint} {
+				width: $width !important;
+			}
+		}
+		@if $mode == 'flex' or $mode == 'flex-prefix' {
+			#{$prefix}flex > .#{$col5}#{$colnumber}#{$breakpoint} {
+				@if $mode == 'flex-prefix' {
+					-webkit-box-flex: 0 1 $width !important; 
+					-moz-box-flex: 0 1 $width !important; 
+					-webkit-flex: 0 1 $width !important;   
+					-ms-flex: 0 1 $width !important;
+				}
+				flex: 0 1 $width !important; 
+				width: $width !important;
+			}
+		}
+	}
+}
+//5 col grid with gutter
+@mixin grid5_gutter($guttersize, $breakpoint, $mode) {
+	@for $i from 1 through 4 {
+		$colnumber: $i;
+		$width: $i/5*100%-$guttersize;
+		@if $mode == 'float' {
+			.#{$prefix}gutter#{$guttersize} > .#{$col5}#{$colnumber}#{$breakpoint} {
+				width: $width !important;
+			}
+		}
+		@if $mode == 'flex' or $mode == 'flex-prefix' {
+			.#{$prefix}flex.#{$prefix}gutter#{$guttersize} > .#{$col5}#{$colnumber}#{$breakpoint} {
+				@if $mode == 'flex-prefix' {
+					-webkit-box-flex: 0 1 $width !important; 
+					-moz-box-flex: 0 1 $width !important;  
+					-webkit-flex: 0 1 $width !important;  
+					-ms-flex: 0 1 $width !important;
+				}
+				flex: 0 1 $width !important; 
+				width: $width !important;
+			}
+		}
+	}
+} 

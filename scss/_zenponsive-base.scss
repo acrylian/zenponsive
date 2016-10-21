@@ -1,0 +1,77 @@
+/* Zenponsive base
+
+/* Basic reset all so you really get really only the margins/paddings you want 
+ * It is recommend to include a normalize.css before zenponsive.css
+------------------------------------------------------------------------------*/
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width: 100%;
+}
+
+body * {
+ 	margin:0;
+	padding:0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Main content wrapper for the site or parts of it
+---------------------------------------------------*/
+#zp-site,
+.zp-wrapper {
+	min-width: 240px;
+	margin: 0 auto;
+	position:relative;
+}
+
+/* Predefined for some general used widths
+--------------------------------------------------*/
+.zp-w479 { max-width: 479px; } //Smartphone
+.zp-w767 { max-width: 767px; } //Smaller tablet 
+.zp-w960 { max-width: 960px; } //Standard desktop 
+.zp-w1024 { max-width: 1024px; } //Standard desktop wider
+.zp-w1280 { max-width: 1280px; } //Bigger desktop 
+.zp-w1600 { max-width: 1600px; } //Big desktop
+.zp-wFull { max-width: 100%; } //Full width
+
+/* Default gutters 2% and 4%
+-----------------------------*/
+.zp-gutter2 {
+	margin-left: -2% !important;
+}
+.zp-gutter2 > * {
+	margin-left: 2% !important;
+}
+
+.zp-gutter4 {
+	margin-left: -4% !important;
+}
+.zp-gutter4 > * {
+	margin-left: 4% !important;
+}
+
+/* Responsive images
+------------------------------*/
+img {
+	width: auto; 
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	display: block;
+}
+
+/* Show and hide helpers
+------------------------------*/
+.zp-hide { display: none !important; }
+.zp-show { display: block !important; }
+.zp-invisible { visibility: hidden !important; }
+.zp-visible { visibility: visible !important; }
