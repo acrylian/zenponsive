@@ -1,14 +1,17 @@
 
 Zenponsive 
 ==========
+
 A simple responsive CSS grid
 ----------------------------
+
 Yet another grid ;-) This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It of course does not reinvent the wheel and is on purpose not trying to be a full design framework like the big ones. Those are great and were of course an inspiration but also a bit overloaded to my taste even if largely modular. 
 
 **License**: GPL v3
  
 Features
 ---------
+
 - **Fluid scaling grid:** Percent based 12 column layout with predefined widths 960/1024/1280/1600/fullwidth. Additionally fifths are available "outside" the 12 column grid.
 - **Prefixed id/class names:** All id or class names of Zenponsive are prefixed with `zp-` to be easily recognizable between custom css.
 - **No predefined styles and typography**: All styling up to you.
@@ -18,6 +21,7 @@ Features
 
 Float or Flexbox 
 ------------------
+
 There are three files (each also minified):
 
 - `zenponsive.css`: Float version
@@ -34,6 +38,7 @@ Browser support
 
 Setup
 -----
+
 This is quite simple:
 
 ```html
@@ -68,11 +73,12 @@ That's all. Of course you can also combine all css into one to speed up loading.
     
 Basic structure
 ----------------
+
 ### General wrapper
 
 `.zp-wrapper` is just a general wrapper that together with a width set centers the content within the browser window.
 
-###Prefefined widths
+### Prefefined widths
 
 There are some predefined site widths you can use: 
 
@@ -87,7 +93,7 @@ There are some predefined site widths you can use:
 Since the grid itself is percentage based you can of course use any other custom width.
 
 
-###Columns
+### Columns
 
 #### 12 column grid
 
@@ -109,6 +115,7 @@ Since these are outside the 12 column grid, do not mix both. Besides they can be
 Here a basic example using `.zp-w960` here and six columns:
 
 ### Float
+
 ```html
 <div class="zp wrapper zp-w960">
   <div class="zp-col02">zp-col02</div>
@@ -122,6 +129,7 @@ Here a basic example using `.zp-w960` here and six columns:
 `.zp-wrapper` is a general wrapper for the main content that is centered in the browser. Use it together with a width like `.zp-960`.
 
 ### Flexbox
+
 The flexbox setup is nearly the same but requires an additional wrapper:
 
 ```html
@@ -139,6 +147,7 @@ The flexbox setup is nearly the same but requires an additional wrapper:
 
 Rows/wrapping zp-columns
 ----------------------
+
 You don't need to wrap columns in rows. If your columns are the same size you can have for example two rows of six `.zp-col02` (e.g. a thumbnail gallery grid) you don't need to wrapp each row of six. You just need to wrap them all within `.zp-clearfix` to clear the floating on anything after them (e.g. another section of content). You can also use the alias `.zp-row`. 
 
 ### Float
@@ -212,6 +221,7 @@ An example:
 Don't use `.zp-row` on `.zp-col12` elements. The float class of the previous breakpoint is reseted on the next to avoid unwanted clearing. So it also needs to be set for every breakpoint if needed.
 
 ### Flexbox
+
 Naturally for flexbox you don't need any rows, clear fixes or other float clearing.
 
 ```html
@@ -232,10 +242,12 @@ Naturally for flexbox you don't need any rows, clear fixes or other float cleari
 Changing zp-columns
 -----------------
 
-###Changing even columns to even columns
+### Changing even columns to even columns
+
 But you can also request to turn any column to another column width using the special classes `.zp-colXX-959`/`.zp-colXX-767`/`.zp-colXX-479`. You can use these even to apply to be mobile first. Here an example that turns a `.zp-col02` (six per row) into `.zp-col04` (two times three per row) on the 767px breakpoint:
 
 ### Float
+
 ```html
 <div class="zp-wrapper zp-w960">
   <div class="zp-row">
@@ -250,6 +262,7 @@ But you can also request to turn any column to another column width using the sp
 ```
 
 ### Flexbox
+
 ```html
 <div class="zp-wrapper zp-w960">
   <div class="zp-flex">
@@ -265,7 +278,8 @@ But you can also request to turn any column to another column width using the sp
   
 If you need more breakpoints you can add them via mixins within the Sass files within `/scss` or a custom css file.
 
-###Changing even zp-columns to uneven (and vice versa) without rows
+### Changing even zp-columns to uneven (and vice versa) without rows
+
 You can also work without an extra `.zp-row` or a `.zp-clearfix` wrapper. If you use breakpoints switch to different columns on different breakpoints and the column height is not the same (e.g. not square thumbs), the wrapper gets into your way as the row does not fit anymore. For example if you start with six `.zp-col02` and switch to `.zp-col03` you will get two rows.
 
 In this case use the `.zp-floatclearXXX` classes on the first row item of the 2nd and onward rows. This exists for all four default breakpoints so you can address the rows individually:
@@ -364,6 +378,7 @@ Sometimes you may wish to have a full width colored or textured background on se
 ```
 
 ### Flexbox
+
 ```html
 <div class="zp-wrapper zp-wFull">
    <div class="zp-flex zp-gutter4">
@@ -380,6 +395,7 @@ Instead of the id `#zp-wrapper` you can also use the `.zp-wrapper` class.
     
 Change float order
 ------------------
+
 All columns are set to `float:left`. Sometimes you may wish to change the order so you can request to `float:right` as well using the special classes (you saw one already above on the rows):
 
 - `.zp-floatright` (initial size)
@@ -400,6 +416,7 @@ This of course only works if you have at least two zp-columns that actually floa
 
 Hiding elements
 ---------------
+
 General classes are available to hide elements initially and/or on breakpoints:
 
 - `.zp-hide`/`.zp-hide979`/`.zp-hide767`/`.zp-hide479` (`display: none`)
@@ -410,4 +427,5 @@ General classes are available to hide elements initially and/or on breakpoints:
 
 Demos
 -----
+
 http://zenponsive.maltem.de/demos.html
