@@ -4,7 +4,7 @@
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2015 Malte Müller
 * @license GPL v3 or later
-* @version: 1.4
+* @version: 1.4.1
 */
 /* Zenponsive base
 
@@ -31,7 +31,6 @@ body * {
 
 /* Main content wrapper for the site or parts of it
 ---------------------------------------------------*/
-#zp-site,
 .zp-wrapper {
   min-width: 240px;
   margin: 0 auto;
@@ -259,15 +258,6 @@ img {
 
 .zp-gutter4 > .zp-col5th-4 {
   width: 76% !important; }
-
-/* Responsive images
-------------------------------------------------*/
-img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  border: 0;
-  display: block; }
 
 /* General clear float to start a row of other column sizes All and IE8+
 	------------------------------------------------------------------------

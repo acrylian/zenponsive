@@ -5,7 +5,7 @@
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2015 Malte Müller
 * @license GPL v3 or later
-* @version: 1.4
+* @version: 1.4.1
 */
 
 @import 'zenponsive-base';
@@ -37,16 +37,6 @@
 
 @include grid12_gutter(4,'', 'float');
 @include grid5_gutter(4,'', 'float');
-
-/* Responsive images
-------------------------------------------------*/
-img {
-	width: auto; 
-	max-width: 100%;
-	height: auto;
-	border: 0;
-	display: block;
-}
 
 /* General clear float to start a row of other column sizes All and IE8+
 	------------------------------------------------------------------------
@@ -225,16 +215,16 @@ img {
 	@include grid5_gutter(4,$break4, 'float');
 	
 	/* various helpers */
-	.zp-floatclear,
-	.zp-floatclear1280,
-	.zp-floatclear959,
-	.zp-floatclear767,
-	.zp-floatleft479 {
+	.#{$prefix}floatclear,
+	.#{$prefix}floatclear1280,
+	.#{$prefix}floatclear959,
+	.#{$prefix}floatclear767,
+	.#{$prefix}floatleft479 {
 		clear: none !important;
 	}
-	.zp-floatright479 { float: right !important; }
-	.zp-floatclear479 { clear: both !important; }
-	.zp-clearblock479 { display: inline !important; width: auto !important; }
+	.#{$prefix}floatright479 { float: right !important; }
+	.#{$prefix}floatclear479 { clear: both !important; }
+	.#{$prefix}clearblock479 { display: inline !important; width: auto !important; }
 
 	@include show_hide(479);
 }
