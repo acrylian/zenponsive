@@ -1,14 +1,14 @@
-@import 'zenponsive-mixins';
+@import 'zenponsive-mixins'; 
 
 /**
 * Zenponsive – Responsive CSS Grid - Float
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2015 Malte Müller
 * @license GPL v3 or later
-* @version: 1.4.1
+* @version: 2.0
 */
 
-@import 'zenponsive-base';
+@import 'zenponsive-base'; 
 
 /* The columns generally
 ------------------------------------------------*/
@@ -16,29 +16,38 @@
 	height: auto;
 	margin: 0; /* Don't change this because then the widths will not work */
 	position: relative; /* needed so you can relatively/absolutely position elements within these */
-	float: left; 
 	display: inline-block;
 	word-wrap: break-word; /* So longer words don't break the width  */
 }
 
+//@include main_flexwrapper('flex');
+@include grid12_wrapper_base('', 'flex'); /* empty gutter size means .zp-nogutter class */
+@include grid12_wrapper_base(2, 'flex');
+@include grid12_wrapper_base(4, 'flex');
+
 /* The columns without gutter
 ------------------------------------------------*/
-@include grid12('', 'float');
-@include grid5('', 'float'); 
+/* Grid items in case you don't want to use the cols */
+@include general_flexboxitem('flex');
+
+@include grid12('', '', 'flex');
+@include grid5('', '', 'flex'); 
 
 /* The columns with 2% gutter 	
 ------------------------------------------------*/
 
-@include grid12_gutter(2,'', 'float');
-@include grid5_gutter(2,'', 'float');
+@include grid12(2, '', 'flex');
+@include grid5(2, '', 'flex');
 
 /* The columns with  4% gutter
 ------------------------------------------------*/
 
-@include grid12_gutter(4,'', 'float');
-@include grid5_gutter(4,'', 'float');
+@include grid12(4, '',  'flex'); 
+@include grid5(4, '', 'flex');
 
 /* General clear float to start a row of other column sizes All and IE8+
+
+	NOTE: Since the grid base is now flexbox with a display: inline-block fallback these are rather obsolete
 	------------------------------------------------------------------------
 	Zenponsive does not require to define rows by default if you for example use square cropped image thumbs. 
 	However to avoid some CSS issues with items of different height in different rows 
@@ -76,7 +85,7 @@
 	display: none !important; 
 }
 .#{$prefix}show { 
-	display: block !important; 
+	display: inline-block !important; 
 }
 .#{$prefix}invisible { 
 	visibility: hidden !important; 
@@ -97,16 +106,16 @@
 	 */
 	
 	/* No gutter */
-	@include grid12($break1, 'float');
-	@include grid5($break1, 'float');
+	@include grid12('', $break1, 'flex');
+	@include grid5('', $break1, 'flex');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break1, 'float');
-	@include grid5_gutter(2,$break1, 'float');
+	@include grid12(2, $break1, 'flex');
+	@include grid5(2, $break1, 'flex');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break1, 'float');
-	@include grid5_gutter(4,$break1, 'float');
+	@include grid12(4, $break1, 'flex');
+	@include grid5(4, $break1, 'flex');
 	
 	/* Various helpers */
 	.#{$prefix}floatclear, 
@@ -132,16 +141,16 @@
 	 */
 	
 	/* No gutter */
-	@include grid12($break2, 'float');
-	@include grid5($break2, 'float');
+	@include grid12('', $break2, 'flex');
+	@include grid5('', $break2,'flex');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break2, 'float');
-	@include grid5_gutter(2,$break2, 'float');
+	@include grid12(2,$break2, 'flex');
+	@include grid5(2,$break2, 'flex');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break2, 'float');
-	@include grid5_gutter(4,$break2, 'float');
+	@include grid12(4,$break2, 'flex');
+	@include grid5(4,$break2, 'flex');
 
 	/* various helpers */
 	.#{$prefix}floatclear, 
@@ -161,16 +170,16 @@
 	 * Extra classed to override the default col12 set above on this width breakpoint
 	 */
 	/* No gutter */
-	@include grid12($break3, 'float');
-	@include grid5($break3, 'float');
+	@include grid12('', $break3,'flex');
+	@include grid5('', $break3,'flex');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break3, 'float');
-	@include grid5_gutter(2,$break3, 'float');
+	@include grid12(2,$break3, 'flex');
+	@include grid5(2,$break3, 'flex');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break3, 'float');
-	@include grid5_gutter(4,$break3, 'float');
+	@include grid12(4,$break3, 'flex');
+	@include grid5(4,$break3, 'flex');
 	
 	/* various helpers */
 	.#{$prefix}floatclear,
@@ -188,31 +197,40 @@
 /* Mobile */
 @media only screen and (max-width: 479px) {
 	
-	/* No gutter - Columns are always set to full width on this width breakpoint */
+	/* Columns are always set to full width on this width breakpoint unless defined otherwise */
 	
-	*[class^='#{$prefix}col'] {
-		width: 100% !important;
+	/*  Full for all incl. gutter items - Also adjust any custom gutter sizes used here */
+	.#{$prefix}nogutter > *[class^='#{$prefix}col'],
+	.#{$prefix}gutter2 > *[class^='#{$prefix}col'], /*  */
+	.#{$prefix}gutter4 > *[class^='#{$prefix}col'] {
+		-webkit-box-flex: 0 1 100% !important;
+		-moz-box-flex: 0 1 100%  !important;         
+		-webkit-flex: 0 1 100%  !important;  
+		-ms-flex: 0 1 100%  !important;
+		flex: 0 1 100%  !important; 
+		width: 100%  !important;
 	}
-	/* 2% gutter */
+	
+	/* 2% gutter - adjust if using custom gutter sizes */
 	.#{$prefix}gutter2 > *[class^='#{$prefix}col'] {
 		width: 98% !important;
 	}
-	/* 4% gutter */
+	/* 4% gutter - adjust if using custom gutter sizes */
 	.#{$prefix}gutter4 > *[class^='#{$prefix}col'] {
 		width: 96% !important;
 	}
 	
 	/* % gutter */
-	@include grid12($break4, 'float');
-	@include grid5($break4, 'float');
+	@include grid12('', $break4, 'flex');
+	@include grid5('', $break4,'flex');
 	
 	/* 2% gutter */
-	@include grid12_gutter(2,$break4, 'float');
-	@include grid5_gutter(2,$break4, 'float');
+	@include grid12(2,$break4, 'flex');
+	@include grid5(2,$break4, 'flex');
 	
 	/* 4% gutter */
-	@include grid12_gutter(4,$break4, 'float');
-	@include grid5_gutter(4,$break4, 'float');
+	@include grid12(4,$break4, 'flex');
+	@include grid5(4,$break4, 'flex');
 	
 	/* various helpers */
 	.#{$prefix}floatclear,

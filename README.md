@@ -19,22 +19,12 @@ Features
 - **Five default mediaquery breakpoints**: default plus 1280px, 959px, 767px, 479px widths. You can easily extend if you need or want more via your custom css file.
 - **Extra column classes:** By default all columns become full width (`zp-col12`) on the smallest 479 breakpoint. But there are extra classes to force a different behaviour on certain breakpoints.
 
-Float or Flexbox 
+Flexbox and Browser support
 ------------------
 
-There are three files (each also minified):
+The grid is now flexbox only with basic `display: inline-block` fallback for older ones. There is also a prefix version available to support older flexbox syntax (not really tested though).
 
-- `zenponsive.css`: Float version
-- `zenponsive_flexbox.css`: Flexbox version (latest specification for new browsers)
-- `zenponsive_flexbox_prefixed.css`: Flexbox version with prefixes of old specifications. This file is quilte large because of that older browser support.
-
-The float and flexbox versions generally do use the same class names and are generally compatible (see below). But it is recommended to decide which one you want to use to avoid unnecessary file sizes.
-
-Browser support
----------------
-
-- Float version: All more or less modern browsers and probably IE9+ (untested)
-- Flexbox version: Modern browsers, perhaps IE10+ (untested)
+Zenponsive only provides a basic grid. More individual flexbox usages should be done via your additional custom css.
 
 Setup
 -----
@@ -93,7 +83,11 @@ There are some predefined site widths you can use:
 Since the grid itself is percentage based you can of course use any other custom width.
 
 
+
+
 ### Columns
+
+**NOTE THIS FOLLOWIN SECTION IS NOT YET CURRENT AND NEEDS UPDATES**
 
 #### 12 column grid
 

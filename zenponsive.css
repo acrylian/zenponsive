@@ -4,7 +4,7 @@
 * @author Malte Müller (acrylian) <info@maltem.de>
 * @copyright 2015 Malte Müller
 * @license GPL v3 or later
-* @version: 1.4.1
+* @version: 2.0
 */
 /* Zenponsive base
 
@@ -32,7 +32,7 @@ body * {
 /* Main content wrapper for the site or parts of it
 ---------------------------------------------------*/
 .zp-wrapper {
-  min-width: 240px;
+  min-width: 40px;
   margin: 0 auto;
   position: relative; }
 
@@ -104,162 +104,228 @@ img {
   /* Don't change this because then the widths will not work */
   position: relative;
   /* needed so you can relatively/absolutely position elements within these */
-  float: left;
   display: inline-block;
   word-wrap: break-word;
   /* So longer words don't break the width  */ }
 
+.zp-nogutter {
+  display: flex;
+  flex-flow: row wrap; }
+
+/* empty gutter size means .zp-nogutter class */
+.zp-gutter2 {
+  display: flex;
+  flex-flow: row wrap; }
+
+.zp-gutter4 {
+  display: flex;
+  flex-flow: row wrap; }
+
 /* The columns without gutter
 ------------------------------------------------*/
-.zp-col01 {
+/* Grid items in case you don't want to use the cols */
+.zp-nogutter > * {
+  flex: 1 1 auto; }
+
+.zp-nogutter > .zp-col01 {
+  flex: 0 1 8.33333% !important;
   width: 8.33333% !important; }
 
-.zp-col02 {
+.zp-nogutter > .zp-col02 {
+  flex: 0 1 16.66667% !important;
   width: 16.66667% !important; }
 
-.zp-col03 {
+.zp-nogutter > .zp-col03 {
+  flex: 0 1 25% !important;
   width: 25% !important; }
 
-.zp-col04 {
+.zp-nogutter > .zp-col04 {
+  flex: 0 1 33.33333% !important;
   width: 33.33333% !important; }
 
-.zp-col05 {
+.zp-nogutter > .zp-col05 {
+  flex: 0 1 41.66667% !important;
   width: 41.66667% !important; }
 
-.zp-col06 {
+.zp-nogutter > .zp-col06 {
+  flex: 0 1 50% !important;
   width: 50% !important; }
 
-.zp-col07 {
+.zp-nogutter > .zp-col07 {
+  flex: 0 1 58.33333% !important;
   width: 58.33333% !important; }
 
-.zp-col08 {
+.zp-nogutter > .zp-col08 {
+  flex: 0 1 66.66667% !important;
   width: 66.66667% !important; }
 
-.zp-col09 {
+.zp-nogutter > .zp-col09 {
+  flex: 0 1 75% !important;
   width: 75% !important; }
 
-.zp-col10 {
+.zp-nogutter > .zp-col10 {
+  flex: 0 1 83.33333% !important;
   width: 83.33333% !important; }
 
-.zp-col11 {
+.zp-nogutter > .zp-col11 {
+  flex: 0 1 91.66667% !important;
   width: 91.66667% !important; }
 
-.zp-col12 {
+.zp-nogutter > .zp-col12 {
+  flex: 0 1 100% !important;
   width: 100% !important; }
 
-.zp-col5th-1 {
+.zp-nogutter > .zp-col5th-1 {
+  flex: 0 1 20% !important;
   width: 20% !important; }
 
-.zp-col5th-2 {
+.zp-nogutter > .zp-col5th-2 {
+  flex: 0 1 40% !important;
   width: 40% !important; }
 
-.zp-col5th-3 {
+.zp-nogutter > .zp-col5th-3 {
+  flex: 0 1 60% !important;
   width: 60% !important; }
 
-.zp-col5th-4 {
+.zp-nogutter > .zp-col5th-4 {
+  flex: 0 1 80% !important;
   width: 80% !important; }
 
 /* The columns with 2% gutter 	
 ------------------------------------------------*/
 .zp-gutter2 > .zp-col01 {
+  flex: 0 1 6.33333% !important;
   width: 6.33333% !important; }
 
 .zp-gutter2 > .zp-col02 {
+  flex: 0 1 14.66667% !important;
   width: 14.66667% !important; }
 
 .zp-gutter2 > .zp-col03 {
+  flex: 0 1 23% !important;
   width: 23% !important; }
 
 .zp-gutter2 > .zp-col04 {
+  flex: 0 1 31.33333% !important;
   width: 31.33333% !important; }
 
 .zp-gutter2 > .zp-col05 {
+  flex: 0 1 39.66667% !important;
   width: 39.66667% !important; }
 
 .zp-gutter2 > .zp-col06 {
+  flex: 0 1 48% !important;
   width: 48% !important; }
 
 .zp-gutter2 > .zp-col07 {
+  flex: 0 1 56.33333% !important;
   width: 56.33333% !important; }
 
 .zp-gutter2 > .zp-col08 {
+  flex: 0 1 64.66667% !important;
   width: 64.66667% !important; }
 
 .zp-gutter2 > .zp-col09 {
+  flex: 0 1 73% !important;
   width: 73% !important; }
 
 .zp-gutter2 > .zp-col10 {
+  flex: 0 1 81.33333% !important;
   width: 81.33333% !important; }
 
 .zp-gutter2 > .zp-col11 {
+  flex: 0 1 89.66667% !important;
   width: 89.66667% !important; }
 
 .zp-gutter2 > .zp-col12 {
+  flex: 0 1 98% !important;
   width: 98% !important; }
 
 .zp-gutter2 > .zp-col5th-1 {
+  flex: 0 1 18% !important;
   width: 18% !important; }
 
 .zp-gutter2 > .zp-col5th-2 {
+  flex: 0 1 38% !important;
   width: 38% !important; }
 
 .zp-gutter2 > .zp-col5th-3 {
+  flex: 0 1 58% !important;
   width: 58% !important; }
 
 .zp-gutter2 > .zp-col5th-4 {
+  flex: 0 1 78% !important;
   width: 78% !important; }
 
 /* The columns with  4% gutter
 ------------------------------------------------*/
 .zp-gutter4 > .zp-col01 {
+  flex: 0 1 4.33333% !important;
   width: 4.33333% !important; }
 
 .zp-gutter4 > .zp-col02 {
+  flex: 0 1 12.66667% !important;
   width: 12.66667% !important; }
 
 .zp-gutter4 > .zp-col03 {
+  flex: 0 1 21% !important;
   width: 21% !important; }
 
 .zp-gutter4 > .zp-col04 {
+  flex: 0 1 29.33333% !important;
   width: 29.33333% !important; }
 
 .zp-gutter4 > .zp-col05 {
+  flex: 0 1 37.66667% !important;
   width: 37.66667% !important; }
 
 .zp-gutter4 > .zp-col06 {
+  flex: 0 1 46% !important;
   width: 46% !important; }
 
 .zp-gutter4 > .zp-col07 {
+  flex: 0 1 54.33333% !important;
   width: 54.33333% !important; }
 
 .zp-gutter4 > .zp-col08 {
+  flex: 0 1 62.66667% !important;
   width: 62.66667% !important; }
 
 .zp-gutter4 > .zp-col09 {
+  flex: 0 1 71% !important;
   width: 71% !important; }
 
 .zp-gutter4 > .zp-col10 {
+  flex: 0 1 79.33333% !important;
   width: 79.33333% !important; }
 
 .zp-gutter4 > .zp-col11 {
+  flex: 0 1 87.66667% !important;
   width: 87.66667% !important; }
 
 .zp-gutter4 > .zp-col12 {
+  flex: 0 1 96% !important;
   width: 96% !important; }
 
 .zp-gutter4 > .zp-col5th-1 {
+  flex: 0 1 16% !important;
   width: 16% !important; }
 
 .zp-gutter4 > .zp-col5th-2 {
+  flex: 0 1 36% !important;
   width: 36% !important; }
 
 .zp-gutter4 > .zp-col5th-3 {
+  flex: 0 1 56% !important;
   width: 56% !important; }
 
 .zp-gutter4 > .zp-col5th-4 {
+  flex: 0 1 76% !important;
   width: 76% !important; }
 
 /* General clear float to start a row of other column sizes All and IE8+
+
+	NOTE: Since the grid base is now flexbox with a display: inline-block fallback these are rather obsolete
 	------------------------------------------------------------------------
 	Zenponsive does not require to define rows by default if you for example use square cropped image thumbs. 
 	However to avoid some CSS issues with items of different height in different rows 
@@ -294,7 +360,7 @@ img {
   display: none !important; }
 
 .zp-show {
-  display: block !important; }
+  display: inline-block !important; }
 
 .zp-invisible {
   visibility: hidden !important; }
@@ -311,150 +377,198 @@ img {
    * without and with gutter
    */
   /* No gutter */
-  .zp-col01-1280 {
+  .zp-nogutter > .zp-col01-1280 {
+    flex: 0 1 8.33333% !important;
     width: 8.33333% !important; }
 
-  .zp-col02-1280 {
+  .zp-nogutter > .zp-col02-1280 {
+    flex: 0 1 16.66667% !important;
     width: 16.66667% !important; }
 
-  .zp-col03-1280 {
+  .zp-nogutter > .zp-col03-1280 {
+    flex: 0 1 25% !important;
     width: 25% !important; }
 
-  .zp-col04-1280 {
+  .zp-nogutter > .zp-col04-1280 {
+    flex: 0 1 33.33333% !important;
     width: 33.33333% !important; }
 
-  .zp-col05-1280 {
+  .zp-nogutter > .zp-col05-1280 {
+    flex: 0 1 41.66667% !important;
     width: 41.66667% !important; }
 
-  .zp-col06-1280 {
+  .zp-nogutter > .zp-col06-1280 {
+    flex: 0 1 50% !important;
     width: 50% !important; }
 
-  .zp-col07-1280 {
+  .zp-nogutter > .zp-col07-1280 {
+    flex: 0 1 58.33333% !important;
     width: 58.33333% !important; }
 
-  .zp-col08-1280 {
+  .zp-nogutter > .zp-col08-1280 {
+    flex: 0 1 66.66667% !important;
     width: 66.66667% !important; }
 
-  .zp-col09-1280 {
+  .zp-nogutter > .zp-col09-1280 {
+    flex: 0 1 75% !important;
     width: 75% !important; }
 
-  .zp-col10-1280 {
+  .zp-nogutter > .zp-col10-1280 {
+    flex: 0 1 83.33333% !important;
     width: 83.33333% !important; }
 
-  .zp-col11-1280 {
+  .zp-nogutter > .zp-col11-1280 {
+    flex: 0 1 91.66667% !important;
     width: 91.66667% !important; }
 
-  .zp-col12-1280 {
+  .zp-nogutter > .zp-col12-1280 {
+    flex: 0 1 100% !important;
     width: 100% !important; }
 
-  .zp-col5th-1-1280 {
+  .zp-nogutter > .zp-col5th-1-1280 {
+    flex: 0 1 20% !important;
     width: 20% !important; }
 
-  .zp-col5th-2-1280 {
+  .zp-nogutter > .zp-col5th-2-1280 {
+    flex: 0 1 40% !important;
     width: 40% !important; }
 
-  .zp-col5th-3-1280 {
+  .zp-nogutter > .zp-col5th-3-1280 {
+    flex: 0 1 60% !important;
     width: 60% !important; }
 
-  .zp-col5th-4-1280 {
+  .zp-nogutter > .zp-col5th-4-1280 {
+    flex: 0 1 80% !important;
     width: 80% !important; }
 
   /* 2% gutter */
   .zp-gutter2 > .zp-col01-1280 {
+    flex: 0 1 6.33333% !important;
     width: 6.33333% !important; }
 
   .zp-gutter2 > .zp-col02-1280 {
+    flex: 0 1 14.66667% !important;
     width: 14.66667% !important; }
 
   .zp-gutter2 > .zp-col03-1280 {
+    flex: 0 1 23% !important;
     width: 23% !important; }
 
   .zp-gutter2 > .zp-col04-1280 {
+    flex: 0 1 31.33333% !important;
     width: 31.33333% !important; }
 
   .zp-gutter2 > .zp-col05-1280 {
+    flex: 0 1 39.66667% !important;
     width: 39.66667% !important; }
 
   .zp-gutter2 > .zp-col06-1280 {
+    flex: 0 1 48% !important;
     width: 48% !important; }
 
   .zp-gutter2 > .zp-col07-1280 {
+    flex: 0 1 56.33333% !important;
     width: 56.33333% !important; }
 
   .zp-gutter2 > .zp-col08-1280 {
+    flex: 0 1 64.66667% !important;
     width: 64.66667% !important; }
 
   .zp-gutter2 > .zp-col09-1280 {
+    flex: 0 1 73% !important;
     width: 73% !important; }
 
   .zp-gutter2 > .zp-col10-1280 {
+    flex: 0 1 81.33333% !important;
     width: 81.33333% !important; }
 
   .zp-gutter2 > .zp-col11-1280 {
+    flex: 0 1 89.66667% !important;
     width: 89.66667% !important; }
 
   .zp-gutter2 > .zp-col12-1280 {
+    flex: 0 1 98% !important;
     width: 98% !important; }
 
   .zp-gutter2 > .zp-col5th-1-1280 {
+    flex: 0 1 18% !important;
     width: 18% !important; }
 
   .zp-gutter2 > .zp-col5th-2-1280 {
+    flex: 0 1 38% !important;
     width: 38% !important; }
 
   .zp-gutter2 > .zp-col5th-3-1280 {
+    flex: 0 1 58% !important;
     width: 58% !important; }
 
   .zp-gutter2 > .zp-col5th-4-1280 {
+    flex: 0 1 78% !important;
     width: 78% !important; }
 
   /* 4% gutter */
   .zp-gutter4 > .zp-col01-1280 {
+    flex: 0 1 4.33333% !important;
     width: 4.33333% !important; }
 
   .zp-gutter4 > .zp-col02-1280 {
+    flex: 0 1 12.66667% !important;
     width: 12.66667% !important; }
 
   .zp-gutter4 > .zp-col03-1280 {
+    flex: 0 1 21% !important;
     width: 21% !important; }
 
   .zp-gutter4 > .zp-col04-1280 {
+    flex: 0 1 29.33333% !important;
     width: 29.33333% !important; }
 
   .zp-gutter4 > .zp-col05-1280 {
+    flex: 0 1 37.66667% !important;
     width: 37.66667% !important; }
 
   .zp-gutter4 > .zp-col06-1280 {
+    flex: 0 1 46% !important;
     width: 46% !important; }
 
   .zp-gutter4 > .zp-col07-1280 {
+    flex: 0 1 54.33333% !important;
     width: 54.33333% !important; }
 
   .zp-gutter4 > .zp-col08-1280 {
+    flex: 0 1 62.66667% !important;
     width: 62.66667% !important; }
 
   .zp-gutter4 > .zp-col09-1280 {
+    flex: 0 1 71% !important;
     width: 71% !important; }
 
   .zp-gutter4 > .zp-col10-1280 {
+    flex: 0 1 79.33333% !important;
     width: 79.33333% !important; }
 
   .zp-gutter4 > .zp-col11-1280 {
+    flex: 0 1 87.66667% !important;
     width: 87.66667% !important; }
 
   .zp-gutter4 > .zp-col12-1280 {
+    flex: 0 1 96% !important;
     width: 96% !important; }
 
   .zp-gutter4 > .zp-col5th-1-1280 {
+    flex: 0 1 16% !important;
     width: 16% !important; }
 
   .zp-gutter4 > .zp-col5th-2-1280 {
+    flex: 0 1 36% !important;
     width: 36% !important; }
 
   .zp-gutter4 > .zp-col5th-3-1280 {
+    flex: 0 1 56% !important;
     width: 56% !important; }
 
   .zp-gutter4 > .zp-col5th-4-1280 {
+    flex: 0 1 76% !important;
     width: 76% !important; }
 
   /* Various helpers */
@@ -472,7 +586,7 @@ img {
     display: none !important; }
 
   .zp-show1280 {
-    display: block !important; }
+    display: inline-block !important; }
 
   .zp-invisible1280 {
     visibility: hidden !important; }
@@ -486,150 +600,198 @@ img {
    * without and with gutter
    */
   /* No gutter */
-  .zp-col01-959 {
+  .zp-nogutter > .zp-col01-959 {
+    flex: 0 1 8.33333% !important;
     width: 8.33333% !important; }
 
-  .zp-col02-959 {
+  .zp-nogutter > .zp-col02-959 {
+    flex: 0 1 16.66667% !important;
     width: 16.66667% !important; }
 
-  .zp-col03-959 {
+  .zp-nogutter > .zp-col03-959 {
+    flex: 0 1 25% !important;
     width: 25% !important; }
 
-  .zp-col04-959 {
+  .zp-nogutter > .zp-col04-959 {
+    flex: 0 1 33.33333% !important;
     width: 33.33333% !important; }
 
-  .zp-col05-959 {
+  .zp-nogutter > .zp-col05-959 {
+    flex: 0 1 41.66667% !important;
     width: 41.66667% !important; }
 
-  .zp-col06-959 {
+  .zp-nogutter > .zp-col06-959 {
+    flex: 0 1 50% !important;
     width: 50% !important; }
 
-  .zp-col07-959 {
+  .zp-nogutter > .zp-col07-959 {
+    flex: 0 1 58.33333% !important;
     width: 58.33333% !important; }
 
-  .zp-col08-959 {
+  .zp-nogutter > .zp-col08-959 {
+    flex: 0 1 66.66667% !important;
     width: 66.66667% !important; }
 
-  .zp-col09-959 {
+  .zp-nogutter > .zp-col09-959 {
+    flex: 0 1 75% !important;
     width: 75% !important; }
 
-  .zp-col10-959 {
+  .zp-nogutter > .zp-col10-959 {
+    flex: 0 1 83.33333% !important;
     width: 83.33333% !important; }
 
-  .zp-col11-959 {
+  .zp-nogutter > .zp-col11-959 {
+    flex: 0 1 91.66667% !important;
     width: 91.66667% !important; }
 
-  .zp-col12-959 {
+  .zp-nogutter > .zp-col12-959 {
+    flex: 0 1 100% !important;
     width: 100% !important; }
 
-  .zp-col5th-1-959 {
+  .zp-nogutter > .zp-col5th-1-959 {
+    flex: 0 1 20% !important;
     width: 20% !important; }
 
-  .zp-col5th-2-959 {
+  .zp-nogutter > .zp-col5th-2-959 {
+    flex: 0 1 40% !important;
     width: 40% !important; }
 
-  .zp-col5th-3-959 {
+  .zp-nogutter > .zp-col5th-3-959 {
+    flex: 0 1 60% !important;
     width: 60% !important; }
 
-  .zp-col5th-4-959 {
+  .zp-nogutter > .zp-col5th-4-959 {
+    flex: 0 1 80% !important;
     width: 80% !important; }
 
   /* 2% gutter */
   .zp-gutter2 > .zp-col01-959 {
+    flex: 0 1 6.33333% !important;
     width: 6.33333% !important; }
 
   .zp-gutter2 > .zp-col02-959 {
+    flex: 0 1 14.66667% !important;
     width: 14.66667% !important; }
 
   .zp-gutter2 > .zp-col03-959 {
+    flex: 0 1 23% !important;
     width: 23% !important; }
 
   .zp-gutter2 > .zp-col04-959 {
+    flex: 0 1 31.33333% !important;
     width: 31.33333% !important; }
 
   .zp-gutter2 > .zp-col05-959 {
+    flex: 0 1 39.66667% !important;
     width: 39.66667% !important; }
 
   .zp-gutter2 > .zp-col06-959 {
+    flex: 0 1 48% !important;
     width: 48% !important; }
 
   .zp-gutter2 > .zp-col07-959 {
+    flex: 0 1 56.33333% !important;
     width: 56.33333% !important; }
 
   .zp-gutter2 > .zp-col08-959 {
+    flex: 0 1 64.66667% !important;
     width: 64.66667% !important; }
 
   .zp-gutter2 > .zp-col09-959 {
+    flex: 0 1 73% !important;
     width: 73% !important; }
 
   .zp-gutter2 > .zp-col10-959 {
+    flex: 0 1 81.33333% !important;
     width: 81.33333% !important; }
 
   .zp-gutter2 > .zp-col11-959 {
+    flex: 0 1 89.66667% !important;
     width: 89.66667% !important; }
 
   .zp-gutter2 > .zp-col12-959 {
+    flex: 0 1 98% !important;
     width: 98% !important; }
 
   .zp-gutter2 > .zp-col5th-1-959 {
+    flex: 0 1 18% !important;
     width: 18% !important; }
 
   .zp-gutter2 > .zp-col5th-2-959 {
+    flex: 0 1 38% !important;
     width: 38% !important; }
 
   .zp-gutter2 > .zp-col5th-3-959 {
+    flex: 0 1 58% !important;
     width: 58% !important; }
 
   .zp-gutter2 > .zp-col5th-4-959 {
+    flex: 0 1 78% !important;
     width: 78% !important; }
 
   /* 4% gutter */
   .zp-gutter4 > .zp-col01-959 {
+    flex: 0 1 4.33333% !important;
     width: 4.33333% !important; }
 
   .zp-gutter4 > .zp-col02-959 {
+    flex: 0 1 12.66667% !important;
     width: 12.66667% !important; }
 
   .zp-gutter4 > .zp-col03-959 {
+    flex: 0 1 21% !important;
     width: 21% !important; }
 
   .zp-gutter4 > .zp-col04-959 {
+    flex: 0 1 29.33333% !important;
     width: 29.33333% !important; }
 
   .zp-gutter4 > .zp-col05-959 {
+    flex: 0 1 37.66667% !important;
     width: 37.66667% !important; }
 
   .zp-gutter4 > .zp-col06-959 {
+    flex: 0 1 46% !important;
     width: 46% !important; }
 
   .zp-gutter4 > .zp-col07-959 {
+    flex: 0 1 54.33333% !important;
     width: 54.33333% !important; }
 
   .zp-gutter4 > .zp-col08-959 {
+    flex: 0 1 62.66667% !important;
     width: 62.66667% !important; }
 
   .zp-gutter4 > .zp-col09-959 {
+    flex: 0 1 71% !important;
     width: 71% !important; }
 
   .zp-gutter4 > .zp-col10-959 {
+    flex: 0 1 79.33333% !important;
     width: 79.33333% !important; }
 
   .zp-gutter4 > .zp-col11-959 {
+    flex: 0 1 87.66667% !important;
     width: 87.66667% !important; }
 
   .zp-gutter4 > .zp-col12-959 {
+    flex: 0 1 96% !important;
     width: 96% !important; }
 
   .zp-gutter4 > .zp-col5th-1-959 {
+    flex: 0 1 16% !important;
     width: 16% !important; }
 
   .zp-gutter4 > .zp-col5th-2-959 {
+    flex: 0 1 36% !important;
     width: 36% !important; }
 
   .zp-gutter4 > .zp-col5th-3-959 {
+    flex: 0 1 56% !important;
     width: 56% !important; }
 
   .zp-gutter4 > .zp-col5th-4-959 {
+    flex: 0 1 76% !important;
     width: 76% !important; }
 
   /* various helpers */
@@ -647,7 +809,7 @@ img {
     display: none !important; }
 
   .zp-show959 {
-    display: block !important; }
+    display: inline-block !important; }
 
   .zp-invisible959 {
     visibility: hidden !important; }
@@ -660,150 +822,198 @@ img {
    * Extra classed to override the default col12 set above on this width breakpoint
    */
   /* No gutter */
-  .zp-col01-767 {
+  .zp-nogutter > .zp-col01-767 {
+    flex: 0 1 8.33333% !important;
     width: 8.33333% !important; }
 
-  .zp-col02-767 {
+  .zp-nogutter > .zp-col02-767 {
+    flex: 0 1 16.66667% !important;
     width: 16.66667% !important; }
 
-  .zp-col03-767 {
+  .zp-nogutter > .zp-col03-767 {
+    flex: 0 1 25% !important;
     width: 25% !important; }
 
-  .zp-col04-767 {
+  .zp-nogutter > .zp-col04-767 {
+    flex: 0 1 33.33333% !important;
     width: 33.33333% !important; }
 
-  .zp-col05-767 {
+  .zp-nogutter > .zp-col05-767 {
+    flex: 0 1 41.66667% !important;
     width: 41.66667% !important; }
 
-  .zp-col06-767 {
+  .zp-nogutter > .zp-col06-767 {
+    flex: 0 1 50% !important;
     width: 50% !important; }
 
-  .zp-col07-767 {
+  .zp-nogutter > .zp-col07-767 {
+    flex: 0 1 58.33333% !important;
     width: 58.33333% !important; }
 
-  .zp-col08-767 {
+  .zp-nogutter > .zp-col08-767 {
+    flex: 0 1 66.66667% !important;
     width: 66.66667% !important; }
 
-  .zp-col09-767 {
+  .zp-nogutter > .zp-col09-767 {
+    flex: 0 1 75% !important;
     width: 75% !important; }
 
-  .zp-col10-767 {
+  .zp-nogutter > .zp-col10-767 {
+    flex: 0 1 83.33333% !important;
     width: 83.33333% !important; }
 
-  .zp-col11-767 {
+  .zp-nogutter > .zp-col11-767 {
+    flex: 0 1 91.66667% !important;
     width: 91.66667% !important; }
 
-  .zp-col12-767 {
+  .zp-nogutter > .zp-col12-767 {
+    flex: 0 1 100% !important;
     width: 100% !important; }
 
-  .zp-col5th-1-767 {
+  .zp-nogutter > .zp-col5th-1-767 {
+    flex: 0 1 20% !important;
     width: 20% !important; }
 
-  .zp-col5th-2-767 {
+  .zp-nogutter > .zp-col5th-2-767 {
+    flex: 0 1 40% !important;
     width: 40% !important; }
 
-  .zp-col5th-3-767 {
+  .zp-nogutter > .zp-col5th-3-767 {
+    flex: 0 1 60% !important;
     width: 60% !important; }
 
-  .zp-col5th-4-767 {
+  .zp-nogutter > .zp-col5th-4-767 {
+    flex: 0 1 80% !important;
     width: 80% !important; }
 
   /* 2% gutter */
   .zp-gutter2 > .zp-col01-767 {
+    flex: 0 1 6.33333% !important;
     width: 6.33333% !important; }
 
   .zp-gutter2 > .zp-col02-767 {
+    flex: 0 1 14.66667% !important;
     width: 14.66667% !important; }
 
   .zp-gutter2 > .zp-col03-767 {
+    flex: 0 1 23% !important;
     width: 23% !important; }
 
   .zp-gutter2 > .zp-col04-767 {
+    flex: 0 1 31.33333% !important;
     width: 31.33333% !important; }
 
   .zp-gutter2 > .zp-col05-767 {
+    flex: 0 1 39.66667% !important;
     width: 39.66667% !important; }
 
   .zp-gutter2 > .zp-col06-767 {
+    flex: 0 1 48% !important;
     width: 48% !important; }
 
   .zp-gutter2 > .zp-col07-767 {
+    flex: 0 1 56.33333% !important;
     width: 56.33333% !important; }
 
   .zp-gutter2 > .zp-col08-767 {
+    flex: 0 1 64.66667% !important;
     width: 64.66667% !important; }
 
   .zp-gutter2 > .zp-col09-767 {
+    flex: 0 1 73% !important;
     width: 73% !important; }
 
   .zp-gutter2 > .zp-col10-767 {
+    flex: 0 1 81.33333% !important;
     width: 81.33333% !important; }
 
   .zp-gutter2 > .zp-col11-767 {
+    flex: 0 1 89.66667% !important;
     width: 89.66667% !important; }
 
   .zp-gutter2 > .zp-col12-767 {
+    flex: 0 1 98% !important;
     width: 98% !important; }
 
   .zp-gutter2 > .zp-col5th-1-767 {
+    flex: 0 1 18% !important;
     width: 18% !important; }
 
   .zp-gutter2 > .zp-col5th-2-767 {
+    flex: 0 1 38% !important;
     width: 38% !important; }
 
   .zp-gutter2 > .zp-col5th-3-767 {
+    flex: 0 1 58% !important;
     width: 58% !important; }
 
   .zp-gutter2 > .zp-col5th-4-767 {
+    flex: 0 1 78% !important;
     width: 78% !important; }
 
   /* 4% gutter */
   .zp-gutter4 > .zp-col01-767 {
+    flex: 0 1 4.33333% !important;
     width: 4.33333% !important; }
 
   .zp-gutter4 > .zp-col02-767 {
+    flex: 0 1 12.66667% !important;
     width: 12.66667% !important; }
 
   .zp-gutter4 > .zp-col03-767 {
+    flex: 0 1 21% !important;
     width: 21% !important; }
 
   .zp-gutter4 > .zp-col04-767 {
+    flex: 0 1 29.33333% !important;
     width: 29.33333% !important; }
 
   .zp-gutter4 > .zp-col05-767 {
+    flex: 0 1 37.66667% !important;
     width: 37.66667% !important; }
 
   .zp-gutter4 > .zp-col06-767 {
+    flex: 0 1 46% !important;
     width: 46% !important; }
 
   .zp-gutter4 > .zp-col07-767 {
+    flex: 0 1 54.33333% !important;
     width: 54.33333% !important; }
 
   .zp-gutter4 > .zp-col08-767 {
+    flex: 0 1 62.66667% !important;
     width: 62.66667% !important; }
 
   .zp-gutter4 > .zp-col09-767 {
+    flex: 0 1 71% !important;
     width: 71% !important; }
 
   .zp-gutter4 > .zp-col10-767 {
+    flex: 0 1 79.33333% !important;
     width: 79.33333% !important; }
 
   .zp-gutter4 > .zp-col11-767 {
+    flex: 0 1 87.66667% !important;
     width: 87.66667% !important; }
 
   .zp-gutter4 > .zp-col12-767 {
+    flex: 0 1 96% !important;
     width: 96% !important; }
 
   .zp-gutter4 > .zp-col5th-1-767 {
+    flex: 0 1 16% !important;
     width: 16% !important; }
 
   .zp-gutter4 > .zp-col5th-2-767 {
+    flex: 0 1 36% !important;
     width: 36% !important; }
 
   .zp-gutter4 > .zp-col5th-3-767 {
+    flex: 0 1 56% !important;
     width: 56% !important; }
 
   .zp-gutter4 > .zp-col5th-4-767 {
+    flex: 0 1 76% !important;
     width: 76% !important; }
 
   /* various helpers */
@@ -823,7 +1033,7 @@ img {
     display: none !important; }
 
   .zp-show767 {
-    display: block !important; }
+    display: inline-block !important; }
 
   .zp-invisible767 {
     visibility: hidden !important; }
@@ -832,163 +1042,219 @@ img {
     visibility: visible !important; } }
 /* Mobile */
 @media only screen and (max-width: 479px) {
-  /* No gutter - Columns are always set to full width on this width breakpoint */
-  *[class^='zp-col'] {
-    width: 100% !important; }
+  /* Columns are always set to full width on this width breakpoint unless defined otherwise */
+  /*  Full for all incl. gutter items - Also adjust any custom gutter sizes used here */
+  .zp-nogutter > *[class^='zp-col'],
+  .zp-gutter2 > *[class^='zp-col'],
+  .zp-gutter4 > *[class^='zp-col'] {
+    -webkit-box-flex: 0 1 100% !important;
+    -moz-box-flex: 0 1 100%  !important;
+    -webkit-flex: 0 1 100%  !important;
+    -ms-flex: 0 1 100%  !important;
+    flex: 0 1 100%  !important;
+    width: 100%  !important; }
 
-  /* 2% gutter */
+  /* 2% gutter - adjust if using custom gutter sizes */
   .zp-gutter2 > *[class^='zp-col'] {
     width: 98% !important; }
 
-  /* 4% gutter */
+  /* 4% gutter - adjust if using custom gutter sizes */
   .zp-gutter4 > *[class^='zp-col'] {
     width: 96% !important; }
 
   /* % gutter */
-  .zp-col01-479 {
+  .zp-nogutter > .zp-col01-479 {
+    flex: 0 1 8.33333% !important;
     width: 8.33333% !important; }
 
-  .zp-col02-479 {
+  .zp-nogutter > .zp-col02-479 {
+    flex: 0 1 16.66667% !important;
     width: 16.66667% !important; }
 
-  .zp-col03-479 {
+  .zp-nogutter > .zp-col03-479 {
+    flex: 0 1 25% !important;
     width: 25% !important; }
 
-  .zp-col04-479 {
+  .zp-nogutter > .zp-col04-479 {
+    flex: 0 1 33.33333% !important;
     width: 33.33333% !important; }
 
-  .zp-col05-479 {
+  .zp-nogutter > .zp-col05-479 {
+    flex: 0 1 41.66667% !important;
     width: 41.66667% !important; }
 
-  .zp-col06-479 {
+  .zp-nogutter > .zp-col06-479 {
+    flex: 0 1 50% !important;
     width: 50% !important; }
 
-  .zp-col07-479 {
+  .zp-nogutter > .zp-col07-479 {
+    flex: 0 1 58.33333% !important;
     width: 58.33333% !important; }
 
-  .zp-col08-479 {
+  .zp-nogutter > .zp-col08-479 {
+    flex: 0 1 66.66667% !important;
     width: 66.66667% !important; }
 
-  .zp-col09-479 {
+  .zp-nogutter > .zp-col09-479 {
+    flex: 0 1 75% !important;
     width: 75% !important; }
 
-  .zp-col10-479 {
+  .zp-nogutter > .zp-col10-479 {
+    flex: 0 1 83.33333% !important;
     width: 83.33333% !important; }
 
-  .zp-col11-479 {
+  .zp-nogutter > .zp-col11-479 {
+    flex: 0 1 91.66667% !important;
     width: 91.66667% !important; }
 
-  .zp-col12-479 {
+  .zp-nogutter > .zp-col12-479 {
+    flex: 0 1 100% !important;
     width: 100% !important; }
 
-  .zp-col5th-1-479 {
+  .zp-nogutter > .zp-col5th-1-479 {
+    flex: 0 1 20% !important;
     width: 20% !important; }
 
-  .zp-col5th-2-479 {
+  .zp-nogutter > .zp-col5th-2-479 {
+    flex: 0 1 40% !important;
     width: 40% !important; }
 
-  .zp-col5th-3-479 {
+  .zp-nogutter > .zp-col5th-3-479 {
+    flex: 0 1 60% !important;
     width: 60% !important; }
 
-  .zp-col5th-4-479 {
+  .zp-nogutter > .zp-col5th-4-479 {
+    flex: 0 1 80% !important;
     width: 80% !important; }
 
   /* 2% gutter */
   .zp-gutter2 > .zp-col01-479 {
+    flex: 0 1 6.33333% !important;
     width: 6.33333% !important; }
 
   .zp-gutter2 > .zp-col02-479 {
+    flex: 0 1 14.66667% !important;
     width: 14.66667% !important; }
 
   .zp-gutter2 > .zp-col03-479 {
+    flex: 0 1 23% !important;
     width: 23% !important; }
 
   .zp-gutter2 > .zp-col04-479 {
+    flex: 0 1 31.33333% !important;
     width: 31.33333% !important; }
 
   .zp-gutter2 > .zp-col05-479 {
+    flex: 0 1 39.66667% !important;
     width: 39.66667% !important; }
 
   .zp-gutter2 > .zp-col06-479 {
+    flex: 0 1 48% !important;
     width: 48% !important; }
 
   .zp-gutter2 > .zp-col07-479 {
+    flex: 0 1 56.33333% !important;
     width: 56.33333% !important; }
 
   .zp-gutter2 > .zp-col08-479 {
+    flex: 0 1 64.66667% !important;
     width: 64.66667% !important; }
 
   .zp-gutter2 > .zp-col09-479 {
+    flex: 0 1 73% !important;
     width: 73% !important; }
 
   .zp-gutter2 > .zp-col10-479 {
+    flex: 0 1 81.33333% !important;
     width: 81.33333% !important; }
 
   .zp-gutter2 > .zp-col11-479 {
+    flex: 0 1 89.66667% !important;
     width: 89.66667% !important; }
 
   .zp-gutter2 > .zp-col12-479 {
+    flex: 0 1 98% !important;
     width: 98% !important; }
 
   .zp-gutter2 > .zp-col5th-1-479 {
+    flex: 0 1 18% !important;
     width: 18% !important; }
 
   .zp-gutter2 > .zp-col5th-2-479 {
+    flex: 0 1 38% !important;
     width: 38% !important; }
 
   .zp-gutter2 > .zp-col5th-3-479 {
+    flex: 0 1 58% !important;
     width: 58% !important; }
 
   .zp-gutter2 > .zp-col5th-4-479 {
+    flex: 0 1 78% !important;
     width: 78% !important; }
 
   /* 4% gutter */
   .zp-gutter4 > .zp-col01-479 {
+    flex: 0 1 4.33333% !important;
     width: 4.33333% !important; }
 
   .zp-gutter4 > .zp-col02-479 {
+    flex: 0 1 12.66667% !important;
     width: 12.66667% !important; }
 
   .zp-gutter4 > .zp-col03-479 {
+    flex: 0 1 21% !important;
     width: 21% !important; }
 
   .zp-gutter4 > .zp-col04-479 {
+    flex: 0 1 29.33333% !important;
     width: 29.33333% !important; }
 
   .zp-gutter4 > .zp-col05-479 {
+    flex: 0 1 37.66667% !important;
     width: 37.66667% !important; }
 
   .zp-gutter4 > .zp-col06-479 {
+    flex: 0 1 46% !important;
     width: 46% !important; }
 
   .zp-gutter4 > .zp-col07-479 {
+    flex: 0 1 54.33333% !important;
     width: 54.33333% !important; }
 
   .zp-gutter4 > .zp-col08-479 {
+    flex: 0 1 62.66667% !important;
     width: 62.66667% !important; }
 
   .zp-gutter4 > .zp-col09-479 {
+    flex: 0 1 71% !important;
     width: 71% !important; }
 
   .zp-gutter4 > .zp-col10-479 {
+    flex: 0 1 79.33333% !important;
     width: 79.33333% !important; }
 
   .zp-gutter4 > .zp-col11-479 {
+    flex: 0 1 87.66667% !important;
     width: 87.66667% !important; }
 
   .zp-gutter4 > .zp-col12-479 {
+    flex: 0 1 96% !important;
     width: 96% !important; }
 
   .zp-gutter4 > .zp-col5th-1-479 {
+    flex: 0 1 16% !important;
     width: 16% !important; }
 
   .zp-gutter4 > .zp-col5th-2-479 {
+    flex: 0 1 36% !important;
     width: 36% !important; }
 
   .zp-gutter4 > .zp-col5th-3-479 {
+    flex: 0 1 56% !important;
     width: 56% !important; }
 
   .zp-gutter4 > .zp-col5th-4-479 {
+    flex: 0 1 76% !important;
     width: 76% !important; }
 
   /* various helpers */
@@ -1013,7 +1279,7 @@ img {
     display: none !important; }
 
   .zp-show479 {
-    display: block !important; }
+    display: inline-block !important; }
 
   .zp-invisible479 {
     visibility: hidden !important; }

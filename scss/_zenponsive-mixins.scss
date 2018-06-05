@@ -15,7 +15,7 @@ $break4 : -479;
 		display: none !important; 
 	}
 	.#{$prefix}show#{$breakpoint} { 
-		display: block !important; 
+		display: inline-block !important; 
 	}
 	.#{$prefix}invisible#{$breakpoint} { 
 		visibility: hidden !important; 
@@ -25,9 +25,15 @@ $break4 : -479;
 	}
 }
 
-// Main flex wrapper
-@mixin main_flexwrapper($mode) {
-	.#{$prefix}flex {
+// Base flex wrapper for gutter and no gutter
+@mixin grid12_wrapper_base($guttersize, $mode) {
+	$name: gutter;
+	$size: $guttersize;
+	@if $guttersize == '' {
+		$name: nogutter;
+		$size: '';
+	} 
+	.#{$prefix}#{$name}#{$size} {
 		@if $mode == 'flex-prefix' {
 			display: -webkit-box;      // OLD - iOS 6-, Safari 3.1-6 
 			display: -moz-box;         // OLD - Firefox 19- (buggy but mostly works) 
@@ -44,9 +50,9 @@ $break4 : -479;
 }
 
 
-//general flexbox item
+//general flexbox item if not using the default columns
 @mixin general_flexboxitem($mode) {
-	.#{$prefix}flex > *  {
+	.#{$prefix}nogutter > *  {
 		@if $mode == 'flex-prefix' {	
 			-webkit-box-flex: 1 1 auto; // OLD - iOS 6-, Safari 3.1-6    
 			-moz-box-flex: 1 1 auto;    // OLD - Firefox 19- */    
@@ -58,49 +64,28 @@ $break4 : -479;
 	}  
 }
 
-//12 col grid
-@mixin grid12($breakpoint, $mode) {
+//12 col grid with or without gutter.
+// set guttersize and breakpoint to empty ('') if this is the base define without gutter and/or breakpoint
+@mixin grid12($guttersize, $breakpoint, $mode) {
+	$name: gutter;
+	$size: $guttersize;
+	$width : 0;
+	@if $guttersize == '' {
+		$name: nogutter;
+		$size: '';
+	} 
 	@for $i from 1 through 12 {
 		$colnumber: $i;
-		$width: $i/12*100%;
+		@if $guttersize == '' {
+			$width: $i/12*100%;
+		} @else {
+			$width: $i/12*100%-$guttersize;
+		}
 		@if $i < 10 {
 			$colnumber: 0#{$i};
 		}
-		@if $mode == 'float' {
-			.#{$col12}#{$colnumber}#{$breakpoint} {
-				width: $width !important;
-			}
-		}
 		@if $mode == 'flex' or $mode == 'flex-prefix' {
-			.#{$prefix}flex > .#{$col12}#{$colnumber}#{$breakpoint} {
-				@if $mode == 'flex-prefix' {
-					-webkit-box-flex: 0 1 $width !important;
-					-moz-box-flex: 0 1 $width !important;         
-					-webkit-flex: 0 1 $width !important;  
-					-ms-flex: 0 1 $width !important;
-				}
-				flex: 0 1 $width !important; 
-				width: $width !important;
-			}
-		}
-	}
-}
-
-//12 col grid with gutter
-@mixin grid12_gutter($guttersize, $breakpoint, $mode) {
-	@for $i from 1 through 12 {
-		$colnumber: $i;
-		$width: $i/12*100%-$guttersize;
-		@if $i < 10 {
-			$colnumber: 0#{$i};
-		}
-		@if $mode == 'float' {
-			.#{$prefix}gutter#{$guttersize} > .#{$col12}#{$colnumber}#{$breakpoint} {
-				width: $width !important;
-			}
-		}
-		@if $mode == 'flex' or $mode == 'flex-prefix' {
-			.#{$prefix}flex.#{$prefix}gutter#{$guttersize} > .#{$col12}#{$colnumber}#{$breakpoint} {
+			.#{$prefix}#{$name}#{$size} > .#{$col12}#{$colnumber}#{$breakpoint} {
 				@if $mode == 'flex-prefix' {
 					-webkit-box-flex: 0 1 $width !important;  
 					-moz-box-flex: 0 1 $width !important; 
@@ -114,46 +99,29 @@ $break4 : -479;
 	}
 }
 
-//5 col grid
-@mixin grid5($breakpoint, $mode) {
+//5 col grid with or without gutter
+// set guttersize and breakpoint to empty ('') if this is the base define without gutter and/or breakpoint
+@mixin grid5($guttersize, $breakpoint, $mode) {
+	$name: gutter;
+	$size: $guttersize;
+	$width : 0;
+	@if $guttersize == '' {
+		$name: nogutter;
+		$size: '';
+	} 
 	@for $i from 1 through 4 {
 		$colnumber: $i;
-		$width: $i/5*100%;
-		@if $mode == 'float' {
-			.#{$col5}#{$colnumber}#{$breakpoint} {
-				width: $width !important;
-			}
+		@if $guttersize == '' {
+			$width: $i/5*100%;
+		} @else {
+			$width: $i/5*100%-$guttersize;
 		}
 		@if $mode == 'flex' or $mode == 'flex-prefix' {
-			#{$prefix}flex > .#{$col5}#{$colnumber}#{$breakpoint} {
+			.#{$prefix}#{$name}#{$size} > .#{$col5}#{$colnumber}#{$breakpoint} {
 				@if $mode == 'flex-prefix' {
 					-webkit-box-flex: 0 1 $width !important; 
 					-moz-box-flex: 0 1 $width !important; 
 					-webkit-flex: 0 1 $width !important;   
-					-ms-flex: 0 1 $width !important;
-				}
-				flex: 0 1 $width !important; 
-				width: $width !important;
-			}
-		}
-	}
-}
-//5 col grid with gutter
-@mixin grid5_gutter($guttersize, $breakpoint, $mode) {
-	@for $i from 1 through 4 {
-		$colnumber: $i;
-		$width: $i/5*100%-$guttersize;
-		@if $mode == 'float' {
-			.#{$prefix}gutter#{$guttersize} > .#{$col5}#{$colnumber}#{$breakpoint} {
-				width: $width !important;
-			}
-		}
-		@if $mode == 'flex' or $mode == 'flex-prefix' {
-			.#{$prefix}flex.#{$prefix}gutter#{$guttersize} > .#{$col5}#{$colnumber}#{$breakpoint} {
-				@if $mode == 'flex-prefix' {
-					-webkit-box-flex: 0 1 $width !important; 
-					-moz-box-flex: 0 1 $width !important;  
-					-webkit-flex: 0 1 $width !important;  
 					-ms-flex: 0 1 $width !important;
 				}
 				flex: 0 1 $width !important; 
