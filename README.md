@@ -1,9 +1,12 @@
 
+
+
 Zenponsive 
 ==========
 
 A simple responsive CSS grid
 ----------------------------
+**Note: Development of this has been abandoned. All major and slightly modern browsers now support flexbox (the more modern even the grid layout) so you get much better and lightweight solutions by just using it directly where needed.**
 
 Yet another grid ;-) This was primarily made to provide a plain simple and flexible fluid grid system for my own use (and education). It of course does not reinvent the wheel and is on purpose not trying to be a full design framework like the big ones. Those are great and were of course an inspiration but also a bit overloaded to my taste even if largely modular. 
 
